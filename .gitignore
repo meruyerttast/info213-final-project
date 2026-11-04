@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+# participant footprint exports never go in git
+exports/
+*.footprints.json
+*.footprints.csv

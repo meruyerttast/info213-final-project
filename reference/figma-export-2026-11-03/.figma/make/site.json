@@ -1,0 +1,10 @@
+{
+  "description": "A personal assistant for grad students that turns emails, coursework, and messages into calendar plans and actionable proposals, with approval required before anything is sent.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
