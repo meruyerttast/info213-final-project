@@ -15,6 +15,7 @@ import {
   type Source,
 } from "./data"
 import { StoreProvider, useStore } from "./store"
+import { FootprintsPanel } from "@/shared/FootprintsPanel"
 
 type Tab = "home" | "inbox" | "calendar" | "activity"
 type CareerStep = "detail" | "preparing" | "form" | "employers-only" | "review" | "team-message" | "submitting" | "confirmation"
@@ -663,7 +664,7 @@ function Activity({ onAvatar }: { onAvatar: () => void }) {
 
 function LockScreen({ onOpen }: { onOpen: () => void }) {
   return (
-    <main className="lock-screen">
+    <main className="lock-screen" data-fp-screen="Lock screen">
       <div className="lock-status">
         <span>10:42</span>
         <div className="status-icons">
@@ -1203,6 +1204,7 @@ function ModeratorPanel({
   return (
     <div
       className="moderator-layer"
+      data-fp-moderator=""
       onMouseDown={(event) => {
         if (event.target === event.currentTarget) onClose()
       }}
@@ -1278,6 +1280,7 @@ function ModeratorPanel({
             />
           </label>
         </div>
+        <FootprintsPanel prototype="assistant" />
         <button className="moderator-close" onClick={onClose}>
           Close
         </button>
