@@ -5,8 +5,8 @@ Test prototypes for Team 3's Milestone 3 usability sessions (UC Berkeley, Fall 2
 | Prototype | Path | Status |
 |---|---|---|
 | Personal Assistant ("most likely to work") | `/assistant/` | Ported from Figma Make (Nov 3, 2026) |
-| Personal Time Protector ("most delightful") | `/time-protector/` | Not built yet |
-| Chat Calendar Assistant ("dark horse") | `/chat/` | Not built yet |
+| Personal Time Protector ("most delightful") | `/time-protector/` | Built in code (Nov 3) |
+| Chat Calendar Assistant ("dark horse") | `/chat/` | Built in code (Nov 3) |
 
 ## Run it
 
@@ -19,20 +19,18 @@ npm run preview      # serve dist/ on http://localhost:4173/
 
 **Live site:** https://qazybekb.github.io/info213-prototypes/ · Session cards: https://qazybekb.github.io/info213-prototypes/cards/
 
-## Moderator controls (Personal Assistant)
+## Moderator controls (all three prototypes)
 
-- `#lock` opens the lock-screen start for Task 1.
-- `#mod` opens the moderator panel. You can also long-press the avatar for 3 seconds.
-  - **Reset:** brings back the exact start state.
-  - **Jumps:** go to the start of each task.
-  - **Toggles:** the planted error and the error screens.
-- `#onboarding` runs first-time setup.
+- **Open the panel:** press and hold the profile picture (or the clock on a lock screen) for 3 seconds, or add `#mod` to the link.
+- **Jumps** (e.g. "Lock screen") go to a task's start and reset the demo. **Reset demo** does the same and returns to the main screen.
+- **Activity log:** type a participant ID (P00–P99), tap Start log; after the session, Stop log → Save CSV → Clear.
+- `#lock` opens the lock screen directly.
 
 ## Participant data rules (from the M3 brief)
 
 - **Fictional data only.** Participants never type or forward their own information.
 - **No outside services.** No analytics, tracking, or third-party requests; fonts ship with the app.
-- **Footprints:** session logs, once added, stay in the browser until the moderator exports them to the team's Berkeley Google Drive. They use participant IDs only (P01…), never names or typed text.
+- **Footprints (activity log):** `src/shared/footprints.ts`. Logs stay in the browser until the moderator exports them to a team-only Berkeley Drive folder. Participant IDs only, never names or typed text.
 - **Delete after the course:** remove all logs after December 2026.
 
 ## Where things came from
@@ -41,9 +39,6 @@ npm run preview      # serve dist/ on http://localhost:4173/
 - **Figma file:** https://www.figma.com/make/Ph0r8eoCh2mejcARehRV6k
 - **Specs** (in the course Obsidian vault): `INFO 213 - Team Project-5/Milestone 3 - <prototype> v2 Spec.md`.
 
-## Next steps
+## Status (Nov 3)
 
-1. ~~Real-phone layout for the Personal Assistant~~ (done Nov 3): full screen under 500px, safe areas, no fake status bar, app manifest and icons, readable type scale.
-2. Time Protector and Chat Calendar Assistant, built in the same design system.
-3. Footprint logger plus a moderator console.
-4. Deploy to a public static host, so Anam, Stef and participants can open it without signing in.
+All three prototypes are built, phone-ready and deployed to GitHub Pages, with the activity log in each moderator panel. Next: test on a real iPhone (Add to Home Screen) and run the pilot.

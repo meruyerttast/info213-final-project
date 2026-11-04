@@ -663,6 +663,17 @@ function Activity({ onAvatar }: { onAvatar: () => void }) {
 }
 
 function LockScreen({ onOpen }: { onOpen: () => void }) {
+  // Moderators: press and hold the clock for 3 seconds to open the moderator panel.
+  const holdTimer = useRef<number | null>(null)
+  const startHold = () => {
+    holdTimer.current = window.setTimeout(() => {
+      window.dispatchEvent(new CustomEvent("open-moderator"))
+    }, 3000)
+  }
+  const stopHold = () => {
+    if (holdTimer.current !== null) window.clearTimeout(holdTimer.current)
+    holdTimer.current = null
+  }
   return (
     <main className="lock-screen" data-fp-screen="Lock screen">
       <div className="lock-status">
@@ -676,7 +687,16 @@ function LockScreen({ onOpen }: { onOpen: () => void }) {
       <div className="lock-heading">
         <Icon name="lock" size={17} />
         <p>Tuesday, November 10</p>
-        <h1>10:42</h1>
+        <h1
+          onPointerDown={startHold}
+          onPointerUp={stopHold}
+          onPointerCancel={stopHold}
+          onPointerLeave={stopHold}
+          onContextMenu={(event) => event.preventDefault()}
+          style={{ userSelect: "none", WebkitUserSelect: "none", WebkitTouchCallout: "none" }}
+        >
+          10:42
+        </h1>
       </div>
       <button className="lock-notification" onClick={onOpen}>
         <span className="notification-icon">
@@ -3546,6 +3566,12 @@ function AppContent() {
     return (
       <div className="device-shell">
         <LockScreen onOpen={() => openCareerNight("lock")} />
+        {showModerator && (
+          <ModeratorPanel
+            onClose={() => setShowModerator(false)}
+            onJump={jumpFromModerator}
+          />
+        )}
         {toast && (
           <div className="app-toast" role="status">
             <Icon name="check" size={17} />
