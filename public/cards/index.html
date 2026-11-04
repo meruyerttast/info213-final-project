@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Session Cards</title>
+    <style>
+      :root { --bg: #f7f7f8; --card: #fff; --text: #111827; --muted: #6b7280; --a: #1d4ed8; --b: #b45309; --c: #0f766e; }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); color: var(--text); font: 18px/1.5 ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      header { max-width: 980px; margin: 0 auto; padding: 28px 16px 8px; }
+      header h1 { font-size: 22px; margin: 0; }
+      header p { color: var(--muted); font-size: 15px; margin: 4px 0 0; }
+      .grid { max-width: 980px; margin: 0 auto; padding: 16px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+      .card { background: var(--card); border-radius: 18px; padding: 24px 24px 28px; box-shadow: 0 1px 3px rgba(17, 24, 39, .08); border-top: 6px solid var(--muted); }
+      .card.a { border-top-color: var(--a); } .card.b { border-top-color: var(--b); } .card.c { border-top-color: var(--c); }
+      .card.scenario { grid-column: 1 / -1; border-top-color: var(--text); }
+      .tag { font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+      .card h2 { font-size: 22px; margin: 6px 0 12px; }
+      .card p.task { font-size: 21px; line-height: 1.45; margin: 0; }
+      .card ul { margin: 0; padding-left: 20px; } .card li { margin: 4px 0; }
+      .note { color: var(--muted); font-size: 15px; margin-top: 14px; }
+      .scale { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-top: 14px; text-align: center; }
+      .scale span { border: 2px solid #e5e7eb; border-radius: 12px; padding: 12px 0; font-size: 24px; font-weight: 700; }
+      .scale-labels { display: flex; justify-content: space-between; color: var(--muted); font-size: 15px; margin-top: 6px; }
+      .backup { opacity: .85; }
+      @media print {
+        body { background: #fff; }
+        header { display: none; }
+        .grid { display: block; padding: 0; }
+        .card { box-shadow: none; border: 2px solid #e5e7eb; border-top-width: 10px; page-break-after: always; break-after: page; min-height: 60vh; padding: 48px; }
+        .card p.task { font-size: 28px; }
+        .card h2 { font-size: 30px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Milestone 3 · Session cards</h1>
+      <p>For the moderator: print this page (each card prints on its own page) or show cards one at a time. Hand over the scenario card first, then the task cards for this participant (see the Session Kit rotation).</p>
+    </header>
+    <main class="grid">
+      <section class="card scenario">
+        <div class="tag">Scenario · keep this card</div>
+        <h2>You are Maya Chen</h2>
+        <ul>
+          <li>First-year <strong>MIMS</strong> student at UC Berkeley, graduating in <strong>2028</strong></li>
+          <li>Today is <strong>Tuesday, November 10</strong></li>
+          <li>Classes: INFO 213 (Mon/Wed 2:00 pm) and INFO 203 (Tue/Thu 11:00 am)</li>
+          <li>Research assistant job: Wednesdays 9:30 am – 12:30 pm</li>
+          <li>Your INFO 213 project team meets <strong>Thursdays 6:00 – 7:00 pm</strong></li>
+          <li>Your INFO 203 study group: Sam, Diego and Hana</li>
+          <li>Tonight: <strong>dinner with friends</strong> (Priya and Jonah) at <strong>7:00 pm</strong></li>
+          <li>You're interested in product design jobs, and you try to protect your evenings and get at least 7 hours of sleep</li>
+        </ul>
+        <p class="note">Everything here is made up. Please don't type any real personal information.</p>
+      </section>
+
+      <section class="card a"><div class="tag">A1</div><h2>Personal Assistant</h2><p class="task">You're walking between classes and your phone buzzes. It's about an event you'd like to go to. Use the app to get yourself registered, the way you'd really do it.</p></section>
+      <section class="card a"><div class="tag">A2</div><h2>Personal Assistant</h2><p class="task">It's evening. You want to check what the assistant did for you today. You've also realized you can't make it to the event after all. Sort that out.</p></section>
+      <section class="card a"><div class="tag">A3</div><h2>Personal Assistant</h2><p class="task">Finals are coming and you're very busy. Set the assistant up so it bothers you as little as possible, but only in ways you're comfortable with.</p></section>
+      <section class="card a backup"><div class="tag">A4 · backup</div><h2>Personal Assistant</h2><p class="task">Your team chat is trying to find a time to meet this week. Let the assistant help.</p></section>
+
+      <section class="card b"><div class="tag">B1</div><h2>Time Protector</h2><p class="task">You've worked on your INFO 203 assignment all afternoon. It's almost 5. You need about two more hours, it's due tomorrow at 9 am, and you have dinner with friends at 7. Use the app to sort out the rest of your day.</p></section>
+      <section class="card b"><div class="tag">B2</div><h2>Time Protector</h2><p class="task">Same afternoon, worse news: it's going to take about four more hours. Decide what to do.</p></section>
+      <section class="card b backup"><div class="tag">B3 · backup</div><h2>Time Protector</h2><p class="task">From now on, you're fine skipping the gym when you're behind, but you never want to lose sleep. Set the app up that way.</p></section>
+      <section class="card b backup"><div class="tag">B4 · backup</div><h2>Time Protector</h2><p class="task">It's Sunday evening. See how your week went.</p></section>
+
+      <section class="card c"><div class="tag">C1</div><h2>Chat Calendar Assistant</h2><p class="task">You're between meetings. Your INFO 203 study group has been chatting about this week's session. Make sure your calendar shows the right time and place.</p></section>
+      <section class="card c"><div class="tag">C2</div><h2>Chat Calendar Assistant</h2><p class="task">Priya sent you a screenshot about an INFO 203 deadline. Figure out when it's really due, and make your calendar match what you believe.</p></section>
+      <section class="card c backup"><div class="tag">C3 · backup</div><h2>Chat Calendar Assistant</h2><p class="task">You don't want to forward every message. Set the assistant up so it catches changes like these on its own, but only in a way you're comfortable with.</p></section>
+      <section class="card c backup"><div class="tag">C4 · backup</div><h2>Chat Calendar Assistant</h2><p class="task">You realize the study group change shouldn't have happened. Put it back.</p></section>
+
+      <section class="card scenario">
+        <div class="tag">After each task</div>
+        <h2>How easy or hard was that?</h2>
+        <div class="scale"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span></div>
+        <div class="scale-labels"><span>Very hard</span><span>Very easy</span></div>
+      </section>
+    </main>
+  </body>
+</html>

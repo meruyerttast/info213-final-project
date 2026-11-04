@@ -17,6 +17,8 @@ npm run build        # typecheck + production build into dist/
 npm run preview      # serve dist/ on http://localhost:4173/
 ```
 
+**Live site:** https://qazybekb.github.io/info213-prototypes/ · Session cards: https://qazybekb.github.io/info213-prototypes/cards/
+
 ## Moderator controls (Personal Assistant)
 
 - `#lock` opens the lock-screen start for Task 1.
