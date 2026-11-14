@@ -32,7 +32,6 @@ type AppStore = {
   connectedSources: ConnectedSource[]
   currentResume: string
   notifications: Record<string, boolean>
-  plantedError: boolean
   formChangedError: boolean
   cantReachFormError: boolean
   paperworkChecks: boolean[]
@@ -59,7 +58,6 @@ type AppStore = {
   deleteAssistantData: () => void
   resetDemo: () => void
   loadRegisteredDemo: () => void
-  setPlantedError: (enabled: boolean) => void
   setFormChangedError: (enabled: boolean) => void
   setCantReachFormError: (enabled: boolean) => void
   joinWaitlist: (policy: "ask" | "automatic") => void
@@ -101,7 +99,6 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const [notifications, setNotifications] = useState<Record<string, boolean>>(
     appData.settings.notifications,
   )
-  const [plantedError, setPlantedErrorState] = useState(true)
   const [formChangedError, setFormChangedErrorState] = useState(false)
   const [cantReachFormError, setCantReachFormErrorState] = useState(false)
   const [paperworkChecks, setPaperworkChecks] = useState([false, false, false])
@@ -220,22 +217,6 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     setToast("Your data was deleted")
   }
 
-  const setPlantedError = (enabled: boolean) => {
-    setPlantedErrorState(enabled)
-    setRegistrationFields((fields) =>
-      fields.map((field) =>
-        field.id === "program"
-          ? {
-              ...field,
-              value: enabled ? "MIMS 2027" : "MIMS 2028",
-              source: enabled ? "Resume" : "Profile",
-              sourceLabel: enabled ? "Resume - Aug 2026" : "Profile",
-            }
-          : field,
-      ),
-    )
-  }
-
   const resetDemo = () => {
     setInbox(appData.inbox.map((item) => ({ ...item })))
     setCalendar(appData.calendar.map((event) => ({ ...event })))
@@ -253,7 +234,6 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     )
     setCurrentResumeState("oct")
     setNotifications({ ...appData.settings.notifications })
-    setPlantedErrorState(true)
     setFormChangedErrorState(false)
     setCantReachFormErrorState(false)
     setPaperworkChecks([false, false, false])
@@ -322,7 +302,6 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     )
     setCurrentResumeState("oct")
     setNotifications({ ...appData.settings.notifications })
-    setPlantedErrorState(true)
     setFormChangedErrorState(false)
     setCantReachFormErrorState(false)
     setPaperworkChecks([false, false, false])
@@ -743,7 +722,6 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       connectedSources,
       currentResume,
       notifications,
-      plantedError,
       formChangedError,
       cantReachFormError,
       paperworkChecks,
@@ -769,7 +747,6 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       deleteAssistantData,
       resetDemo,
       loadRegisteredDemo,
-      setPlantedError,
       setFormChangedError: setFormChangedErrorState,
       setCantReachFormError: setCantReachFormErrorState,
       joinWaitlist,
@@ -799,7 +776,6 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       connectedSources,
       currentResume,
       notifications,
-      plantedError,
       formChangedError,
       cantReachFormError,
       paperworkChecks,

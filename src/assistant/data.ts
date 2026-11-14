@@ -474,9 +474,9 @@ export const appData = {
       {
         id: "program",
         label: "Program & year",
-        value: "MIMS 2027",
-        source: "Resume",
-        sourceLabel: "Resume - Aug 2026",
+        value: "MIMS 2028",
+        source: "Profile",
+        sourceLabel: "Profile",
       },
       {
         id: "resume",
@@ -560,7 +560,7 @@ export const appData = {
         {
           id: "aug",
           name: "Maya_Chen_Resume_Aug.pdf",
-          detail: "MIMS 2027",
+          detail: "MIMS 2028",
         },
       ],
     },

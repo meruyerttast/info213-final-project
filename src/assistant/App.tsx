@@ -1205,10 +1205,8 @@ function ModeratorPanel({
 }) {
   const {
     resetDemo,
-    plantedError,
     formChangedError,
     cantReachFormError,
-    setPlantedError,
     setFormChangedError,
     setCantReachFormError,
   } = useStore()
@@ -1262,21 +1260,6 @@ function ModeratorPanel({
         </div>
         <h3>TOGGLES</h3>
         <div className="moderator-toggles">
-          <label>
-            <span>
-              <strong>Planted error</strong>
-              <small>
-                {plantedError
-                  ? "MIMS 2027 · Aug resume"
-                  : "MIMS 2028 · Profile"}
-              </small>
-            </span>
-            <Toggle
-              checked={plantedError}
-              onChange={setPlantedError}
-              label="Planted error"
-            />
-          </label>
           <label>
             <span>
               <strong>“Form changed” error</strong>
