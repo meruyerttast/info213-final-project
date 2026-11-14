@@ -13,8 +13,8 @@ export const user = {
   name: "Maya Chen",
   firstName: "Maya",
   initials: "MC",
-  program: "MIMS 2028 · UC Berkeley",
-  email: "maya.chen@berkeley.example",
+  program: "Master's 2028",
+  email: "maya.chen@university.example",
 }
 
 export const DAY_SHORT = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
@@ -76,7 +76,7 @@ export type EventKind =
   | "reminder"
 
 export type ProtectKey = "dinner" | "winddown" | "sleep" | "gym" | "family" | "meal"
-export type Source = "Google Calendar" | "bCourses" | "Time Protector" | "You"
+export type Source = "Google Calendar" | "Course site" | "Time Protector" | "You"
 
 export type EventStatus =
   | "current"
@@ -109,66 +109,66 @@ export interface CalEvent {
 const WORK_KINDS: EventKind[] = ["study", "class", "work", "meeting"]
 export const isWork = (e: CalEvent) => WORK_KINDS.includes(e.kind) && e.status !== "ghost"
 
-export const STUDY_TITLE = "Study: INFO 203 Assignment 4"
+export const STUDY_TITLE = "Study: Stats 203 Assignment 4"
 
 export const baseEvents: CalEvent[] = [
   // Mon Nov 9
-  { id: "mon-gym", title: "Gym", start: t(0, 7), end: t(0, 8), kind: "protected", protect: "gym", location: "RSF", source: "Google Calendar" },
-  { id: "mon-read", title: "Study: INFO 213 reading", start: t(0, 9, 30), end: t(0, 11, 30), kind: "study", source: "Google Calendar" },
-  { id: "mon-213", title: "INFO 213 class", start: t(0, 14), end: t(0, 15, 30), kind: "class", location: "South Hall 202", source: "Google Calendar" },
-  { id: "mon-a4", title: "Study: INFO 203 Assignment 4", start: t(0, 16), end: t(0, 18), kind: "study", source: "Google Calendar" },
+  { id: "mon-gym", title: "Gym", start: t(0, 7), end: t(0, 8), kind: "protected", protect: "gym", location: "Campus gym", source: "Google Calendar" },
+  { id: "mon-read", title: "Study: Design 213 reading", start: t(0, 9, 30), end: t(0, 11, 30), kind: "study", source: "Google Calendar" },
+  { id: "mon-213", title: "Design 213 class", start: t(0, 14), end: t(0, 15, 30), kind: "class", location: "Room 202", source: "Google Calendar" },
+  { id: "mon-a4", title: "Study: Stats 203 Assignment 4", start: t(0, 16), end: t(0, 18), kind: "study", source: "Google Calendar" },
   { id: "mon-dinner", title: "Dinner", start: t(0, 19), end: t(0, 20), kind: "meal", source: "Google Calendar" },
   { id: "mon-wind", title: "Wind-down", start: t(0, 23, 15), end: t(1, 0), kind: "protected", protect: "winddown", source: "Time Protector", detail: "No work before bed" },
   // Tue Nov 10
   { id: "tue-sleep-am", title: "Sleep", start: t(1, 0), end: t(1, 7), kind: "protected", protect: "sleep", source: "Time Protector" },
-  { id: "tue-203", title: "INFO 203 class", start: t(1, 11), end: t(1, 12, 30), kind: "class", location: "South Hall 210", source: "Google Calendar" },
-  { id: "tue-study", title: STUDY_TITLE, start: t(1, 13, 30), end: t(1, 17), kind: "study", location: "Moffitt Library", source: "Google Calendar", detail: "Due Wed 9:00 am (bCourses)" },
-  { id: "tue-travel", title: "Travel to dinner", start: t(1, 18, 15), end: t(1, 19), kind: "travel", source: "Google Calendar", detail: "BART to Rockridge" },
+  { id: "tue-203", title: "Stats 203 class", start: t(1, 11), end: t(1, 12, 30), kind: "class", location: "Room 210", source: "Google Calendar" },
+  { id: "tue-study", title: STUDY_TITLE, start: t(1, 13, 30), end: t(1, 17), kind: "study", location: "Main Library", source: "Google Calendar", detail: "Due Wed 9:00 am (course site)" },
+  { id: "tue-travel", title: "Travel to dinner", start: t(1, 18, 15), end: t(1, 19), kind: "travel", source: "Google Calendar", detail: "Train home" },
   { id: "tue-dinner", title: "Dinner with friends", start: t(1, 19), end: t(1, 21), kind: "protected", protect: "dinner", location: "Rockridge", people: "Priya, Jonah", source: "Google Calendar" },
   { id: "tue-home", title: "Travel home", start: t(1, 21), end: t(1, 21, 15), kind: "travel", source: "Google Calendar" },
   { id: "tue-wind", title: "Wind-down", start: t(1, 23, 15), end: t(2, 0), kind: "protected", protect: "winddown", source: "Time Protector", detail: "No work before bed" },
   // Wed Nov 11
   { id: "wed-sleep", title: "Sleep", start: t(2, 0), end: t(2, 7), kind: "protected", protect: "sleep", source: "Time Protector", detail: "7 h minimum" },
-  { id: "wed-gym", title: "Gym", start: t(2, 7), end: t(2, 8), kind: "protected", protect: "gym", location: "RSF", source: "Google Calendar" },
+  { id: "wed-gym", title: "Gym", start: t(2, 7), end: t(2, 8), kind: "protected", protect: "gym", location: "Campus gym", source: "Google Calendar" },
   { id: "wed-ready", title: "Get ready and commute", start: t(2, 8), end: t(2, 8, 45), kind: "travel", source: "Google Calendar" },
-  { id: "wed-due", title: "INFO 203 Assignment 4 due", short: "A4 due", start: t(2, 9), end: t(2, 9), kind: "deadline", source: "bCourses" },
-  { id: "wed-gsr", title: "Research assistant (GSR) shift", short: "GSR shift", start: t(2, 9, 30), end: t(2, 12, 30), kind: "work", location: "South Hall", source: "Google Calendar" },
-  { id: "wed-213", title: "INFO 213 class", start: t(2, 14), end: t(2, 15, 30), kind: "class", location: "South Hall 202", source: "Google Calendar" },
-  { id: "wed-group", title: "INFO 203 study group", start: t(2, 16), end: t(2, 17), kind: "meeting", location: "Moffitt", people: "Sam, Diego, Hana", source: "Google Calendar" },
+  { id: "wed-due", title: "Stats 203 Assignment 4 due", short: "A4 due", start: t(2, 9), end: t(2, 9), kind: "deadline", source: "Course site" },
+  { id: "wed-gsr", title: "Research assistant (RA) shift", short: "RA shift", start: t(2, 9, 30), end: t(2, 12, 30), kind: "work", location: "Campus", source: "Google Calendar" },
+  { id: "wed-213", title: "Design 213 class", start: t(2, 14), end: t(2, 15, 30), kind: "class", location: "Room 202", source: "Google Calendar" },
+  { id: "wed-group", title: "Stats 203 study group", start: t(2, 16), end: t(2, 17), kind: "meeting", location: "Library", people: "Sam, Diego, Hana", source: "Google Calendar" },
   { id: "wed-dinner", title: "Dinner", start: t(2, 19), end: t(2, 20), kind: "meal", source: "Google Calendar" },
   { id: "wed-wind", title: "Wind-down", start: t(2, 23, 15), end: t(3, 0), kind: "protected", protect: "winddown", source: "Time Protector", detail: "No work before bed" },
   // Thu Nov 12 (the heavy day: 9 h planned, 0 h free)
   { id: "thu-ready", title: "Get ready and commute", start: t(3, 8), end: t(3, 8, 45), kind: "travel", source: "Google Calendar" },
-  { id: "thu-a5", title: "Study: INFO 203 Assignment 5", start: t(3, 8, 45), end: t(3, 10, 45), kind: "study", source: "Google Calendar" },
-  { id: "thu-203", title: "INFO 203 class", start: t(3, 11), end: t(3, 12, 30), kind: "class", location: "South Hall 210", source: "Google Calendar" },
+  { id: "thu-a5", title: "Study: Stats 203 Assignment 5", start: t(3, 8, 45), end: t(3, 10, 45), kind: "study", source: "Google Calendar" },
+  { id: "thu-203", title: "Stats 203 class", start: t(3, 11), end: t(3, 12, 30), kind: "class", location: "Room 210", source: "Google Calendar" },
   { id: "thu-lunch", title: "Lunch", start: t(3, 12, 30), end: t(3, 13), kind: "meal", source: "Google Calendar" },
-  { id: "thu-m3", title: "Study: INFO 213 Milestone 3", start: t(3, 13, 30), end: t(3, 16), kind: "study", source: "Google Calendar" },
-  { id: "thu-rr", title: "Study: INFO 203 Reading response", start: t(3, 16, 30), end: t(3, 17, 30), kind: "study", source: "Google Calendar" },
-  { id: "thu-walk", title: "Walk to South Hall", start: t(3, 17, 30), end: t(3, 18), kind: "travel", source: "Google Calendar" },
-  { id: "thu-sync", title: "INFO 213 team sync", start: t(3, 18), end: t(3, 19), kind: "meeting", location: "South Hall 205", people: "Kai, Lena, Ravi", source: "Google Calendar" },
+  { id: "thu-m3", title: "Study: Design 213 Milestone 3", start: t(3, 13, 30), end: t(3, 16), kind: "study", source: "Google Calendar" },
+  { id: "thu-rr", title: "Study: Stats 203 Reading response", start: t(3, 16, 30), end: t(3, 17, 30), kind: "study", source: "Google Calendar" },
+  { id: "thu-walk", title: "Walk to campus", start: t(3, 17, 30), end: t(3, 18), kind: "travel", source: "Google Calendar" },
+  { id: "thu-sync", title: "Design 213 team sync", start: t(3, 18), end: t(3, 19), kind: "meeting", location: "Room 205", people: "Kai, Lena, Ravi", source: "Google Calendar" },
   { id: "thu-walk2", title: "Walk home", start: t(3, 19), end: t(3, 19, 30), kind: "travel", source: "Google Calendar" },
   { id: "thu-dinner", title: "Dinner", start: t(3, 19, 30), end: t(3, 20, 30), kind: "meal", source: "Google Calendar" },
   { id: "thu-rr2", title: "Study: Reading response, finish", start: t(3, 21), end: t(3, 22), kind: "study", source: "Google Calendar" },
   { id: "thu-family", title: "Family call", start: t(3, 22), end: t(3, 22, 45), kind: "protected", protect: "family", source: "Google Calendar" },
   { id: "thu-wind", title: "Wind-down", start: t(3, 23, 15), end: t(4, 0), kind: "protected", protect: "winddown", source: "Time Protector", detail: "No work before bed" },
-  { id: "thu-due", title: "INFO 203 Reading response due", short: "Reading due", start: t(3, 23, 59), end: t(3, 23, 59), kind: "deadline", source: "bCourses" },
+  { id: "thu-due", title: "Stats 203 Reading response due", short: "Reading due", start: t(3, 23, 59), end: t(3, 23, 59), kind: "deadline", source: "Course site" },
   // Fri Nov 13
-  { id: "fri-gym", title: "Gym", start: t(4, 7), end: t(4, 8), kind: "protected", protect: "gym", location: "RSF", source: "Google Calendar" },
-  { id: "fri-a5", title: "Study: INFO 203 Assignment 5", start: t(4, 9, 30), end: t(4, 12, 30), kind: "study", source: "Google Calendar" },
+  { id: "fri-gym", title: "Gym", start: t(4, 7), end: t(4, 8), kind: "protected", protect: "gym", location: "Campus gym", source: "Google Calendar" },
+  { id: "fri-a5", title: "Study: Stats 203 Assignment 5", start: t(4, 9, 30), end: t(4, 12, 30), kind: "study", source: "Google Calendar" },
   { id: "fri-lunch", title: "Lunch", start: t(4, 12, 30), end: t(4, 13, 15), kind: "meal", source: "Google Calendar" },
-  { id: "fri-m3", title: "Study: INFO 213 Milestone 3", start: t(4, 14), end: t(4, 16), kind: "study", source: "Google Calendar" },
+  { id: "fri-m3", title: "Study: Design 213 Milestone 3", start: t(4, 14), end: t(4, 16), kind: "study", source: "Google Calendar" },
   { id: "fri-dinner", title: "Dinner with Priya", start: t(4, 19), end: t(4, 21), kind: "protected", protect: "meal", people: "Priya", source: "Google Calendar" },
   { id: "fri-wind", title: "Wind-down", start: t(4, 23, 15), end: t(5, 0), kind: "protected", protect: "winddown", source: "Time Protector", detail: "No work before bed" },
-  { id: "fri-due", title: "INFO 203 Assignment 5 due", short: "A5 due", start: t(4, 23, 59), end: t(4, 23, 59), kind: "deadline", source: "bCourses" },
+  { id: "fri-due", title: "Stats 203 Assignment 5 due", short: "A5 due", start: t(4, 23, 59), end: t(4, 23, 59), kind: "deadline", source: "Course site" },
   // Sat Nov 14
-  { id: "sat-m3", title: "Study: INFO 213 Milestone 3", start: t(5, 10), end: t(5, 13), kind: "study", source: "Google Calendar" },
+  { id: "sat-m3", title: "Study: Design 213 Milestone 3", start: t(5, 10), end: t(5, 13), kind: "study", source: "Google Calendar" },
   { id: "sat-groceries", title: "Groceries", start: t(5, 15), end: t(5, 16), kind: "meal", source: "Google Calendar" },
   { id: "sat-wind", title: "Wind-down", start: t(5, 23, 15), end: t(6, 0), kind: "protected", protect: "winddown", source: "Time Protector", detail: "No work before bed" },
   // Sun Nov 15
-  { id: "sun-m3", title: "Study: INFO 213 Milestone 3", start: t(6, 13), end: t(6, 16), kind: "study", source: "Google Calendar" },
+  { id: "sun-m3", title: "Study: Design 213 Milestone 3", start: t(6, 13), end: t(6, 16), kind: "study", source: "Google Calendar" },
   { id: "sun-family", title: "Family call", start: t(6, 18), end: t(6, 19), kind: "protected", protect: "family", source: "Google Calendar" },
   { id: "sun-wind", title: "Wind-down", start: t(6, 23, 15), end: t(7, 0), kind: "protected", protect: "winddown", source: "Time Protector", detail: "No work before bed" },
-  { id: "sun-due", title: "INFO 213 Milestone 3 due", short: "M3 due", start: t(6, 23, 59), end: t(6, 23, 59), kind: "deadline", source: "bCourses" },
+  { id: "sun-due", title: "Design 213 Milestone 3 due", short: "M3 due", start: t(6, 23, 59), end: t(6, 23, 59), kind: "deadline", source: "Course site" },
 ]
 
 // ---------- Protection ----------
@@ -578,7 +578,7 @@ export function generateOptions(N: number, ctx: PlanCtx): Generated {
   choices.push({
     key: "extension",
     title: "Ask for an extension",
-    detail: `Draft to Alex Rivera, INFO 203 GSI. Keeps the ${dur(fitCap)} that fits.`,
+    detail: `Draft to Alex Rivera, Stats 203 TA. Keeps the ${dur(fitCap)} that fits.`,
     plan: { ...base, id: "c-ext", template: "c-ext", name: "Asked for an extension", extras: { extension: true } },
   })
   choices.push({
@@ -808,7 +808,7 @@ export function changeList(plan: { blocks: Block[]; allowed: Lockable[]; extras?
     const left = 7 * 60 - fx.sleepCut
     rows.push({ icon: "warn", title: "Sleep shortened", detail: `${dur(left)} tonight, below your ${dur(sleepMin)} minimum`, tone: left < sleepMin ? "red" : "amber" })
   }
-  if (plan.extras?.extension) rows.push({ icon: "note", title: "Extension request sent", detail: "To Alex Rivera, INFO 203 GSI", tone: "neutral" })
+  if (plan.extras?.extension) rows.push({ icon: "note", title: "Extension request sent", detail: "To Alex Rivera, Stats 203 TA", tone: "neutral" })
   if (plan.extras?.submitAsIs) rows.push({ icon: "note", title: "Reminder added", detail: "Wed 8:45 am · submit what you have, marked “submitted as is”", tone: "neutral" })
   return rows
 }
@@ -830,7 +830,7 @@ export const pastPlans: PastPlan[] = [
     id: "past-thu",
     date: "Thu Nov 5",
     name: "After dinner",
-    course: "INFO 203 Reading response",
+    course: "Stats 203 Reading response",
     added: 60,
     kept: "Dinner kept",
     rows: [{ title: "Study block added", detail: "Thu 9:15–10:15 pm · 1 h", tone: "blue" }],
@@ -839,7 +839,7 @@ export const pastPlans: PastPlan[] = [
     id: "past-wed",
     date: "Wed Nov 4",
     name: "Late push",
-    course: "INFO 203 Assignment 3",
+    course: "Stats 203 Assignment 3",
     added: 90,
     kept: "Gym kept",
     rows: [
@@ -852,7 +852,7 @@ export const pastPlans: PastPlan[] = [
     id: "past-mon",
     date: "Mon Nov 2",
     name: "Split it",
-    course: "INFO 213 Milestone 2",
+    course: "Design 213 Milestone 2",
     added: 90,
     kept: "Dinner kept",
     rows: [
@@ -866,12 +866,12 @@ export const lastWeek = {
   label: "Nov 2–8",
   eveningsProtected: { kept: 4, of: 5, missed: "Wed Nov 4 (Late push)" },
   sleepUnder: [
-    { night: "Wed Nov 4", hours: "6 h 30 m", why: "Late push for INFO 203 Assignment 3" },
+    { night: "Wed Nov 4", hours: "6 h 30 m", why: "Late push for Stats 203 Assignment 3" },
     { night: "Sat Nov 7", hours: "6 h 40 m", why: "Late night out" },
   ],
   overruns: [
-    { course: "INFO 203", count: 2 },
-    { course: "INFO 213", count: 1 },
+    { course: "Stats 203", count: 2 },
+    { course: "Design 213", count: 1 },
   ],
   averageOverrun: 80,
 }

@@ -228,7 +228,7 @@ function Icon({ name, size = 22, className = "" }: { name: string; size?: number
 const sourceClass: Record<string, string> = {
   "Google Calendar": "source-calendar",
   Calendar: "source-calendar",
-  bCourses: "source-bcourses",
+  "Course site": "source-bcourses",
   "Time Protector": "source-tp",
   You: "source-you",
   "Edited by you": "source-you",
@@ -868,7 +868,7 @@ function CheckinNotification({
           <strong>Time Protector</strong>
           <time>now</time>
         </span>
-        <span className="notif-body">Your INFO 203 study block ends in 5 min. Done, or need more time?</span>
+        <span className="notif-body">Your Stats 203 study block ends in 5 min. Done, or need more time?</span>
       </span>
     </div>
   )
@@ -908,7 +908,7 @@ function CheckinNotification({
                   <strong>Time Protector</strong>
                   <time>now</time>
                 </span>
-                <span className="notif-body">Your INFO 203 study block ends in 5 min. Done, or need more time?</span>
+                <span className="notif-body">Your Stats 203 study block ends in 5 min. Done, or need more time?</span>
               </span>
             </div>
             <div className="notif-actions" role="menu">
@@ -1046,8 +1046,8 @@ function StudyingScreen({
         <span className="studying-kicker">
           <Icon name="book" size={15} /> FOCUS
         </span>
-        <h1>Studying: INFO 203 Assignment 4</h1>
-        <p>Moffitt Library · 1:30–5:00 pm</p>
+        <h1>Studying: Stats 203 Assignment 4</h1>
+        <p>Main Library · 1:30–5:00 pm</p>
         <div className="studying-timer" {...press.handlers} onContextMenu={(e) => e.preventDefault()}>
           <svg width="236" height="236" viewBox="0 0 236 236" aria-hidden="true">
             <circle cx="118" cy="118" r={r} fill="none" stroke="rgba(255,255,255,.14)" strokeWidth="8" />
@@ -1073,7 +1073,7 @@ function StudyingScreen({
         </div>
         <div className="studying-due">
           <Icon name="flag" size={16} />
-          Due Wed 9:00 am · bCourses
+          Due Wed 9:00 am · course site
         </div>
         <div className="studying-actions">
           <button className="studying-secondary" onClick={onDoneEarly}>
@@ -1111,9 +1111,9 @@ function CheckinSheet({
           <Icon name="book" size={20} />
         </span>
         <div>
-          <strong>Study: INFO 203 Assignment 4</strong>
+          <strong>Study: Stats 203 Assignment 4</strong>
           <span>1:30–5:00 pm · due Wed 9:00 am</span>
-          <SourceChip source="bCourses" />
+          <SourceChip source="Course site" />
         </div>
       </div>
       <p className="sheet-detail">Done, or need more time? I won’t change anything until you choose.</p>
@@ -1247,7 +1247,7 @@ function Today({
             <time>now</time>
           </div>
           <h3>Your study block ends in 5 min</h3>
-          <p>Study: INFO 203 Assignment 4 · 1:30–5:00 pm · due Wed 9:00 am</p>
+          <p>Study: Stats 203 Assignment 4 · 1:30–5:00 pm · due Wed 9:00 am</p>
           <div className="checkin-buttons">
             <button className="secondary-button" onClick={() => onCheckin("done")}>
               Done
@@ -1317,10 +1317,10 @@ function Today({
       <div className="deadline-chip">
         <Icon name="flag" size={15} />
         <span>
-          <strong>INFO 203 Assignment 4</strong>
+          <strong>Stats 203 Assignment 4</strong>
           <small>Due Wed 9:00 am</small>
         </span>
-        <SourceChip source="bCourses" />
+        <SourceChip source="Course site" />
       </div>
       <section className="content-section">
         <div className="section-title-row">
@@ -1500,11 +1500,11 @@ function Week({
 function shortTitle(e: CalEvent) {
   return e.title
     .replace("Study: ", "")
-    .replace("INFO 203 ", "203 ")
-    .replace("INFO 213 ", "213 ")
+    .replace("Stats 203 ", "203 ")
+    .replace("Design 213 ", "213 ")
     .replace("Assignment ", "A")
     .replace("Milestone ", "M")
-    .replace("Research assistant (GSR) shift", "GSR")
+    .replace("Research assistant (RA) shift", "RA")
     .replace("Get ready and commute", "Commute")
 }
 
@@ -1547,7 +1547,7 @@ function DayView({
               <strong>{d.title.replace(/ due$/, "")}</strong>
               <small>Due {clock(d.start)}</small>
             </span>
-            <SourceChip source="bCourses" />
+            <SourceChip source="Course site" />
           </div>
         ))}
         {l.heavy && (
@@ -1954,7 +1954,7 @@ function ReplanFlow({
       <main className="flow-screen replan-screen">
         <FlowHeader title="Need more time" onBack={onExit} />
         <div className="flow-scroll replan-scroll">
-          <span className="flow-kicker">STUDY: INFO 203 ASSIGNMENT 4</span>
+          <span className="flow-kicker">STUDY: STATS 203 ASSIGNMENT 4</span>
           <h1>How much more time?</h1>
           <p className="flow-intro">Your best guess is fine. You can adjust the times later.</p>
           {activeReplan && (
@@ -2001,7 +2001,7 @@ function ReplanFlow({
             <span>
               <small>DEADLINE</small>
               <strong>Due {dayClock(deadline)}</strong>
-              <SourceChip source={deadline === K.DEADLINE ? "bCourses" : "Edited by you"} />
+              <SourceChip source={deadline === K.DEADLINE ? "Course site" : "Edited by you"} />
             </span>
             <button onClick={() => setSheet("deadline")}>Edit</button>
           </div>
@@ -2095,10 +2095,10 @@ function ReplanFlow({
           <Sheet onClose={() => setSheet(null)}>
             <span className="sheet-kicker">DEADLINE</span>
             <h2>When is it due?</h2>
-            <p className="sheet-detail">I found this in bCourses. Change it only if your GSI agreed to a new time.</p>
+            <p className="sheet-detail">I found this on the course site. Change it only if your TA agreed to a new time.</p>
             <div className="scope-options">
               {[
-                [K.DEADLINE, "Wed Nov 11, 9:00 am", "From bCourses"],
+                [K.DEADLINE, "Wed Nov 11, 9:00 am", "From the course site"],
                 [K.DEADLINE_LATE, "Wed Nov 11, 5:00 pm", "Only if Alex agreed to an extension"],
               ].map(([value, label, detail]) => (
                 <button
@@ -2334,7 +2334,7 @@ function ReplanFlow({
           <div className="message-to">
             <span>To:</span>
             <strong>Alex Rivera</strong>
-            <small>INFO 203 GSI</small>
+            <small>Stats 203 TA</small>
           </div>
           <div className="message-to">
             <span>Subject:</span>
@@ -2632,7 +2632,7 @@ function buildPreviewEvents(
   fx: ReturnType<typeof describePlan>["fx"],
 ): CalEvent[] {
   const out: CalEvent[] = []
-  const deadline = { id: "wed-due", title: "INFO 203 Assignment 4 due", short: "INFO 203 A4", start: K.DEADLINE, end: K.DEADLINE, kind: "deadline" as const, source: "bCourses" as const }
+  const deadline = { id: "wed-due", title: "Stats 203 Assignment 4 due", short: "Stats 203 A4", start: K.DEADLINE, end: K.DEADLINE, kind: "deadline" as const, source: "Course site" as const }
   out.push(deadline)
   const base = solidPreview(blockEnd)
   for (const e of base) {
@@ -2669,7 +2669,7 @@ function buildPreviewEvents(
 
 function solidPreview(blockEnd: number): CalEvent[] {
   return [
-    { id: "tue-study", title: "Study: INFO 203 Assignment 4", start: K.BLOCK_START, end: blockEnd, kind: "study", source: "Google Calendar" },
+    { id: "tue-study", title: "Study: Stats 203 Assignment 4", start: K.BLOCK_START, end: blockEnd, kind: "study", source: "Google Calendar" },
     { id: "tue-travel", title: "Travel to dinner", start: t(1, 18, 15), end: t(1, 19), kind: "travel", source: "Google Calendar" },
     { id: "tue-dinner", title: "Dinner with friends", start: t(1, 19), end: t(1, 21), kind: "protected", protect: "dinner", source: "Google Calendar" },
     { id: "tue-home", title: "Travel home", start: t(1, 21), end: t(1, 21, 15), kind: "travel", source: "Google Calendar" },
@@ -2677,9 +2677,9 @@ function solidPreview(blockEnd: number): CalEvent[] {
     { id: "wed-sleep", title: "Sleep", start: t(2, 0), end: t(2, 7), kind: "protected", protect: "sleep", source: "Time Protector" },
     { id: "wed-gym", title: "Gym", start: t(2, 7), end: t(2, 8), kind: "protected", protect: "gym", source: "Google Calendar" },
     { id: "wed-ready", title: "Get ready and commute", start: t(2, 8), end: t(2, 8, 45), kind: "travel", source: "Google Calendar" },
-    { id: "wed-gsr", title: "GSR shift", start: t(2, 9, 30), end: t(2, 12, 30), kind: "work", source: "Google Calendar" },
-    { id: "wed-213", title: "INFO 213 class", start: t(2, 14), end: t(2, 15, 30), kind: "class", source: "Google Calendar" },
-    { id: "wed-group", title: "INFO 203 study group", start: t(2, 16), end: t(2, 17), kind: "meeting", source: "Google Calendar" },
+    { id: "wed-gsr", title: "RA shift", start: t(2, 9, 30), end: t(2, 12, 30), kind: "work", source: "Google Calendar" },
+    { id: "wed-213", title: "Design 213 class", start: t(2, 14), end: t(2, 15, 30), kind: "class", source: "Google Calendar" },
+    { id: "wed-group", title: "Stats 203 study group", start: t(2, 16), end: t(2, 17), kind: "meeting", source: "Google Calendar" },
   ]
 }
 
@@ -2730,7 +2730,7 @@ function DoneScreen({ onBack }: { onBack: () => void }) {
         </div>
         <section className="progress-card">
           <h2>How far did you get?</h2>
-          <p>Optional. I use this to plan future INFO 203 blocks.</p>
+          <p>Optional. I use this to plan future Stats 203 blocks.</p>
           <div className="estimate-slider">
             <input
               type="range"
@@ -2907,7 +2907,7 @@ function PlanDetail({ id, onBack, onEdit }: { id: string; onBack: () => void; on
           {plan.kind === "spread" && plan.spread
             ? plan.spread.moves.map((m) => {
                 const ev = (["thu-m3", "thu-rr", "thu-a5"] as const).includes(m.eventId as "thu-m3")
-                  ? { "thu-m3": "Study: INFO 213 Milestone 3", "thu-rr": "Study: INFO 203 Reading response", "thu-a5": "Study: INFO 203 Assignment 5" }[m.eventId as "thu-m3"]
+                  ? { "thu-m3": "Study: Design 213 Milestone 3", "thu-rr": "Study: Stats 203 Reading response", "thu-a5": "Study: Stats 203 Assignment 5" }[m.eventId as "thu-m3"]
                   : m.eventId
                 return <ChangeRow key={m.eventId} row={{ icon: "move", title: `${ev} moved`, detail: `Now ${dayRange(m.start, m.end)}`, tone: "blue" }} />
               })
@@ -2950,7 +2950,7 @@ function Insights({ onAvatar }: { onAvatar: () => void }) {
       now: "1 of 1 so far",
     },
     { id: "sleep" as const, label: "Sleep under 7 h", last: `${lastWeek.sleepUnder.length} nights`, now: sleepShort ? "1 night (planned tonight)" : "0 nights" },
-    { id: "overruns" as const, label: "Overruns", last: "3, mostly INFO 203", now: todayPlan ? "1 (INFO 203, today)" : "None yet" },
+    { id: "overruns" as const, label: "Overruns", last: "3, mostly Stats 203", now: todayPlan ? "1 (Stats 203, today)" : "None yet" },
     { id: "average" as const, label: "Average overrun", last: dur(lastWeek.averageOverrun), now: todayPlan ? dur(addedToday) : "–" },
   ]
   const open = (id: NonNullable<typeof sheet>) => {
@@ -3002,7 +3002,7 @@ function Insights({ onAvatar }: { onAvatar: () => void }) {
             <span className="sparkle">
               <Icon name="sparkle" size={16} />
             </span>
-            <p>INFO 203 blocks run about 1.5× longer than planned. Plan them longer next week?</p>
+            <p>Stats 203 blocks run about 1.5× longer than planned. Plan them longer next week?</p>
             <button className="link-button" onClick={() => open("evidence")}>
               How I worked this out
             </button>
@@ -3011,7 +3011,7 @@ function Insights({ onAvatar }: { onAvatar: () => void }) {
                 className="primary-button"
                 onClick={() => {
                   setSuggestion("applied")
-                  showToast("Next week’s INFO 203 blocks are planned 1.5× longer.", () => setSuggestion("open"))
+                  showToast("Next week’s Stats 203 blocks are planned 1.5× longer.", () => setSuggestion("open"))
                 }}
               >
                 Apply to next week
@@ -3029,7 +3029,7 @@ function Insights({ onAvatar }: { onAvatar: () => void }) {
             </span>
             <p>
               <strong>Applied to next week</strong>
-              INFO 203 blocks for Nov 16–22 are planned 1.5× longer.
+              Stats 203 blocks for Nov 16–22 are planned 1.5× longer.
             </p>
             <button onClick={() => setSuggestion("open")}>Undo</button>
           </div>
@@ -3070,7 +3070,7 @@ function Insights({ onAvatar }: { onAvatar: () => void }) {
                   </span>
                 ))}
               </div>
-              <p className="sheet-meta">Wed Nov 4: a late push for INFO 203 Assignment 3 used your wind-down.</p>
+              <p className="sheet-meta">Wed Nov 4: a late push for Stats 203 Assignment 3 used your wind-down.</p>
             </>
           )}
           {sheet === "sleep" && (
@@ -3089,7 +3089,7 @@ function Insights({ onAvatar }: { onAvatar: () => void }) {
           )}
           {sheet === "overruns" && (
             <>
-              <h2>Overruns: 3, mostly INFO 203</h2>
+              <h2>Overruns: 3, mostly Stats 203</h2>
               <div className="insight-list">
                 {pastPlans.map((p) => (
                   <div key={p.id}>
@@ -3108,8 +3108,8 @@ function Insights({ onAvatar }: { onAvatar: () => void }) {
           )}
           {sheet === "evidence" && (
             <>
-              <h2>INFO 203 runs about 1.5× longer</h2>
-              <p className="sheet-detail">Your last four INFO 203 study blocks were planned for 9 h in total and took about 13 h 30 m.</p>
+              <h2>Stats 203 runs about 1.5× longer</h2>
+              <p className="sheet-detail">Your last four Stats 203 study blocks were planned for 9 h in total and took about 13 h 30 m.</p>
               <p className="sheet-meta">I only use your calendar and check-ins for this. It isn’t a grade or a score.</p>
             </>
           )}
@@ -3168,9 +3168,9 @@ function OverloadFlow({ onExit }: { onExit: () => void }) {
     return workload(moved, 3)
   })()
   const names: Record<string, string> = {
-    "thu-m3": "Study: INFO 213 Milestone 3",
-    "thu-rr": "Study: INFO 203 Reading response",
-    "thu-a5": "Study: INFO 203 Assignment 5",
+    "thu-m3": "Study: Design 213 Milestone 3",
+    "thu-rr": "Study: Stats 203 Reading response",
+    "thu-a5": "Study: Stats 203 Assignment 5",
   }
   return (
     <main className="flow-screen replan-screen">
@@ -3487,11 +3487,11 @@ function CalendarSettings({ onBack }: { onBack: () => void }) {
   const [confirm, setConfirm] = useState<null | "calendar" | "bcourses">(null)
   const rows = [
     { id: "calendar" as const, name: "Google Calendar", reads: "Event times, to find free time", cls: "source-calendar", icon: "calendar" },
-    { id: "bcourses" as const, name: "bCourses", reads: "Assignment deadlines only", cls: "source-bcourses", icon: "book" },
+    { id: "bcourses" as const, name: "Course site", reads: "Assignment deadlines only", cls: "source-bcourses", icon: "book" },
   ]
   return (
     <main className="flow-screen settings-screen">
-      <FlowHeader title="Calendars & bCourses" onBack={onBack} />
+      <FlowHeader title="Calendars & course site" onBack={onBack} />
       <div className="flow-scroll settings-scroll">
         <p className="settings-intro">I read these to find free time and deadlines. I never edit them without your OK.</p>
         <div className="source-settings-list">
@@ -3524,7 +3524,7 @@ function CalendarSettings({ onBack }: { onBack: () => void }) {
           <div className="sheet-icon cancel-icon">
             <Icon name="calendar" size={24} />
           </div>
-          <h2>Disconnect {confirm === "calendar" ? "Google Calendar" : "bCourses"}?</h2>
+          <h2>Disconnect {confirm === "calendar" ? "Google Calendar" : "Course site"}?</h2>
           <p className="sheet-detail">I’ll stop reading it. Plans you already set stay as they are.</p>
           <button
             className="danger-button"
@@ -3557,13 +3557,13 @@ function PrivacySettings({ onBack, onDeleted }: { onBack: () => void; onDeleted:
           </span>
           <div>
             <strong>What I read</strong>
-            <p>Your calendar and bCourses deadlines. Nothing else.</p>
+            <p>Your calendar and course site deadlines. Nothing else.</p>
           </div>
         </section>
         <div className="read-list standalone">
           {[
             ["Google Calendar", "Event times and titles, to find free time"],
-            ["bCourses", "Due dates for your assignments"],
+            ["Course site", "Due dates for your assignments"],
             ["Check-ins", "What you tap, to plan better next time"],
           ].map(([what, why]) => (
             <div className="read-item" key={what}>
@@ -3579,7 +3579,7 @@ function PrivacySettings({ onBack, onDeleted }: { onBack: () => void; onDeleted:
           <Icon name="lock" size={22} />
           <div>
             <h2>I don’t read email, messages or grades</h2>
-            <p>Drafts to friends or your GSI are only sent when you press and hold Send.</p>
+            <p>Drafts to friends or your TA are only sent when you press and hold Send.</p>
           </div>
         </section>
         <button className="delete-data-button" onClick={() => setConfirm(true)}>
@@ -3636,7 +3636,7 @@ function SettingsPage({ route, onRoute, onClose, onDeleted }: { route: SettingsR
     { id: "change", title: "How I change your plan", detail: changeMode === "ask" ? "Always ask" : "Automatic if nothing protected changes", icon: "sparkle" },
     {
       id: "calendars",
-      title: "Calendars & bCourses",
+      title: "Calendars & course site",
       detail: `${[sources.calendar, sources.bcourses].filter(Boolean).length} of 2 connected`,
       icon: "calendar",
     },
@@ -3858,12 +3858,12 @@ function OnboardingFlow({ onDone }: { onDone: () => void }) {
         )}
         {step === 4 && (
           <>
-            <h1>Connect your calendar and bCourses</h1>
+            <h1>Connect your calendar and course site</h1>
             <p>I use them to find free time and deadlines. I never edit them without your OK.</p>
             <div className="onboarding-sources">
               {[
                 ["calendar", "Google Calendar", "Free time and events", "source-calendar", "calendar"],
-                ["bcourses", "bCourses", "Deadlines only", "source-bcourses", "book"],
+                ["bcourses", "Course site", "Deadlines only", "source-bcourses", "book"],
               ].map(([id, name, detail, cls, icon]) => (
                 <section key={id}>
                   <span className={`source-logo ${cls}`}>

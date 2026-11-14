@@ -266,7 +266,7 @@ function Home({
       <section className="content-section">
         <div className="section-title-row">
           <h2>This week</h2>
-          <SourceChip source="bCourses" />
+          <SourceChip source="Course site" />
         </div>
         <div className="card deadline-card">
           {appData.deadlines.map((item) => (
@@ -753,12 +753,12 @@ function SimulatedBrowserCard({
           <span />
           <span />
           <span />
-          <div>berkeley.example/secure</div>
+          <div>university.example/secure</div>
         </div>
         <div className="browser-content">
           <span className="browser-logo">B</span>
           <h2>{title}</h2>
-          <p>Secure Berkeley sign-in required</p>
+          <p>Secure school sign-in required</p>
           <div className="browser-placeholder" />
           <div className="browser-placeholder short" />
         </div>
@@ -916,7 +916,7 @@ function PaperworkFlow({ onDone }: { onDone: () => void }) {
         ) : (
           <>
             <h1>Your address update checklist</h1>
-            <p>Complete these steps in the Berkeley student portal.</p>
+            <p>Complete these steps in your student portal.</p>
             <div className="checklist-progress">
               <span>
                 {completed} of {tasks.length} complete
@@ -963,7 +963,7 @@ function PaperworkFlow({ onDone }: { onDone: () => void }) {
       </div>
       {showPortal && (
         <SimulatedBrowserCard
-          title="CalCentral Student Portal"
+          title="Student Portal"
           onClose={() => setShowPortal(false)}
         />
       )}
@@ -1012,7 +1012,7 @@ function MeetingFlow({ onDone }: { onDone: () => void }) {
 
   return (
     <main className="flow-screen meeting-screen">
-      <FlowHeader title="INFO 213 team" onBack={onDone} />
+      <FlowHeader title="Design 213 team" onBack={onDone} />
       <div className="flow-scroll meeting-scroll">
         {step === "message" && (
           <>
@@ -1023,7 +1023,7 @@ function MeetingFlow({ onDone }: { onDone: () => void }) {
             </div>
             <div className="meeting-source">
               <SourceChip source="WhatsApp" />
-              <span>INFO 213 team - 8:15am</span>
+              <span>Design 213 team - 8:15am</span>
             </div>
             <div className="meeting-proposal">
               <Icon name="sparkle" size={19} />
@@ -1108,7 +1108,7 @@ function MeetingFlow({ onDone }: { onDone: () => void }) {
             <h1>Check the poll before I send it</h1>
             <div className="message-to">
               <span>To</span>
-              <strong>INFO 213 team</strong>
+              <strong>Design 213 team</strong>
               <SourceChip source="WhatsApp" />
             </div>
             {editingDraft ? (
@@ -1176,7 +1176,7 @@ function MeetingFlow({ onDone }: { onDone: () => void }) {
             </span>
             <h1>Fri 10:00am won. Booked.</h1>
             <p>
-              INFO 213 · M3 deck
+              Design 213 · M3 deck
               <br />
               Fri Nov 13 · 10:00-11:00am
             </p>
@@ -1580,11 +1580,11 @@ function EditFieldSheet({
         <div className="source-context">
           <p>
             <strong>Your profile says</strong>
-            MIMS 2028
+            Master's 2028
           </p>
           <p>
             <strong>Your Oct resume says</strong>
-            MIMS 2028
+            Master's 2028
           </p>
         </div>
       )}
@@ -1969,7 +1969,7 @@ function ReviewRegistration({
           <div className="conflict-heading">
             <Icon name="calendar" size={19} />
             <p>
-              <strong>Overlaps INFO 213 team sync</strong>
+              <strong>Overlaps Design 213 team sync</strong>
               Thu 6:00-7:00pm <span>(Calendar)</span>
             </p>
           </div>
@@ -2032,7 +2032,7 @@ function TeamMessageSheet({
       <h2>Check the note to your team</h2>
       <div className="message-to">
         <span>To</span>
-        <strong>INFO 213 team</strong>
+        <strong>Design 213 team</strong>
         <SourceChip source="WhatsApp" />
       </div>
       <label className="message-draft">
@@ -2298,7 +2298,7 @@ function RegistrationConfirmation({
               <Icon name="people" size={20} />
               <p>
                 <strong>Team message sent</strong>
-                INFO 213 team · WhatsApp
+                Design 213 team · WhatsApp
               </p>
             </div>
           )}
@@ -2893,7 +2893,7 @@ function PrivacySettings({ onBack }: { onBack: () => void }) {
             </span>
             <div>
               <strong>What I read this week</strong>
-              <p>12 emails, 3 bCourses items</p>
+              <p>12 emails, 3 course site items</p>
             </div>
             <Icon
               name="chevron"
@@ -3011,7 +3011,7 @@ function SourcePermissionSheet({
 }) {
   const reads: Record<string, string> = {
     bcourses: "course announcements, assignments, and due dates",
-    gmail: "messages sent to your Berkeley email",
+    gmail: "messages sent to your school email",
     calendar: "event titles, times, and availability",
     career: "Career Center announcements and registration details",
     whatsapp: "only the messages you forward to Personal Assistant",
@@ -3067,8 +3067,8 @@ function OnboardingFlow({ onDone }: { onDone: () => void }) {
     useState<"alwaysAsk" | "personalOnly" | "routine">("alwaysAsk")
   const [profileValues, setProfileValues] = useState({
     name: "Maya Chen",
-    email: "maya.chen@berkeley.example",
-    program: "MIMS 2028",
+    email: "maya.chen@university.example",
+    program: "Master's 2028",
     linkedin: "linkedin.com/in/mayachen-example",
   })
   const [editingProfile, setEditingProfile] =
@@ -3191,9 +3191,9 @@ function OnboardingFlow({ onDone }: { onDone: () => void }) {
               >
                 <span />
                 <div>
-                  <strong>Emails from Berkeley senders</strong>
+                  <strong>Emails from your school</strong>
                   <small>
-                    Example: automatically notice a deadline from @berkeley.edu
+                    Example: automatically notice a deadline from your school's email domain
                   </small>
                 </div>
               </button>
@@ -3209,8 +3209,8 @@ function OnboardingFlow({ onDone }: { onDone: () => void }) {
             <p>I built this from the sources you just connected.</p>
             <div className="onboarding-profile">
               {[
-                ["name", "Full name", "Berkeley directory"],
-                ["email", "Email", "Berkeley directory"],
+                ["name", "Full name", "School directory"],
+                ["email", "Email", "School directory"],
                 ["program", "Program & year", "Resume - Oct"],
                 ["linkedin", "LinkedIn", "You"],
               ].map(([id, label, source]) => (
