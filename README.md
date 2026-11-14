@@ -37,9 +37,8 @@ npm run preview      # serve dist/ on http://localhost:4173/
 ## Where things came from
 
 - **Source:** the Personal Assistant was built in Figma Make, then exported with "Download code" on Nov 3, 2026. The original export, including Figma's build scripts, is in `reference/figma-export-2026-11-03/` for reference only. Don't run its `.figma/make/*` scripts.
-- **Figma file:** https://www.figma.com/make/Ph0r8eoCh2mejcARehRV6k
 - **Specs** (in the course Obsidian vault): `INFO 213 - Team Project-5/Milestone 3 - <prototype> v2 Spec.md`.
 
-## Status (Nov 3)
+## Status (Nov 13)
 
-All three prototypes are built, phone-ready and deployed to GitHub Pages, with the activity log in each moderator panel. Next: test on a real iPhone (Add to Home Screen) and run the pilot.
+We ran four test sessions from Nov 10 to 13 using `/assistant/`, `/time-protector/` and `/chat/`. `/chat-v3/` is the Chat Calendar Assistant updated from what we learned. It is our direction for Milestone 4.
