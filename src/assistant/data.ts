@@ -1,4 +1,4 @@
-export type Source = "Profile" | "Resume" | "Email" | "Course site" | "Calendar" | "WhatsApp"
+export type Source = "Profile" | "Resume" | "Email" | "bCourses" | "Calendar" | "WhatsApp"
 export type ItemStatus = "needs-ok" | "in-progress" | "done"
 
 export type InboxItem = {
@@ -84,12 +84,12 @@ export const appData = {
     name: "Maya Chen",
     firstName: "Maya",
     initials: "MC",
-    program: "Master's 2028",
+    program: "MIMS 2028",
   },
   today: [
     {
       id: "today-1",
-      title: "Stats 203",
+      title: "INFO 203",
       time: "11:00am",
       source: "Calendar" as Source,
       color: "blue",
@@ -112,19 +112,19 @@ export const appData = {
   deadlines: [
     {
       id: "deadline-1",
-      course: "Stats 203",
+      course: "INFO 203",
       title: "Assignment 4",
       due: "Wed 9:00am",
     },
     {
       id: "deadline-2",
-      course: "Stats 203",
+      course: "INFO 203",
       title: "Reading response",
       due: "Thu 11:59pm",
     },
     {
       id: "deadline-3",
-      course: "Design 213",
+      course: "INFO 213",
       title: "Milestone 3",
       due: "Sun 11:59pm",
     },
@@ -155,7 +155,7 @@ export const appData = {
     {
       id: "kai-meeting",
       icon: "people",
-      title: "Kai · Design 213 team",
+      title: "Kai · INFO 213 team",
       detail: "“Can we meet this week to finish the M3 deck?”",
       source: "WhatsApp",
       age: "8:15am",
@@ -175,9 +175,9 @@ export const appData = {
     {
       id: "reading",
       icon: "book",
-      title: "Stats 203 reading response added",
+      title: "INFO 203 reading response added",
       detail: "Due Thu Nov 12 · 11:59pm",
-      source: "Course site",
+      source: "bCourses",
       age: "Mon",
       proposal: "Added to your calendar",
       status: "done",
@@ -196,7 +196,7 @@ export const appData = {
     },
     {
       id: "info213-mon",
-      title: "Design 213",
+      title: "INFO 213",
       day: 0,
       start: 14,
       end: 15.5,
@@ -206,7 +206,7 @@ export const appData = {
     },
     {
       id: "info203-tue",
-      title: "Stats 203",
+      title: "INFO 203",
       day: 1,
       start: 11,
       end: 12.5,
@@ -226,7 +226,7 @@ export const appData = {
     },
     {
       id: "study-block-tue",
-      title: "Study block: Stats 203 Assignment 4",
+      title: "Study block: INFO 203 Assignment 4",
       day: 1,
       start: 13.5,
       end: 17,
@@ -246,7 +246,7 @@ export const appData = {
     },
     {
       id: "info213-wed",
-      title: "Design 213",
+      title: "INFO 213",
       day: 2,
       start: 14,
       end: 15.5,
@@ -266,7 +266,7 @@ export const appData = {
     },
     {
       id: "info203-thu",
-      title: "Stats 203",
+      title: "INFO 203",
       day: 3,
       start: 11,
       end: 12.5,
@@ -276,7 +276,7 @@ export const appData = {
     },
     {
       id: "sync-thu",
-      title: "Design 213 team sync",
+      title: "INFO 213 team sync",
       day: 3,
       start: 18,
       end: 19,
@@ -296,11 +296,11 @@ export const appData = {
     },
     {
       id: "assignment-4-deadline",
-      title: "Stats 203 Assignment 4",
+      title: "INFO 203 Assignment 4",
       day: 2,
       start: 9,
       end: 9,
-      source: "Course site",
+      source: "bCourses",
       color: "amber",
       detail: "Assignment deadline",
       kind: "deadline",
@@ -308,11 +308,11 @@ export const appData = {
     },
     {
       id: "reading-response-deadline",
-      title: "Stats 203 Reading response",
+      title: "INFO 203 Reading response",
       day: 3,
       start: 23 + 59 / 60,
       end: 23 + 59 / 60,
-      source: "Course site",
+      source: "bCourses",
       color: "amber",
       detail: "Reading response deadline",
       kind: "deadline",
@@ -320,11 +320,11 @@ export const appData = {
     },
     {
       id: "milestone-3-deadline",
-      title: "Design 213 Milestone 3",
+      title: "INFO 213 Milestone 3",
       day: 6,
       start: 23 + 59 / 60,
       end: 23 + 59 / 60,
-      source: "Course site",
+      source: "bCourses",
       color: "amber",
       detail: "Milestone deadline",
       kind: "deadline",
@@ -342,7 +342,7 @@ export const appData = {
     },
     {
       id: "info213-mon-w2",
-      title: "Design 213",
+      title: "INFO 213",
       day: 0,
       start: 14,
       end: 15.5,
@@ -352,7 +352,7 @@ export const appData = {
     },
     {
       id: "info203-tue-w2",
-      title: "Stats 203",
+      title: "INFO 203",
       day: 1,
       start: 11,
       end: 12.5,
@@ -372,7 +372,7 @@ export const appData = {
     },
     {
       id: "info213-wed-w2",
-      title: "Design 213",
+      title: "INFO 213",
       day: 2,
       start: 14,
       end: 15.5,
@@ -382,7 +382,7 @@ export const appData = {
     },
     {
       id: "info203-thu-w2",
-      title: "Stats 203",
+      title: "INFO 203",
       day: 3,
       start: 11,
       end: 12.5,
@@ -392,7 +392,7 @@ export const appData = {
     },
     {
       id: "sync-thu-w2",
-      title: "Design 213 team sync",
+      title: "INFO 213 team sync",
       day: 3,
       start: 18,
       end: 19,
@@ -446,15 +446,15 @@ export const appData = {
     note: "Bring 3 printed resumes",
     reason: "Matches your interest in product design.",
     email: {
-      sender: "University Career Center",
-      address: "careercenter@university.example",
+      sender: "UC Berkeley Career Center",
+      address: "careercenter@berkeley.example",
       received: "Today at 9:58am",
       subject: "Product Design Career Night — registration closes Monday",
       greeting: "Hi Maya,",
       intro:
         "You’re invited to our Product Design Career Night for graduate students.",
       closing:
-        "Space is limited. We hope to see you there!\n\nUniversity Career Center",
+        "Space is limited. We hope to see you there!\n\nUC Berkeley Career Center",
     },
     registrationFields: [
       {
@@ -467,14 +467,14 @@ export const appData = {
       {
         id: "email",
         label: "Email",
-        value: "maya.chen@university.example",
+        value: "maya.chen@berkeley.example",
         source: "Profile",
         sourceLabel: "Profile",
       },
       {
         id: "program",
         label: "Program & year",
-        value: "Master's 2028",
+        value: "MIMS 2028",
         source: "Profile",
         sourceLabel: "Profile",
       },
@@ -510,14 +510,14 @@ export const appData = {
     connectedSources: [
       {
         id: "bcourses",
-        name: "Course site",
+        name: "bCourses",
         lastRead: "Today at 10:31am",
-        source: "Course site",
+        source: "bCourses",
         connected: true,
       },
       {
         id: "gmail",
-        name: "School email",
+        name: "Berkeley Gmail",
         lastRead: "Today at 10:38am",
         source: "Email",
         connected: true,
@@ -547,20 +547,20 @@ export const appData = {
     ] as ConnectedSource[],
     profile: {
       name: "Maya Chen",
-      email: "maya.chen@university.example",
-      program: "Master's 2028",
+      email: "maya.chen@berkeley.example",
+      program: "MIMS 2028",
       linkedin: "linkedin.com/in/mayachen-example",
       interests: ["Product design", "UX research"],
       resumes: [
         {
           id: "oct",
           name: "Maya_Chen_Resume_Oct.pdf",
-          detail: "Master's 2028",
+          detail: "MIMS 2028",
         },
         {
           id: "aug",
           name: "Maya_Chen_Resume_Aug.pdf",
-          detail: "Master's 2028",
+          detail: "MIMS 2028",
         },
       ],
     },
@@ -581,18 +581,18 @@ export const appData = {
         time: "Mon 11:08am",
       },
       {
-        title: "Stats 203 Assignment 4",
-        source: "Course site",
+        title: "INFO 203 Assignment 4",
+        source: "bCourses",
         time: "Today 10:31am",
       },
       {
-        title: "Stats 203 Reading response",
-        source: "Course site",
+        title: "INFO 203 Reading response",
+        source: "bCourses",
         time: "Mon 4:12pm",
       },
       {
-        title: "Design 213 Milestone 3",
-        source: "Course site",
+        title: "INFO 213 Milestone 3",
+        source: "bCourses",
         time: "Mon 4:10pm",
       },
     ] as PrivacyRead[],
@@ -606,10 +606,10 @@ export const appData = {
   activity: [
     {
       id: "activity-reading",
-      title: "Added Stats 203 reading response to your calendar",
-      detail: "Detected a new deadline on the course site",
+      title: "Added INFO 203 reading response to your calendar",
+      detail: "Detected a new deadline in bCourses",
       time: "Mon 4:12pm",
-      source: "Course site",
+      source: "bCourses",
       automatic: true,
     },
   ] as ActivityItem[],
@@ -619,7 +619,7 @@ export const sourceStyles: Record<Source, string> = {
   Profile: "source-profile",
   Resume: "source-resume",
   Email: "source-email",
-  "Course site": "source-bcourses",
+  bCourses: "source-bcourses",
   Calendar: "source-calendar",
   WhatsApp: "source-whatsapp",
 }

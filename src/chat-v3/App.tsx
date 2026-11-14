@@ -553,7 +553,7 @@ function ScreenshotArt({ thumb = false }: { thumb?: boolean }) {
       viewBox="0 0 360 540"
       preserveAspectRatio={thumb ? "xMidYMin slice" : "xMidYMid meet"}
       role="img"
-      aria-label="Screenshot of an Stats 203 announcement by Alex Rivera (TA), Nov 9, 4:12 pm: Assignment 5 deadline extended to Mon Nov 16, 9:00 am. Late days still apply after that."
+      aria-label="Screenshot of an INFO 203 announcement by Alex Rivera (GSI), Nov 9, 4:12 pm: Assignment 5 deadline extended to Mon Nov 16, 9:00 am. Late days still apply after that."
       fontFamily="'Inter Variable', Inter, -apple-system, sans-serif"
     >
       <rect width="360" height="540" fill="#f8fafc" />
@@ -562,7 +562,7 @@ function ScreenshotArt({ thumb = false }: { thumb?: boolean }) {
       <rect x="307" y="18" width="19" height="7" rx="1.5" fill="#111827" />
       <rect y="40" width="360" height="56" fill="#ffffff" />
       <path d="M26 59l-8 9 8 9" stroke="#2563eb" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-      <text x="36" y="74" fontSize="16" fill="#2563eb">Stats 203</text>
+      <text x="36" y="74" fontSize="16" fill="#2563eb">INFO 203</text>
       <text x="196" y="74" textAnchor="middle" fontSize="16" fontWeight="700" fill="#111827">Discussion</text>
       <line x1="0" y1="96" x2="360" y2="96" stroke="#e5e7eb" />
       <rect x="18" y="112" width="122" height="26" rx="13" fill="#fef3c7" />
@@ -572,8 +572,8 @@ function ScreenshotArt({ thumb = false }: { thumb?: boolean }) {
       <text x="40" y="180" textAnchor="middle" fontSize="15" fontWeight="700" fill="#ffffff">AR</text>
       <text x="72" y="169" fontSize="16" fontWeight="700" fill="#111827">Alex Rivera</text>
       <rect x="172" y="155" width="38" height="19" rx="5" fill="#dbeafe" />
-      <text x="191" y="169" textAnchor="middle" fontSize="12" fontWeight="700" fill="#1d4ed8">TA</text>
-      <text x="72" y="190" fontSize="13.5" fill="#6b7280">Nov 9, 4:12 pm · Stats 203</text>
+      <text x="191" y="169" textAnchor="middle" fontSize="12" fontWeight="700" fill="#1d4ed8">GSI</text>
+      <text x="72" y="190" fontSize="13.5" fill="#6b7280">Nov 9, 4:12 pm · INFO 203</text>
       <text x="18" y="236" fontSize="20" fontWeight="800" fill="#111827">Assignment 5 deadline extended</text>
       <text x="18" y="272" fontSize="16" fill="#374151">Assignment 5 deadline extended to</text>
       <text x="18" y="297" fontSize="16" fill="#111827" fontWeight="800">
@@ -859,7 +859,7 @@ function ChatList() {
           <div className="profile-sheet">
             <span className="profile-large">MC</span>
             <h2>Maya Chen</h2>
-            <p>Master's 2028</p>
+            <p>MIMS 2028 · UC Berkeley School of Information</p>
           </div>
           <button
             className="primary-button"
@@ -1681,7 +1681,7 @@ function DoneMessage({ item }: { item: Extract<BotItem, { kind: "done" }> }) {
 
 function DisagreeCard({ at }: { at: number }) {
   const { s, go, chooseSources } = useStore()
-  const choiceLabels = ["", "Use Mon Nov 16, 9:00 am", "Keep Fri Nov 13 (course site)", "Keep both until confirmed", "Draft a question to the TA"]
+  const choiceLabels = ["", "Use Mon Nov 16, 9:00 am", "Keep Fri Nov 13 (bCourses)", "Keep both until confirmed", "Draft a question to the GSI"]
   return (
     <div className="bot-card disagree-card">
       <p className="warn-head">
@@ -1690,14 +1690,14 @@ function DisagreeCard({ at }: { at: number }) {
       </p>
       <div className="mini-sources">
         <div>
-          <SourceChip label="Course site" tone="bcourses" />
+          <SourceChip label="bCourses" tone="bcourses" />
           <strong>Fri Nov 13, 11:59 pm</strong>
           <small>Course site · updated Oct 30</small>
         </div>
         <div>
           <SourceChip label="Screenshot from Priya" tone="screenshot" />
           <strong>Mon Nov 16, 9:00 am</strong>
-          <small>Alex Rivera (TA) · Nov 9 · newer</small>
+          <small>Alex Rivera (GSI) · Nov 9 · newer</small>
         </div>
       </div>
       {s.a5.status === "resolved" ? (
@@ -1713,7 +1713,7 @@ function DisagreeCard({ at }: { at: number }) {
       ) : (
         <div className="card-actions">
           <button className="primary-button" onClick={() => chooseSources(1, 0)}>
-            Use Mon Nov 16 (newer, from the TA)
+            Use Mon Nov 16 (newer, from the GSI)
           </button>
           <div className="card-actions-row">
             <button className="secondary-button" onClick={() => chooseSources(2, 0)}>
@@ -1735,7 +1735,7 @@ function DraftCard({ text, at }: { text: string; at: number }) {
   return (
     <div className="bot-card draft-card">
       <span className="card-kicker">DRAFT · NOT SENT</span>
-      <strong>To Alex Rivera (TA)</strong>
+      <strong>To Alex Rivera (GSI)</strong>
       <blockquote>{text}</blockquote>
       <button
         className="secondary-button"
@@ -1878,7 +1878,7 @@ function PermissionSheet({ step, onAllow, onClose }: { step: 1 | 2; onAllow: () 
         <Icon name={google ? "calendar" : "book"} size={24} />
       </div>
       <span className="sheet-kicker">STEP {step} OF 2</span>
-      <h2>Connect {google ? "Google Calendar" : "Course site"}</h2>
+      <h2>Connect {google ? "Google Calendar" : "bCourses"}</h2>
       <p className="permission-intro">Calendar Assistant will be able to:</p>
       <div className="permission-read">
         <Icon name="check" size={16} />
@@ -1893,7 +1893,7 @@ function PermissionSheet({ step, onAllow, onClose }: { step: 1 | 2; onAllow: () 
           </>
         ) : (
           <>
-            <span>Submit or change anything on the course site</span>
+            <span>Submit or change anything in bCourses</span>
             <span>See your grades</span>
           </>
         )}
@@ -2245,7 +2245,7 @@ function conflictInfo(s: State, p: Proposal) {
   if (next) lines.push(`Your ${next.title} is at ${fmt(next.start)} that day.`)
   sameDay
     .filter((e) => e.kind === "deadline")
-    .forEach((d) => lines.push(`${d.title} is due ${weekday(d.date)} ${fmt(d.start)} (${d.calendar === "Course site" ? "the course site" : "your calendar"}).`))
+    .forEach((d) => lines.push(`${d.title} is due ${weekday(d.date)} ${fmt(d.start)} (${d.calendar === "bCourses" ? "bCourses" : "your calendar"}).`))
   return { ok: true, lines }
 }
 
@@ -2480,10 +2480,10 @@ function EditSheet({ p, onClose }: { p: Proposal; onClose: () => void }) {
 // ---------- S2 Sources disagree (full screen) ----------
 
 const SOURCE_CHOICES = [
-  "Use Mon Nov 16, 9:00 am, and remind me to check the course site on Thursday.",
-  "Keep Fri Nov 13 (course site).",
+  "Use Mon Nov 16, 9:00 am, and remind me to check bCourses on Thursday.",
+  "Keep Fri Nov 13 (bCourses).",
   "Keep both on my calendar until it's confirmed.",
-  "Draft a question to the TA.",
+  "Draft a question to the GSI.",
 ]
 
 function SourcesScreen() {
@@ -2506,7 +2506,7 @@ function SourcesScreen() {
         <section className="sources-table" aria-label="Sources side by side">
           <div className="sources-col">
             <span className="col-kicker">SOURCE A</span>
-            <SourceChip label="Course site" tone="bcourses" />
+            <SourceChip label="bCourses" tone="bcourses" />
             <dl>
               <dt>Due</dt>
               <dd>
@@ -2524,7 +2524,7 @@ function SourcesScreen() {
                 setBcourses(true)
               }}
             >
-              Open the course site
+              Open in bCourses
               <Icon name="chevron" size={16} />
             </button>
           </div>
@@ -2537,7 +2537,7 @@ function SourcesScreen() {
                 <strong>Mon Nov 16, 9:00 am</strong>
               </dd>
               <dt>From</dt>
-              <dd>Alex Rivera (TA), posted Nov 9</dd>
+              <dd>Alex Rivera (GSI), posted Nov 9</dd>
               <dt>Last updated</dt>
               <dd>
                 Nov 9 <span className="newer-tag">newer</span>
@@ -2551,7 +2551,7 @@ function SourcesScreen() {
         </section>
         <p className="sources-note">
           <Icon name="info" size={17} />
-          The screenshot is newer and comes from the TA. The course site may not be updated yet.
+          The screenshot is newer and comes from the GSI. bCourses may not be updated yet.
         </p>
         <section className="detail-section">
           <h3>What should your calendar show?</h3>
@@ -2623,7 +2623,7 @@ function SourcesScreen() {
           <div className="sheet-icon tone-bcourses">
             <Icon name="book" size={24} />
           </div>
-          <span className="sheet-kicker">COURSE SITE · STATS 203</span>
+          <span className="sheet-kicker">BCOURSES · INFO 203</span>
           <h2>Assignment 5</h2>
           <div className="fact-rows">
             <p>
@@ -2639,7 +2639,7 @@ function SourcesScreen() {
               <strong>Oct 30</strong>
             </p>
           </div>
-          <p className="sheet-detail">This is what the course site shows right now. Announcements from the TA can be newer.</p>
+          <p className="sheet-detail">This is what the course site shows right now. Announcements from the GSI can be newer.</p>
           <button className="secondary-button" onClick={() => setBcourses(false)}>
             Close
           </button>
@@ -2902,8 +2902,8 @@ function EventScreen({ id }: { id: string }) {
           </div>
           <h2>Delete {e.title}?</h2>
           <p className="sheet-detail">
-            {e.calendar === "Course site"
-              ? "It will be hidden from your calendar. The course site doesn't change."
+            {e.calendar === "bCourses"
+              ? "It will be hidden from your calendar. bCourses doesn't change."
               : "It will be removed from your Google Calendar."}{" "}
             You can undo this from History.
           </p>
@@ -2998,7 +2998,7 @@ function SettingsRoot() {
   const rows: [Screen, string, string, string][] = [
     [{ name: "settings-find" }, "eye", "How I find changes", modeLabel],
     [{ name: "settings-confirm" }, "check", "Confirmations", s.autoApply ? "Apply automatically in some cases" : "Always ask me"],
-    [{ name: "settings-cal" }, "calendar", "Calendars & course site", `2 connected · synced ${fmt(s.sync.calendar)}`],
+    [{ name: "settings-cal" }, "calendar", "Calendars & bCourses", `2 connected · synced ${fmt(s.sync.calendar)}`],
     [{ name: "settings-privacy" }, "lock", "Privacy & data", "Quotes only, deletable anytime"],
   ]
   return (
@@ -3009,7 +3009,7 @@ function SettingsRoot() {
           <ChatAvatar chat="bot" size={52} />
           <div>
             <strong>Calendar Assistant</strong>
-            <span>Connected for Maya Chen · Master's 2028</span>
+            <span>Connected for Maya Chen · MIMS 2028</span>
           </div>
         </div>
         <div className="settings-list">
@@ -3095,8 +3095,8 @@ function FindChangesSettings() {
           <span className="card-kicker">PREVIEW</span>
           <p>
             {studyOn && watch
-              ? `Stats 203 study group is on. I would have caught Sam's 4:30 correction (${t}), even if you forwarded only his 2:14 pm message.`
-              : "With Stats 203 study group on, I would have caught Sam's 4:30 correction."}
+              ? `INFO 203 study group is on. I would have caught Sam's 4:30 correction (${t}), even if you forwarded only his 2:14 pm message.`
+              : "With INFO 203 study group on, I would have caught Sam's 4:30 correction."}
           </p>
           <div className="preview-bubble">
             <ChatAvatar chat="bot" size={26} />
@@ -3173,7 +3173,7 @@ function ConfirmSettings() {
           <p>I always ask before changing a due date.</p>
         </section>
         <p className="hint-line">
-          Example: Hana organizes Stats 203 study group. Sam isn't the organizer, so I'd still ask about his change.
+          Example: Hana organizes INFO 203 study group. Sam isn't the organizer, so I'd still ask about his change.
         </p>
       </div>
     </main>
@@ -3185,11 +3185,11 @@ function CalendarSettings() {
   const [syncing, setSyncing] = useState(false)
   const rows: [string, string, string, Tone, string][] = [
     ["Google Calendar", "calendar", "Read your events and change them after you confirm", "calendar", fmt(s.sync.calendar)],
-    ["Course site", "book", "Read-only: courses, assignments and due dates", "bcourses", fmt(s.sync.bcourses)],
+    ["bCourses", "book", "Read-only: courses, assignments and due dates", "bcourses", fmt(s.sync.bcourses)],
   ]
   return (
-    <main className="screen-root flow-screen settings-screen" data-fp-screen="Calendars & course site">
-      <FlowHeader title="Calendars & course site" backLabel="Settings" />
+    <main className="screen-root flow-screen settings-screen" data-fp-screen="Calendars & bCourses">
+      <FlowHeader title="Calendars & bCourses" backLabel="Settings" />
       <div className="flow-scroll padded">
         <div className="source-list">
           {rows.map(([name, icon, detail, tone, sync]) => (
@@ -3410,7 +3410,7 @@ function ModeratorPanel({ onClose }: { onClose: () => void }) {
           <label>
             <span>
               <strong>Watch mode at start</strong>
-              <small>{s.config.watchAtStart ? "Watching Stats 203 study group" : "Forward-only (default)"}</small>
+              <small>{s.config.watchAtStart ? "Watching INFO 203 study group" : "Forward-only (default)"}</small>
             </span>
             <Toggle
               checked={s.config.watchAtStart}

@@ -276,7 +276,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       },
       {
         id: "activity-team-message",
-        title: "Sent your message to Design 213 team (WhatsApp)",
+        title: "Sent your message to INFO 213 team (WhatsApp)",
         detail: "You approved the message before it was sent",
         time: "10:45am",
         source: "WhatsApp",
@@ -387,7 +387,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     setActivity((items) => [
       {
         id: "activity-meeting-poll",
-        title: "Sent a scheduling poll to Design 213 team",
+        title: "Sent a scheduling poll to INFO 213 team",
         detail: automatic
           ? "Sent automatically based on your settings"
           : "You approved the WhatsApp poll",
@@ -433,7 +433,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
             ...events,
             {
               id: "m3-deck-meeting",
-              title: "Design 213 · M3 deck",
+              title: "INFO 213 · M3 deck",
               day: 4,
               start: 10,
               end: 11,
@@ -449,7 +449,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     setActivity((items) => [
       {
         id: "activity-meeting-booked",
-        title: "Booked Design 213 team meeting",
+        title: "Booked INFO 213 team meeting",
         detail: "Fri Nov 13 · 10:00-11:00am · Poll winner",
         time: "2 hours later",
         source: "WhatsApp",
@@ -548,7 +548,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         ? [
             {
               id: "activity-team-message",
-              title: "Sent your message to Design 213 team (WhatsApp)",
+              title: "Sent your message to INFO 213 team (WhatsApp)",
               detail: "You approved the message before it was sent",
               time: "10:45am",
               source: "WhatsApp" as const,

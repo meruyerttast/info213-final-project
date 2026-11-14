@@ -267,7 +267,7 @@ export function itemPreview(item: BotItem | undefined, s: State): string {
     case "disagree":
       return "Two sources disagree about Assignment 5."
     case "draft":
-      return "Draft for Alex Rivera (TA)"
+      return "Draft for Alex Rivera (GSI)"
     case "sample":
       return "Try it: forward me this sample message."
   }
@@ -365,9 +365,9 @@ export function initialState(config: Config, nav: Screen[], epoch: number): Stat
       {
         id: "e0",
         at: 16 * 60 + 12,
-        title: "Added Stats 203 reading response",
-        detail: "Due Thu Nov 12, 11:59 pm · found on the course site",
-        chip: { label: "Course site", tone: "bcourses" },
+        title: "Added INFO 203 reading response",
+        detail: "Due Thu Nov 12, 11:59 pm · found in bCourses",
+        chip: { label: "bCourses", tone: "bcourses" },
         status: "confirmed",
       },
     ],
@@ -380,9 +380,9 @@ export function initialState(config: Config, nav: Screen[], epoch: number): Stat
     kept: [
       {
         kind: "bcourses",
-        who: "Course site",
+        who: "bCourses",
         time: "Mon 4:12 pm",
-        text: "Stats 203 · Reading response · Due Thu Nov 12, 11:59 pm",
+        text: "INFO 203 · Reading response · Due Thu Nov 12, 11:59 pm",
       },
     ],
     sync: { calendar: NOW_AT - 1, bcourses: NOW_AT - 5 },
@@ -429,7 +429,7 @@ function studyTarget(s: State, use214: boolean, use231: boolean): Target {
   if (use214 && use231) {
     return {
       basis: "214+231",
-      slot: { date: 12, start: 16 * 60 + 30, end: 17 * 60 + 30, location: "Library 405" },
+      slot: { date: 12, start: 16 * 60 + 30, end: 17 * 60 + 30, location: "Moffitt 405" },
       sameLength: true,
       roomMentioned: true,
       notes: [
@@ -463,7 +463,7 @@ function studyTarget(s: State, use214: boolean, use231: boolean): Target {
   const date = s.studyDay ?? 12
   return {
     basis: `231@${date}`,
-    slot: { date, start: 16 * 60 + 30, end: 17 * 60 + 30, location: "Library 405" },
+    slot: { date, start: 16 * 60 + 30, end: 17 * 60 + 30, location: "Moffitt 405" },
     sameLength: true,
     roomMentioned: true,
     notes: [
@@ -546,7 +546,7 @@ function evaluateStudy(s0: State, ids: string[], mode: EvalMode): State {
       return pushBot(s, [
         botText(
           original
-            ? "This matches your calendar: **Stats 203 study group**, Wed Nov 11, 4:00–5:00 pm, Main Library 4th floor. Nothing to change."
+            ? "This matches your calendar: **INFO 203 study group**, Wed Nov 11, 4:00–5:00 pm, Moffitt Library 4th floor. Nothing to change."
             : `This is an older message (Mon 6:02 pm). Your calendar already has a newer time: **${slotText(slotOf(ev))}**.`,
           now,
         ),
@@ -558,7 +558,7 @@ function evaluateStudy(s0: State, ids: string[], mode: EvalMode): State {
   if (use231 && !use214 && s.studyDay === undefined) {
     return pushBot(s, [
       botText(
-        `Sam's message says **4:30** and **room 405 at the library**, but not the day. It looks like a correction to an earlier message I haven't seen. Which day? Or forward me the earlier message.`,
+        `Sam's message says **4:30** and **room 405 at Moffitt**, but not the day. It looks like a correction to an earlier message I haven't seen. Which day? Or forward me the earlier message.`,
         now,
         [11, 12, 13].map((date) => q(dayLabel(date), { t: "pick-day", date }, { echo: true })),
         "ask_day",
@@ -584,7 +584,7 @@ function evaluateStudy(s0: State, ids: string[], mode: EvalMode): State {
         ? s
         : pushBot(s, [
             botText(
-              `I already used this message. Your calendar has **Stats 203 study group** on ${slotText(slotOf(ev))}${ev.edited ? " (you edited it)" : ""}.`,
+              `I already used this message. Your calendar has **INFO 203 study group** on ${slotText(slotOf(ev))}${ev.edited ? " (you edited it)" : ""}.`,
               now,
             ),
           ])
@@ -596,7 +596,7 @@ function evaluateStudy(s0: State, ids: string[], mode: EvalMode): State {
       ? s
       : pushBot(s, [
           botText(
-            `Already on your calendar: **Stats 203 study group** is ${slotText(slotOf(ev))}. Nothing to change.`,
+            `Already on your calendar: **INFO 203 study group** is ${slotText(slotOf(ev))}. Nothing to change.`,
             now,
           ),
         ])
@@ -611,7 +611,7 @@ function evaluateStudy(s0: State, ids: string[], mode: EvalMode): State {
       mode === "use-newer"
         ? `Using Sam's ${t} message: ${diffPhrase(open.after, p.after)}.`
         : proactive
-          ? `Heads up: Sam just posted a newer message in Stats 203 study group. This corrects the change I suggested: ${diffPhrase(open.after, p.after)}.`
+          ? `Heads up: Sam just posted a newer message in INFO 203 study group. This corrects the change I suggested: ${diffPhrase(open.after, p.after)}.`
           : `This corrects the change I suggested: ${diffPhrase(open.after, p.after)}.`
     return pushBot(s, [botText(intro, now), { id: uid("c"), kind: "card", at: now, pid: p.id }])
   }
@@ -620,7 +620,7 @@ function evaluateStudy(s0: State, ids: string[], mode: EvalMode): State {
     const p = makeProposal(s, target, { r4: true })
     s = addProposal(s, p)
     const intro =
-      (proactive ? "Sam just posted a correction in Stats 203 study group. " : "") +
+      (proactive ? "Sam just posted a correction in INFO 203 study group. " : "") +
       `This updates the change I just made: ${diffPhrase(slotOf(ev), p.after)}.`
     return pushBot(s, [
       botText(intro, now, [
@@ -636,7 +636,7 @@ function evaluateStudy(s0: State, ids: string[], mode: EvalMode): State {
     p.newer = {
       start: 16 * 60 + 30,
       end: 17 * 60 + 30,
-      location: "Library 405",
+      location: "Moffitt 405",
       label: `Sam's ${t} message`,
     }
     p.notes = [
@@ -648,14 +648,14 @@ function evaluateStudy(s0: State, ids: string[], mode: EvalMode): State {
   let intro: string
   if (use214 && use231) {
     intro = proactive
-      ? `I noticed a change in **Stats 203 study group**, a chat you let me watch. I used Sam's latest message (${t}).`
+      ? `I noticed a change in **INFO 203 study group**, a chat you let me watch. I used Sam's latest message (${t}).`
       : !f214
         ? `I found a change, with a correction. I used Sam's later message (${t}). I also read his 2:14 pm message in this chat.`
         : `I found a change, with a correction. I used Sam's later message (${t}).`
   } else if (!use214) {
-    intro = `OK, ${dayLabel(target.slot.date)}. Here's the change to **Stats 203 study group**.`
+    intro = `OK, ${dayLabel(target.slot.date)}. Here's the change to **INFO 203 study group**.`
   } else {
-    intro = "I found a change to **Stats 203 study group**."
+    intro = "I found a change to **INFO 203 study group**."
   }
   const items: BotItem[] = [botText(intro, now), { id: uid("c"), kind: "card", at: now, pid: p.id }]
   if (offer) {
@@ -682,11 +682,11 @@ function proactiveStudy(s: State): State {
   if (latest?.status === "open" && latest.basis === "214") {
     const now = nowAt(s)
     s = setProposal(s, latest.id, {
-      newer: { start: 16 * 60 + 30, end: 17 * 60 + 30, location: "Library 405", label: `Sam's ${fmt(corrAt(s))} message` },
+      newer: { start: 16 * 60 + 30, end: 17 * 60 + 30, location: "Moffitt 405", label: `Sam's ${fmt(corrAt(s))} message` },
     })
     return pushBot(s, [
       botText(
-        `Heads up: Sam just posted a newer message in Stats 203 study group: '${CORRECTION_TEXT}'. Use that instead?`,
+        `Heads up: Sam just posted a newer message in INFO 203 study group: '${CORRECTION_TEXT}'. Use that instead?`,
         now,
         [
           q("Use 4:30", { t: "use-newer", pid: latest.id }, { primary: true, echo: true }),
@@ -714,7 +714,7 @@ function arriveCorrection(s: State): State {
       next.banner = {
         id: Date.now() + Math.random(),
         chat: "study",
-        title: "Stats 203 study group",
+        title: "INFO 203 study group",
         text: `Sam: ${CORRECTION_TEXT}`,
       }
     }
@@ -916,13 +916,13 @@ function deleteEvent(s: State, id: string): [State, string] {
 // ---------- Task 2: screenshot and sources ----------
 
 export const GSI_DRAFT =
-  "Hi Alex, quick question about Stats 203 Assignment 5. The Nov 9 announcement says it's due Mon Nov 16, 9:00 am, but the course site still shows Fri Nov 13, 11:59 pm. Which date should we follow? Thanks, Maya"
+  "Hi Alex, quick question about INFO 203 Assignment 5. The Nov 9 announcement says it's due Mon Nov 16, 9:00 am, but bCourses still shows Fri Nov 13, 11:59 pm. Which date should we follow? Thanks, Maya"
 
 function screenshotResult(s: State): State {
   const now = nowAt(s)
   s = { ...s, bot: s.bot.filter((b) => b.kind !== "reading") }
   const items: BotItem[] = [
-    botText("This says **Stats 203 Assignment 5** is now due **Mon Nov 16, 9:00 am**.", now),
+    botText("This says **INFO 203 Assignment 5** is now due **Mon Nov 16, 9:00 am**.", now),
   ]
   if (s.a5.status === "resolved") {
     items.push(
@@ -963,13 +963,13 @@ function chooseSources(s: State, choice: number): State {
     setA5(
       { date: 16, start: 9 * 60, end: 9 * 60, assistant: shotChip, flag: undefined, sources: [SCREENSHOT_QUOTE, BCOURSES_QUOTE] },
       [
-        { label: "Extended by Alex Rivera (TA) · Nov 9, 4:12 pm", detail: "Mon 9:00 am", by: "other" },
+        { label: "Extended by Alex Rivera (GSI) · Nov 9, 4:12 pm", detail: "Mon 9:00 am", by: "other" },
         { label: `Confirmed by you · ${fmt(now)}`, by: "you" },
       ],
     )
     upsert({
       id: "a5-check",
-      title: "Check the course site: Assignment 5 due date",
+      title: "Check bCourses: Assignment 5 due date",
       date: 12,
       start: 9 * 60,
       end: 9 * 60 + 15,
@@ -981,20 +981,20 @@ function chooseSources(s: State, choice: number): State {
       log: [{ label: `Added by you · ${fmt(now)}`, by: "you" }],
       deleted: false,
     })
-    title = "Moved Stats 203 Assignment 5"
+    title = "Moved INFO 203 Assignment 5"
     detail = "Fri Nov 13, 11:59 pm → Mon Nov 16, 9:00 am · reminder Thu Nov 12, 9:00 am"
-    text = "Updated ✅ Stats 203 Assignment 5 → due **Mon Nov 16, 9:00 am**. I'll remind you to check the course site on Thu Nov 12 at 9:00 am."
+    text = "Updated ✅ INFO 203 Assignment 5 → due **Mon Nov 16, 9:00 am**. I'll remind you to check bCourses on Thu Nov 12 at 9:00 am."
   } else if (choice === 2) {
-    setA5({ flag: undefined }, [{ label: `You kept the course site date · ${fmt(now)}`, by: "you" }])
-    title = "Kept the course site date for Assignment 5"
+    setA5({ flag: undefined }, [{ label: `You kept the bCourses date · ${fmt(now)}`, by: "you" }])
+    title = "Kept the bCourses date for Assignment 5"
     detail = "Fri Nov 13, 11:59 pm · the screenshot said Mon Nov 16, 9:00 am"
-    chip = { label: "Course site", tone: "bcourses" }
-    text = "OK, keeping **Fri Nov 13, 11:59 pm** from the course site. Your calendar didn't change."
+    chip = { label: "bCourses", tone: "bcourses" }
+    text = "OK, keeping **Fri Nov 13, 11:59 pm** from bCourses. Your calendar didn't change."
   } else if (choice === 3) {
     setA5({ flag: "Unconfirmed" }, [{ label: `Marked unconfirmed by you · ${fmt(now)}`, by: "you" }])
     upsert({
       id: "a5-gsi",
-      title: "Stats 203 Assignment 5 (TA post)",
+      title: "INFO 203 Assignment 5 (GSI post)",
       date: 16,
       start: 9 * 60,
       end: 9 * 60,
@@ -1010,12 +1010,12 @@ function chooseSources(s: State, choice: number): State {
     title = "Kept both dates for Assignment 5"
     detail = "Fri Nov 13, 11:59 pm and Mon Nov 16, 9:00 am, both marked unconfirmed"
     text =
-      "Done. Both dates are on your calendar, marked unconfirmed: **Fri Nov 13, 11:59 pm** (course site) and **Mon Nov 16, 9:00 am** (TA post). I'll tell you when the course site changes."
+      "Done. Both dates are on your calendar, marked unconfirmed: **Fri Nov 13, 11:59 pm** (bCourses) and **Mon Nov 16, 9:00 am** (GSI post). I'll tell you when bCourses changes."
   } else {
-    setA5({ flag: "Checking with TA" }, [{ label: `Question to the TA drafted by you · ${fmt(now)}`, by: "you" }])
-    title = "Drafted a question to the TA"
+    setA5({ flag: "Checking with GSI" }, [{ label: `Question to the GSI drafted by you · ${fmt(now)}`, by: "you" }])
+    title = "Drafted a question to the GSI"
     detail = "Assignment 5 · calendar unchanged, marked “checking”"
-    text = "Here's a draft for Alex Rivera (TA). I didn't send it. Your calendar still shows **Fri Nov 13, 11:59 pm**, marked “checking”."
+    text = "Here's a draft for Alex Rivera (GSI). I didn't send it. Your calendar still shows **Fri Nov 13, 11:59 pm**, marked “checking”."
   }
   s = { ...s, events }
   let entryId: string
@@ -1027,7 +1027,7 @@ function chooseSources(s: State, choice: number): State {
     status: "confirmed",
     before,
     a5: true,
-    undoText: "Undone. Assignment 5 is back to **Fri Nov 13, 11:59 pm** (course site), with nothing marked. Decide again when you're ready.",
+    undoText: "Undone. Assignment 5 is back to **Fri Nov 13, 11:59 pm** (bCourses), with nothing marked. Decide again when you're ready.",
   })
   s = { ...s, a5: { status: "resolved", choice, entryId } }
   const items: BotItem[] = []
@@ -1607,7 +1607,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
               location: orig.roomMentioned ? orig.after.location : target.location ?? "",
             },
             notes: [
-              { field: "other", text: `You picked ${target.title} instead of Stats 203 study group.` },
+              { field: "other", text: `You picked ${target.title} instead of INFO 203 study group.` },
               ...orig.notes.filter((n) => n.field !== "room"),
               ...(orig.roomMentioned ? [] : [{ field: "room" as Field, text: `Room not mentioned, keeping ${target.location}.` }]),
             ],
@@ -1680,8 +1680,8 @@ export function StoreProvider({ children }: { children: ReactNode }) {
           }
           const candidates = prop.study
             ? [
-                q("Design 213 team sync · Thu 6:00 pm", { t: "candidate", pid, target: "sync-12" }, { echo: true }),
-                q("Stats 203 class · Thu 11:00 am", { t: "candidate", pid, target: "info203-12" }, { echo: true }),
+                q("INFO 213 team sync · Thu 6:00 pm", { t: "candidate", pid, target: "sync-12" }, { echo: true }),
+                q("INFO 203 class · Thu 11:00 am", { t: "candidate", pid, target: "info203-12" }, { echo: true }),
                 q("None of these, create a new event", { t: "candidate", pid, target: "new" }, { echo: true }),
               ]
             : []
@@ -1891,8 +1891,8 @@ export function StoreProvider({ children }: { children: ReactNode }) {
               "Hi Maya. Send me any message, email or screenshot about a plan, and I'll keep your calendar right. Nothing changes without your OK.",
               nowAt(p),
             ),
-            botText("First, connect Google Calendar and your course site, so I can compare what you send me with what's planned.", nowAt(p), [
-              q("Connect Google Calendar & course site", { t: "onb-connect" }, { primary: true, nav: true }),
+            botText("First, connect Google Calendar and bCourses, so I can compare what you send me with what's planned.", nowAt(p), [
+              q("Connect Google Calendar & bCourses", { t: "onb-connect" }, { primary: true, nav: true }),
             ]),
           ]),
         )
@@ -1902,13 +1902,13 @@ export function StoreProvider({ children }: { children: ReactNode }) {
           ...p,
           onboarding: { ...p.onboarding, step: 2 },
           bot: p.bot.map((b) =>
-            b.kind === "text" && b.quick?.some((x) => x.act.t === "onb-connect") ? { ...b, picked: "Connect Google Calendar & course site" } : b,
+            b.kind === "text" && b.quick?.some((x) => x.act.t === "onb-connect") ? { ...b, picked: "Connect Google Calendar & bCourses" } : b,
           ),
         }))
         reply((p) =>
           pushBot(p, [
             botText(
-              `Connected: Google Calendar and your course site (last sync ${fmt(nowAt(p))}). I only change Google Calendar events after you confirm.`,
+              `Connected: Google Calendar and bCourses (last sync ${fmt(nowAt(p))}). I only change Google Calendar events after you confirm.`,
               nowAt(p),
             ),
             botText(

@@ -45,7 +45,7 @@ export const chatMeta: Record<ChatId, ChatMeta> = {
     avatar: ["#60a5fa", "#1d4ed8"],
   },
   study: {
-    name: "Stats 203 study group",
+    name: "INFO 203 study group",
     kind: "group",
     subtitle: "4 members",
     avatarText: "203",
@@ -59,7 +59,7 @@ export const chatMeta: Record<ChatId, ChatMeta> = {
     avatar: people.priya.avatar,
   },
   team: {
-    name: "Design 213 team",
+    name: "INFO 213 team",
     kind: "group",
     subtitle: "4 members",
     avatarText: "213",
@@ -86,14 +86,14 @@ export type Msg = {
 
 // The four study-group messages from spec §2. The 2:31 correction is added by the store,
 // so the moderator can choose "already in the chat" or "arrives 30 s after opening".
-export const CORRECTION_TEXT = "actually 4:30, sorry! got us room 405 at the library"
+export const CORRECTION_TEXT = "actually 4:30, sorry! got us room 405 at moffitt"
 export const CORRECTION_AT = DAY + 14 * 60 + 31
 
 export const studyBase: Msg[] = [
   {
     id: "h602",
     from: "hana",
-    text: "reminder: wed 4pm library 4th floor, bring A4 questions",
+    text: "reminder: wed 4pm moffitt 4th floor, bring A4 questions",
     at: 18 * 60 + 2,
   },
   {
@@ -113,7 +113,7 @@ export const otherChats: Record<"priya" | "team" | "mom", Msg[]> = {
   ],
   team: [
     { id: "t1", from: "lena", text: "can someone book a room for thursday sync?", at: 10 * 60 + 5 },
-    { id: "t2", from: "ravi", text: "done, Room 205, 6–7", at: 10 * 60 + 31 },
+    { id: "t2", from: "ravi", text: "done, South Hall 205, 6–7", at: 10 * 60 + 31 },
     { id: "t3", from: "me", text: "thanks Ravi", at: 10 * 60 + 40 },
     { id: "t1120", from: "kai", text: "deck draft is in the drive", at: DAY + 11 * 60 + 20 },
   ],
@@ -128,8 +128,8 @@ export const otherChats: Record<"priya" | "team" | "mom", Msg[]> = {
 export const cannedReplies: Record<string, string> = {
   p1: "This matches your calendar: **Dinner with friends**, Tue Nov 10, 7:00–9:00 pm. Nothing to change.",
   p2: "This matches your calendar: **Dinner with friends**, Tue Nov 10, 7:00–9:00 pm. Nothing to change.",
-  t1: "This is about **Design 213 team sync**, Thu Nov 12, 6:00–7:00 pm. It doesn't change the time, so there's nothing to update.",
-  t2: "This matches your calendar: **Design 213 team sync**, Thu Nov 12, 6:00–7:00 pm, Room 205. Nothing to change.",
+  t1: "This is about **INFO 213 team sync**, Thu Nov 12, 6:00–7:00 pm. It doesn't change the time, so there's nothing to update.",
+  t2: "This matches your calendar: **INFO 213 team sync**, Thu Nov 12, 6:00–7:00 pm, South Hall 205. Nothing to change.",
   m3: "No day or time yet, so there's nothing to add. Forward me the plan once you pick a time.",
   d216: "Diego's message ('works for me 👍') has no date, time or place, so there's nothing to change.",
 }
@@ -162,15 +162,15 @@ export const emails: Record<Email["id"], Email> = {
   },
   career: {
     id: "career",
-    from: "University Career Center",
-    address: "careercenter@university.example",
+    from: "UC Berkeley Career Center",
+    address: "careercenter@berkeley.example",
     subject: "Résumé review drop-ins this Friday",
     time: "Today, 9:40 am",
     preview: "Résumé review drop-ins, Fri Nov 13, 1–3 pm, Career Center.",
     body: [
       "Hi Maya,",
       "Résumé review drop-ins, Fri Nov 13, 1–3 pm, Career Center. No appointment needed. Bring a printed or digital copy.",
-      "University Career Center",
+      "UC Berkeley Career Center",
     ],
   },
 }
@@ -197,7 +197,7 @@ export type CalEvent = {
   location?: string
   kind: "event" | "deadline" | "reminder"
   color: Color
-  calendar: "Google Calendar" | "Course site"
+  calendar: "Google Calendar" | "bCourses"
   organizer?: string
   assistant?: { label: string; tone: Tone }
   edited?: boolean
@@ -234,8 +234,8 @@ const h = (hour: number, min = 0) => hour * 60 + min
 const due = (id: string, title: string, date: number, start: number, extra: Partial<CalEvent> = {}) =>
   ev(id, title, date, start, start, "amber", {
     kind: "deadline",
-    calendar: "Course site",
-    log: [{ label: "Added from the course site", by: "other" }],
+    calendar: "bCourses",
+    log: [{ label: "Added from bCourses", by: "other" }],
     ...extra,
   })
 
@@ -243,21 +243,21 @@ export const STUDY_ORIGINAL = {
   date: 11,
   start: h(16),
   end: h(17),
-  location: "Main Library, 4th floor",
+  location: "Moffitt Library, 4th floor",
 }
 
 export const initialEvents: CalEvent[] = [
   // Week of Nov 9
-  ev("gym-9", "Gym", 9, h(7), h(8), "green", { location: "Campus gym" }),
-  ev("info213-9", "Design 213", 9, h(14), h(15, 30), "violet", { location: "Room 210" }),
-  ev("info203-10", "Stats 203", 10, h(11), h(12, 30), "blue", { location: "Room 202" }),
-  ev("block-10", "Study block", 10, h(13, 30), h(17), "slate", { location: "Main Library" }),
+  ev("gym-9", "Gym", 9, h(7), h(8), "green", { location: "RSF" }),
+  ev("info213-9", "INFO 213", 9, h(14), h(15, 30), "violet", { location: "South Hall 210" }),
+  ev("info203-10", "INFO 203", 10, h(11), h(12, 30), "blue", { location: "South Hall 202" }),
+  ev("block-10", "Study block", 10, h(13, 30), h(17), "slate", { location: "Moffitt Library" }),
   ev("dinner-10", "Dinner with friends", 10, h(19), h(21), "rose", { location: "Priya, Jonah" }),
-  ev("gym-11", "Gym", 11, h(7), h(8), "green", { location: "Campus gym" }),
-  due("a4", "Stats 203 Assignment 4", 11, h(9)),
-  ev("gsr-11", "RA shift", 11, h(9, 30), h(12, 30), "slate", { location: "Room 107" }),
-  ev("info213-11", "Design 213", 11, h(14), h(15, 30), "violet", { location: "Room 210" }),
-  ev("study", "Stats 203 study group", 11, h(16), h(17), "teal", {
+  ev("gym-11", "Gym", 11, h(7), h(8), "green", { location: "RSF" }),
+  due("a4", "INFO 203 Assignment 4", 11, h(9)),
+  ev("gsr-11", "GSR shift", 11, h(9, 30), h(12, 30), "slate", { location: "South Hall 107" }),
+  ev("info213-11", "INFO 213", 11, h(14), h(15, 30), "violet", { location: "South Hall 210" }),
+  ev("study", "INFO 203 study group", 11, h(16), h(17), "teal", {
     location: STUDY_ORIGINAL.location,
     organizer: "Hana",
     sources: [
@@ -265,51 +265,51 @@ export const initialEvents: CalEvent[] = [
         kind: "chat",
         who: "Hana",
         time: "Mon 6:02 pm",
-        text: "reminder: wed 4pm library 4th floor, bring A4 questions",
+        text: "reminder: wed 4pm moffitt 4th floor, bring A4 questions",
         chat: "study",
         msgId: "h602",
       },
     ],
     log: [{ label: "Created by Hana · Mon 6:02 pm", detail: "Wed 4:00 pm", by: "other" }],
   }),
-  ev("info203-12", "Stats 203", 12, h(11), h(12, 30), "blue", { location: "Room 202" }),
-  ev("sync-12", "Design 213 team sync", 12, h(18), h(19), "violet", {
-    location: "Room 205",
+  ev("info203-12", "INFO 203", 12, h(11), h(12, 30), "blue", { location: "South Hall 202" }),
+  ev("sync-12", "INFO 213 team sync", 12, h(18), h(19), "violet", {
+    location: "South Hall 205",
     organizer: "Kai",
   }),
-  due("rr", "Stats 203 reading response", 12, h(23, 59)),
-  ev("gym-13", "Gym", 13, h(7), h(8), "green", { location: "Campus gym" }),
-  due("a5", "Stats 203 Assignment 5", 13, h(23, 59), {
+  due("rr", "INFO 203 reading response", 12, h(23, 59)),
+  ev("gym-13", "Gym", 13, h(7), h(8), "green", { location: "RSF" }),
+  due("a5", "INFO 203 Assignment 5", 13, h(23, 59), {
     sources: [
       {
         kind: "bcourses",
-        who: "Course site",
+        who: "bCourses",
         time: "updated Oct 30",
         text: "Assignment 5 · Due Fri Nov 13, 11:59 pm",
       },
     ],
   }),
   ev("dinner-13", "Dinner with Priya", 13, h(19), h(21), "rose"),
-  due("m3", "Design 213 Milestone 3", 15, h(23, 59)),
+  due("m3", "INFO 213 Milestone 3", 15, h(23, 59)),
   // Week of Nov 16
-  ev("gym-16", "Gym", 16, h(7), h(8), "green", { location: "Campus gym" }),
-  ev("info213-16", "Design 213", 16, h(14), h(15, 30), "violet", { location: "Room 210" }),
-  ev("info203-17", "Stats 203", 17, h(11), h(12, 30), "blue", { location: "Room 202" }),
-  ev("gym-18", "Gym", 18, h(7), h(8), "green", { location: "Campus gym" }),
-  ev("gsr-18", "RA shift", 18, h(9, 30), h(12, 30), "slate", { location: "Room 107" }),
-  ev("info213-18", "Design 213", 18, h(14), h(15, 30), "violet", { location: "Room 210" }),
-  ev("info203-19", "Stats 203", 19, h(11), h(12, 30), "blue", { location: "Room 202" }),
-  ev("sync-19", "Design 213 team sync", 19, h(18), h(19), "violet", {
-    location: "Room 205",
+  ev("gym-16", "Gym", 16, h(7), h(8), "green", { location: "RSF" }),
+  ev("info213-16", "INFO 213", 16, h(14), h(15, 30), "violet", { location: "South Hall 210" }),
+  ev("info203-17", "INFO 203", 17, h(11), h(12, 30), "blue", { location: "South Hall 202" }),
+  ev("gym-18", "Gym", 18, h(7), h(8), "green", { location: "RSF" }),
+  ev("gsr-18", "GSR shift", 18, h(9, 30), h(12, 30), "slate", { location: "South Hall 107" }),
+  ev("info213-18", "INFO 213", 18, h(14), h(15, 30), "violet", { location: "South Hall 210" }),
+  ev("info203-19", "INFO 203", 19, h(11), h(12, 30), "blue", { location: "South Hall 202" }),
+  ev("sync-19", "INFO 213 team sync", 19, h(18), h(19), "violet", {
+    location: "South Hall 205",
     organizer: "Kai",
   }),
-  ev("gym-20", "Gym", 20, h(7), h(8), "green", { location: "Campus gym" }),
+  ev("gym-20", "Gym", 20, h(7), h(8), "green", { location: "RSF" }),
 ]
 
 // The screenshot in Priya's chat (Task 2), as data for the source quote.
 export const SCREENSHOT_QUOTE: Quote = {
   kind: "screenshot",
-  who: "Alex Rivera (TA)",
+  who: "Alex Rivera (GSI)",
   time: "Nov 9, 4:12 pm",
   text: "Assignment 5 deadline extended to Mon Nov 16, 9:00 am. Late days still apply after that.",
   chat: "priya",
@@ -318,9 +318,9 @@ export const SCREENSHOT_QUOTE: Quote = {
 
 export const BCOURSES_QUOTE: Quote = {
   kind: "bcourses",
-  who: "Course site",
+  who: "bCourses",
   time: "last updated Oct 30",
-  text: "Stats 203 · Assignment 5 · Due Fri Nov 13, 11:59 pm",
+  text: "INFO 203 · Assignment 5 · Due Fri Nov 13, 11:59 pm",
 }
 
 export const BUILD_VERSION = "Chat v2.0 · Nov 3"
