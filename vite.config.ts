@@ -19,6 +19,7 @@ export default defineConfig({
         assistant: path.resolve(import.meta.dirname, 'assistant/index.html'),
         timeProtector: path.resolve(import.meta.dirname, 'time-protector/index.html'),
         chat: path.resolve(import.meta.dirname, 'chat/index.html'),
+        chatV3: path.resolve(import.meta.dirname, 'chat-v3/index.html'),
       },
     },
   },
