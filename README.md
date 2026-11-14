@@ -7,6 +7,7 @@ Test prototypes for Team 3's Milestone 3 usability sessions (UC Berkeley, Fall 2
 | Personal Assistant ("most likely to work") | `/assistant/` | Ported from Figma Make (Nov 3, 2026) |
 | Personal Time Protector ("most delightful") | `/time-protector/` | Built in code (Nov 3) |
 | Chat Calendar Assistant ("dark horse") | `/chat/` | Built in code (Nov 3) |
+| Chat Calendar Assistant v3 | `/chat-v3/` | Separate copy updated from M3 findings (Nov 13); `/chat/` stays as tested |
 
 ## Run it
 
