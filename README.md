@@ -8,6 +8,7 @@ Test prototypes for Team 3's Milestone 3 usability sessions (UC Berkeley, Fall 2
 | Personal Time Protector ("most delightful") | `/time-protector/` | Built in code (Nov 3) |
 | Chat Calendar Assistant ("dark horse") | `/chat/` | Built in code (Nov 3) |
 | Chat Calendar Assistant v3 | `/chat-v3/` | Separate copy updated from M3 findings (Nov 13); `/chat/` stays as tested |
+| Chat Calendar Assistant v4 | `/chat-v4/` | Final version for Milestone 4 (Nov 16). School-neutral content, plus three changes from the Ethics Impact Assessment: an "Unverified" label on screenshot sources, a sender check before sign-ups, and a one-sentence summary of each change that screen readers announce. The "apply automatically" setting is removed |
 
 ## Run it
 
@@ -41,4 +42,4 @@ npm run preview      # serve dist/ on http://localhost:4173/
 
 ## Status (Nov 13)
 
-We ran four test sessions from Nov 10 to 13 using `/assistant/`, `/time-protector/` and `/chat/`. `/chat-v3/` is the Chat Calendar Assistant updated from what we learned. It is our direction for Milestone 4.
+We ran four test sessions from Nov 10 to 13 using `/assistant/`, `/time-protector/` and `/chat/`. `/chat-v3/` is the Chat Calendar Assistant updated from what we learned. It is our direction for Milestone 4. `/chat-v4/` is the final version shown in the Milestone 4 presentation.
