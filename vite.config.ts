@@ -21,6 +21,7 @@ export default defineConfig({
         chat: path.resolve(import.meta.dirname, 'chat/index.html'),
         chatV3: path.resolve(import.meta.dirname, 'chat-v3/index.html'),
         chatV4: path.resolve(import.meta.dirname, 'chat-v4/index.html'),
+        chatV5: path.resolve(import.meta.dirname, 'chat-v5/index.html'),
       },
     },
   },
