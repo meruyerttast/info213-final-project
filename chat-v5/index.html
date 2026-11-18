@@ -414,6 +414,112 @@ img{display:block}
 @keyframes botwave{0%,60%,100%{transform:rotate(0) translateY(0)}10%{transform:rotate(-14deg) translateY(-1px)}20%{transform:rotate(12deg) translateY(-2px)}30%{transform:rotate(-8deg) translateY(-1px)}40%{transform:rotate(5deg)}}
 @media (prefers-reduced-motion:reduce){.bot{animation:none}}
 @media (prefers-reduced-motion:reduce){.typing i,.notif,.evb.hl{animation:none!important}}
+
+/* ---- interactive controls (v5.1) ---- */
+.tabs>button{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10.5px;color:#111;font-weight:500}
+.tabs>button.on{font-weight:700}
+.tg-tabs>button{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:10.5px;color:rgba(255,255,255,.55)}
+.tg-tabs>button.on{color:#a78bfa}
+.gm-tabs>button{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:12px;color:#c4c7c5;position:relative}
+.gm-tabs>button.on i.pillbg{background:#004a77}
+.gm-reply button{flex:1;height:44px;border-radius:22px;border:1px solid #5f6368;display:flex;align-items:center;justify-content:center;gap:8px;color:#c4c7c5;font-size:15px}
+.ss-act button{display:flex;flex-direction:column;align-items:center;gap:7px;font-size:12.5px;width:76px;text-align:center}
+.react button{font-size:24px;line-height:1}
+.react button:last-child{width:30px;height:30px;border-radius:50%;background:#f0f2f5;font-size:16px;display:grid;place-items:center;color:#54656f}
+.tg-react button{font-size:28px;line-height:1}
+.tg-react button:last-child{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.12);font-size:15px;display:grid;place-items:center;color:#fff}
+.cal-top .ics button,.ch-ic button{color:inherit;display:grid;place-items:center}
+.cal-bot button{color:var(--ios-red)}
+.chip{border:0}
+.sin{flex:1;min-width:0;border:0;outline:0;background:transparent;font:inherit;font-size:16px;color:#111;height:100%}
+.sin::placeholder{color:#8696a0}
+.sin.dk{color:#fff}.sin.dk::placeholder{color:rgba(255,255,255,.5)}
+.gm-search .sin.dk::placeholder{color:#c4c7c5}
+.sin::-webkit-search-cancel-button{-webkit-appearance:none}
+.composer .in{justify-content:space-between;gap:6px}
+.cin{flex:1;min-width:0;border:0;outline:0;background:transparent;font:inherit;font-size:16px;color:#111}
+.cin.dk{color:#fff}.cin.dk::placeholder{color:rgba(255,255,255,.45)}
+.tg-comp .in{padding:0 14px}
+.csend{display:none;width:36px;height:36px;border-radius:50%;background:var(--wa);color:#fff;place-items:center;flex:none}
+.csend.tg{background:#8b5cf6}
+.composer.typing .csend{display:grid}
+.composer.typing .ccam,.composer.typing .cmic{display:none}
+.emostrip{flex:none;display:flex;justify-content:space-around;padding:8px 10px;background:var(--bar);border-top:1px solid #e3e3e3;font-size:26px}
+.replybar{flex:none;display:flex;gap:10px;align-items:center;padding:8px 12px 4px;background:var(--bar);border-top:1px solid #e3e3e3}
+.replybar div{flex:1;min-width:0;background:rgba(11,20,26,.05);border-left:4px solid #06cf9c;border-radius:7px;padding:5px 8px;font-size:13.5px;color:#3b4a54;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.replybar b{display:block;color:#06cf9c;font-size:13px}
+.replybar button{color:var(--mute);font-size:16px}
+.replybar.dk{background:#0d0b14;border:0}.replybar.dk div{background:rgba(255,255,255,.08);color:#ddd;border-color:#a78bfa}.replybar.dk b{color:#c4b5fd}
+.pinbar{flex:none;display:flex;align-items:center;gap:10px;padding:7px 14px;background:#fff;border-bottom:1px solid var(--line);font-size:14px;color:#3b4a54}
+.pinbar div{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pinbar b{display:block;font-size:12.5px;color:#008069}
+.pinbar.dk{background:rgba(38,34,47,.95);color:#ddd;border:0;border-radius:16px}.pinbar.dk b{color:#c4b5fd}
+.msgrow.hasre{margin-bottom:12px}
+.react-b{position:absolute;bottom:-14px;left:10px;background:#fff;border-radius:12px;padding:1px 5px;font-size:14px;box-shadow:0 1px 3px rgba(0,0,0,.18)}
+.me .react-b{left:auto;right:10px}
+.tbub{position:relative}.react-b.dk{background:#26222f;box-shadow:0 0 0 2px #0d0b14}
+.tbub.tsel{outline:2px solid #a78bfa}
+.photo{display:block;width:220px;max-width:100%;border-radius:12px;margin-bottom:4px}
+.tg-selbar{flex:none;display:flex;justify-content:space-between;align-items:center;padding:14px 20px 34px;background:#0d0b14;font-size:16px;color:#fff}
+.gm-lab{background:#3c4043;border-radius:4px;padding:0 5px;font-size:11.5px;color:#c4c7c5;margin-right:6px}
+.setlist{margin:6px 16px;background:#f7f8fa;border-radius:12px;overflow:hidden}
+.setlist>button,.setlist>div{width:100%;display:flex;justify-content:space-between;align-items:center;padding:13px 16px;font-size:16px;border-top:1px solid var(--line);text-align:left;color:#111}
+.setlist>:first-child{border-top:0}
+.setlist span{color:#8e8e93}
+.setlist .kvrow span:last-child{max-width:60%;text-align:right;font-size:15px}
+.setlist.dk{background:rgba(255,255,255,.07)}.setlist.dk>button,.setlist.dk>div{color:#fff;border-color:rgba(255,255,255,.08)}
+.asheet{position:absolute;left:8px;right:8px;bottom:30px;z-index:30;display:flex;flex-direction:column;gap:8px}
+.agroup{background:rgba(250,250,250,.97);border-radius:14px;overflow:hidden}
+.atitle{background:rgba(250,250,250,.97);border-radius:14px 14px 0 0;padding:14px 18px;text-align:center;font-size:13px;color:#8e8e93;margin-bottom:-8px;border-bottom:1px solid #e5e5ea}
+.agroup button{width:100%;padding:17px;text-align:center;font-size:19px;color:#007aff;border-top:1px solid #e5e5ea}
+.agroup button:first-child{border-top:0}
+.agroup button.red{color:#ff3b30}
+.anote{padding:18px;text-align:center;font-size:15px;color:#3c3c43;line-height:1.45}.anote b{display:block;font-size:17px;color:#111;margin-bottom:4px}
+.acancel{background:#fff;border-radius:14px;padding:17px;text-align:center;font-size:19px;font-weight:600;color:#007aff}
+.asheet.dk .agroup,.asheet.dk .atitle{background:rgba(44,44,46,.97);border-color:#3a3a3c}.asheet.dk .agroup button{border-color:#3a3a3c;color:#a78bfa}.asheet.dk .agroup button.red{color:#ff6b6b}.asheet.dk .acancel{background:#2c2c2e;color:#a78bfa}.asheet.dk .anote{color:#ddd}.asheet.dk .anote b{color:#fff}
+.sheet{z-index:28}.scrim{z-index:27}
+.sheet.dk{background:#1c1c1e;color:#fff}.sheet.dk .sh-top button{color:#a8c7fa}.sheet.dk .pick .pb{border-color:#2c2c2e}.sheet.dk .pick .pb small{color:#a8abaf}
+.fbody{padding:6px 16px 30px;display:flex;flex-direction:column;gap:10px;overflow-y:auto}
+.frow{display:flex;flex-direction:column;gap:5px;font-size:13px;color:var(--mute)}
+.frow input,.frow select,.frow textarea{font:inherit;font-size:16px;color:#111;background:#f2f2f7;border:0;border-radius:10px;padding:11px 12px;outline:0;width:100%}
+.frow textarea{resize:none;min-height:150px}
+.sheet.dk .frow input,.sheet.dk .frow select,.sheet.dk .frow textarea{background:#2c2c2e;color:#fff}
+.callscr{position:absolute;inset:0;z-index:40;background:linear-gradient(#3b4a54,#111b21);color:#fff;display:flex;flex-direction:column;justify-content:space-between}
+.callscr .av{display:block;border-radius:50%;overflow:hidden;background:#dfe5e7}.callscr .av img{width:100%;height:100%;object-fit:cover}
+.callbtns{display:flex;justify-content:space-around;padding:0 30px 70px}
+.callbtns button{width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.18);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.callbtns button small{font-size:11px}.callbtns button.on{background:#fff;color:#111}
+.callbtns .end{background:#ff3b30}.callbtns .end svg{transform:rotate(135deg)}
+.camscr{position:absolute;inset:0;z-index:40;background:#000;display:flex;flex-direction:column}
+.camx{position:absolute;top:56px;left:18px;color:#fff;font-size:22px;z-index:2}
+.viewf{flex:1;margin:100px 0 0;background:linear-gradient(160deg,#4b5563,#1f2937);display:grid;place-items:center;font-size:56px;opacity:.9}
+.flash{position:absolute;inset:0;background:#fff;animation:fl .35s ease-out forwards}@keyframes fl{to{opacity:0}}
+.cambar{height:170px;display:flex;align-items:center;justify-content:space-around}
+.shutter{width:74px;height:74px;border-radius:50%;background:#fff;box-shadow:0 0 0 5px #000,0 0 0 8px #fff}
+.infoscr{background:#f7f8fa;overflow-y:auto}.infoscr.dk{background:#0d0b14;color:#fff}
+.infoscr .back{display:flex;align-items:center;gap:4px;color:var(--wa-dark);font-size:17px;padding:4px 8px}
+.infoscr.dk .back{color:#a78bfa}
+.infobtns{display:flex;gap:10px;justify-content:center;margin-top:16px}
+.infobtns button{width:96px;height:62px;border-radius:12px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:13px;color:var(--wa-dark);box-shadow:0 1px 2px rgba(0,0,0,.06)}
+.infoscr.dk .infobtns button{background:rgba(255,255,255,.08);color:#a78bfa}
+.drawer{position:absolute;top:0;bottom:0;left:0;width:300px;z-index:30;background:#1f1f1f;border-radius:0 16px 16px 0;overflow-y:auto}
+.drawer button{width:calc(100% - 12px);display:flex;justify-content:space-between;padding:14px 24px;font-size:15.5px;color:#e3e3e3;border-radius:0 24px 24px 0}
+.drawer button.on{background:#004a77;color:#c2e7ff;font-weight:600}
+.mgrid{display:grid;grid-template-columns:repeat(7,1fr);padding:0 8px;text-align:center;row-gap:6px}
+.mgrid .l{font-size:12px;color:#8e8e93;padding-bottom:6px}
+.mgrid button{height:52px;display:flex;flex-direction:column;align-items:center;gap:3px;border-top:1px solid #e5e5ea;padding-top:6px}
+.mgrid button b{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:18px;font-weight:500}
+.mgrid button.today b{color:var(--ios-red);font-weight:700}.mgrid button.on b{background:#000;color:#fff}.mgrid button.on.today b{background:var(--ios-red);color:#fff}
+.mgrid button i{width:6px;height:6px;border-radius:50%;background:#c7c7cc}
+.ldate{font-size:13px;font-weight:600;color:#3c3c43;padding:14px 16px 6px;text-transform:uppercase;letter-spacing:.3px}
+.lev{width:calc(100% - 24px);margin:0 12px 6px;display:flex;gap:12px;align-items:center;background:#fff;border-radius:12px;padding:11px 14px;text-align:left}
+.lev i{width:4px;align-self:stretch;border-radius:2px}
+.lev b{display:block;font-size:16px;font-weight:600}.lev small{display:block;font-size:13.5px;color:#8e8e93;margin-top:2px}
+.ext .cap{width:100%;font:inherit;outline:0;color:#111;margin-top:12px}
+.widget{border:0}
+.ovl{z-index:35}
+.tgre{display:flex;width:max-content;gap:3px;align-items:center;background:rgba(167,139,250,.25);border-radius:12px;padding:1px 8px;font-size:14px;margin-top:5px}
+.setlist .kvrow span:first-child{color:#111}.setlist.dk .kvrow span:first-child{color:#fff}
 </style>
 </head>
 <body>
@@ -610,7 +716,7 @@ const INITIAL=[
  ev("sync-19","Design 213 team sync",19,h(18),h(19),"violet",{loc:"Room 205"}),
  ev("gym-20","Gym",20,h(7),h(8),"green",{loc:"Campus gym"})
 ];
-const WD=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],WDL=["Sunday","Monday","Tuesday","Wednesday","Thursday","Jarvis","Saturday"];
+const WD=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],WDL=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 const wdi=d=>(d-8+700)%7; /* Nov 8, 2026 is a Sunday */
 function fmtT(m){let H=Math.floor(m/60),M=m%60;const ap=H>=12?"pm":"am";H=H%12||12;return M?`${H}:${String(M).padStart(2,"0")} ${ap}`:`${H}:00 ${ap}`}
 
@@ -652,22 +758,84 @@ const INBOX=[
  {id:"bk",from:"Bay Area Transit",subject:"Your monthly pass renews Nov 15",preview:"Your student pass will renew automatically. No action needed.",t:"Nov 9",color:"#c2185b"}
 ];
 
+/* ================= more chats (all fictional) ================= */
+const PEOPLE={sam:["Sam","#c2410c"],hana:["Hana","#be185d"],diego:["Diego","#15803d"],priya:["Priya","#be185d"],kai:["Kai","#7c3aed"],lena:["Lena","#0369a1"],ravi:["Ravi","#b45309"],zhuldyz:["Zhuldyz","#0f766e"],aidos:["Aidos","#15803d"],alex:["Alex","#4338ca"],jonah:["Jonah","#1d4ed8"]};
+const CHATS0={
+ study:{name:"Stats 203 study group",sub:"Diego, Hana, Sam, You",av:"study",group:true,msgs:study},
+ priya:{name:"Priya",sub:"online",av:"priya",msgs:priyaChat},
+ design:{name:"Design 213 team",sub:"Kai, Lena, Ravi, You",av:"design",group:true,msgs:[
+  {id:"ds1",from:"lena",text:"can someone book a room for thursday sync?",t:"10:05 am",day:"Today"},
+  {id:"ds2",from:"ravi",text:"done, Room 205, 6–7",t:"10:31 am"},
+  {id:"ds3",from:"me",text:"thanks Ravi",t:"10:40 am"},
+  {id:"ds4",from:"kai",text:"deck draft is in the drive",t:"11:20 am"}]},
+ climb:{name:"Climbing crew 🧗",sub:"Lena, Jonah, Aidos, You",av:"climb",group:true,msgs:[
+  {id:"cl1",from:"jonah",text:"anyone up for bouldering this week?",t:"10:31 am",day:"Today"},
+  {id:"cl2",from:"lena",text:"Thursday 7pm at the gym? bring chalk",t:"10:48 am"}]},
+ mom:{name:"Mom",sub:"last seen today at 10:12 am",av:"mom",msgs:[
+  {id:"m1",from:"them",text:"How was your week?",t:"7:02 pm",day:"Sunday"},
+  {id:"m2",from:"me",text:"busy but good! midterms soon",t:"7:30 pm"},
+  {id:"m3",from:"them",text:"call this weekend?",t:"10:10 am",day:"Today"}]},
+ jonah:{name:"Jonah",sub:"online",av:"jonah",msgs:[
+  {id:"j1",from:"me",text:"dinner still at 7?",t:"9:40 am",day:"Today"},
+  {id:"j2",from:"them",text:"I'll grab the table, see you at 7 🍜",t:"9:52 am"}]},
+ house:{name:"2420 Durant housemates",sub:"Zhuldyz, Aidos, You",av:"house",group:true,msgs:[
+  {id:"h1",from:"aidos",text:"trash day tomorrow 🗑️",t:"8:50 am",day:"Today"},
+  {id:"h2",from:"zhuldyz",text:"who took my oat milk 😭",t:"9:31 am"}]},
+ dana:{name:"Dana Kim",sub:"last seen yesterday",av:"dana",msgs:[
+  {id:"dk1",from:"them",text:"🎤 Voice message (0:42)",t:"8:14 pm",day:"Yesterday"}]},
+ lena:{name:"Lena",sub:"last seen yesterday",av:"lena",msgs:[
+  {id:"le1",from:"them",text:"📷 Photo",t:"6:20 pm",day:"Yesterday"},
+  {id:"le2",from:"me",text:"haha love it",t:"6:24 pm"}]},
+ aidos:{name:"Aidos",sub:"last seen yesterday",av:"aidos",msgs:[
+  {id:"ai1",from:"them",text:"thanks for helping with the couch!",t:"5:12 pm",day:"Yesterday"}]},
+ grandma:{name:"Grandma",sub:"last seen Sunday",av:"grandma",msgs:[
+  {id:"g1",from:"me",text:"📷 Photo",t:"11:02 am",day:"Sunday"},
+  {id:"g2",from:"them",text:"❤️ so beautiful",t:"11:40 am"}]},
+ market:{name:"Berkeley Free & For Sale",sub:"312 members",av:"market",group:true,msgs:[
+  {id:"mk1",from:"alex",text:"desk still available, $40",t:"3:12 pm",day:"Sunday"}]}
+};
+const WA_ORDER=["pip","study","priya","design","climb","mom","jonah","house","dana","lena","aidos","grandma","market"];
+const WA_TIMES={study:"2:31",priya:"1:52",design:"11:20",climb:"10:48",mom:"10:10",jonah:"9:52",house:"9:31",dana:"Yesterday",lena:"Yesterday",aidos:"Yesterday",grandma:"Sunday",market:"Sunday"};
+const TGCHATS0={
+ kazsa:{name:"KazSA Berkeley",sub:"48 members",av:"kazsa",group:true,msgs:TGMSGS},
+ aigerim:{name:"Aigerim",sub:"last seen recently",av:"aigerim",msgs:[{id:"ag1",from:"me",text:"I'll be there! what should I bring?",t:"1:48 PM",day:"Today"},{id:"ag2",from:"them",text:"see you saturday!! 🦃",t:"1:49 PM"}]},
+ plans:{name:"Plans",sub:"1 member",avl:["P","linear-gradient(160deg,#fbbf24,#f97316)"],msgs:[{id:"pl1",from:"me",text:"🎤 Voice message (1:21)",t:"12:33 PM",day:"Today"}]},
+ cabo:{name:"Cabo winter break 🌴",sub:"6 members",av:"maui",group:true,msgs:[{id:"cb1",from:"aidos",text:"so are we doing Dec 19 or 20?",t:"Mon",day:"Monday"},{id:"cb2",from:"dana",text:"flights are cheaper on the 20th",t:"Mon"}]},
+ dana:{name:"Dana",sub:"last seen recently",av:"dana",msgs:[{id:"dn1",from:"me",text:"did you see the cabo prices",t:"Mon",day:"Monday"},{id:"dn2",from:"them",text:"lol yes",t:"Mon"}]},
+ housing:{name:"Berkeley Housing Exchange",sub:"2,140 subscribers",av:"city",msgs:[{id:"hx1",from:"them",text:"Room in 3BR near campus, $1,350, from Jan 1",t:"Mon",day:"Monday"}]},
+ zhuldyz:{name:"Zhuldyz",sub:"last seen recently",av:"zhuldyz",msgs:[{id:"zh1",from:"them",text:"🐱 Sticker",t:"Sun",day:"Sunday"}]},
+ mama:{name:"Mama",sub:"last seen recently",av:"mom",msgs:[{id:"mm1",from:"them",text:"Позвони когда сможешь ❤️",t:"Sun",day:"Sunday"}]},
+ nurlan:{name:"Nurlan",sub:"last seen recently",av:"nurlan",msgs:[{id:"nu1",from:"them",text:"ok see you there",t:"Sat",day:"Saturday"}]}
+};
+const TG_ORDER=["kazsa","aigerim","plans","cabo","dana","housing","zhuldyz","mama","nurlan"];
+const TG_PREV_T={kazsa:"2:03 PM",aigerim:"1:49 PM",plans:"12:33 PM",cabo:"Mon",dana:"Mon",housing:"Mon",zhuldyz:"Sun",mama:"Sun",nurlan:"Sat"};
+const EMAIL_PLAN={rr:"rr",cs:"cs"};
+const FOLDERS=[["inbox","Inbox"],["starred","Starred"],["snoozed","Snoozed"],["sent","Sent"],["archive","All mail"],["spam","Spam"],["trash","Trash"]];
+const LABELS=["Classes","Career","Personal"];
+const EMOJI=["😀","😂","❤️","👍","🙏","🎉","🔥","😮"];
+const clone=o=>JSON.parse(JSON.stringify(o));
+
 /* ================= state ================= */
 let S;
 function fresh(){return {app:"whatsapp",back:null,
- wa:{view:"chats",sel:null,selected:[],menu:null,menuTop:300,picker:false,pickTo:null,list:false,listPick:null},
- tg:{view:"chats",menu:false,menuTop:300},
- gm:{view:"inbox",sel:null,menu:false},
- cal:{day:10,hl:null,detail:null},
+ wa:{view:"chats",tab:"chats",q:"",filter:"all",sel:null,selected:[],menu:null,menuTop:300,picker:false,pickTo:null,list:false,listPick:null},
+ tg:{view:"chats",tab:"chats",q:"",menu:false,menuTop:300,sel:null,selected:[]},
+ gm:{view:"inbox",folder:"inbox",label:null,q:"",sel:[],menu:false,tab:"mail"},
+ cal:{day:10,hl:null,detail:null,mode:"day",q:""},
+ chats:clone(CHATS0), tgchats:clone(TGCHATS0), mail:clone(INBOX).map(e=>Object.assign(e,{folder:"inbox",star:false,labels:[],read:!e.un})), sent:[],
+ star:{}, react:{}, pins:{}, reply:null, emoji:false, hidden:{}, mutedChats:{},
+ sheet:null, over:null,
  share:null, pip:[], typing:false, notif:null, toast:null,
- unread:{pip:0,study:3,priya:1}, tgRead:false, gmRead:{},
- events:INITIAL.map(e=>Object.assign({},e)), undo:{}, t1Var:null, task:null, clock:h(14,33), keepScroll:false}}
+ unread:{pip:0,study:3,priya:1,climb:2}, tgUnread:{kazsa:4,cabo:12,housing:38}, gmRead:{},
+ events:INITIAL.map(e=>Object.assign({},e)), undo:{}, t1Var:null, task:null, clock:h(14,33), keepScroll:false, seq:0}}
 const phone=document.getElementById("phone");
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const md=s=>esc(s).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>");
+const md=s=>esc(s).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>").replace(/\n/g,"<br>");
 function clk(){let H=Math.floor(S.clock/60),M=S.clock%60;return `${H%12||12}:${String(M).padStart(2,"0")}`}
 function tLabel(){let H=Math.floor(S.clock/60),M=S.clock%60;return `${H%12||12}:${String(M).padStart(2,"0")} ${H>=12?"pm":"am"}`}
+function tLabelU(){return tLabel().toUpperCase().replace("AM","AM").replace("PM","PM")}
 function tick(n){S.clock+=n||1}
+function uid(p){S.seq++;return (p||"x")+S.seq}
 function P(kind,data){S.pip.push(Object.assign({kind},data||{}))}
 function seedPip(){S.pip=[];P("date",{text:"Today"});P("brief");P("welcome")}
 function evById(id){return S.events.find(e=>e.id===id)}
@@ -682,15 +850,17 @@ function homeBar(dark){return `<button class="homebar ${dark?"dk":""}" type="but
 /* ================= HOME ================= */
 function appIcon(id,label,inner,bg,badge,cls){return `<button class="app" type="button" data-a="${id?"open:"+id:"noapp"}">${badge?`<span class="badge">${badge}</span>`:""}<span class="ic ${cls||""}" style="background:${bg}">${inner}</span>${label}</button>`}
 function homeView(){
- const waBadge=S.unread.pip+S.unread.study+S.unread.priya+2;
- const today=S.events.filter(e=>e.date===10&&e.kind==="event").sort((a,b)=>a.start-b.start).filter(e=>e.end>S.clock).slice(0,2);
+ const waBadge=Object.values(S.unread).filter(Boolean).length;
+ const tgBadge=Object.values(S.tgUnread).reduce((a,b)=>a+(b||0),0);
+ const gmBadge=S.mail.filter(e=>e.folder==="inbox"&&!e.read).length;
+ const today=S.events.filter(e=>e.date===10&&e.kind==="event"&&!S.hidden[e.cal]).sort((a,b)=>a.start-b.start).filter(e=>e.end>S.clock).slice(0,2);
  const g=(c)=>`<svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#fff" stroke-width="1.8">${c}</svg>`;
  return `<div class="view home">${statusBar(true)}
-  <div class="widget" style="margin-top:62px"><span class="wd">Tuesday 10</span>${today.length?today.map(e=>`<span class="we"><i style="background:${COL[e.color]}"></i><span><b style="font-weight:600">${esc(e.title)}</b><small>${fmtT(e.start)} – ${fmtT(e.end)}</small></span></span>`).join(""):'<span class="we">No more events today</span>'}</div>
+  <button class="widget" type="button" data-a="open:calendar" style="margin-top:62px;text-align:left;color:#fff;width:auto"><span class="wd">Tuesday 10</span>${today.length?today.map(e=>`<span class="we"><i style="background:${COL[e.color]}"></i><span><b style="font-weight:600">${esc(e.title)}</b><small>${fmtT(e.start)} – ${fmtT(e.end)}</small></span></span>`).join(""):'<span class="we">No more events today</span>'}</button>
   <div class="hs-grid" style="padding-top:22px">
    ${appIcon("whatsapp","WhatsApp",`<svg viewBox="0 0 24 24" width="36" height="36" fill="#fff"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/></svg>`,"linear-gradient(160deg,#5ee27a,#1daa61)",waBadge)}
-   ${appIcon("telegram","Telegram",`<svg viewBox="0 0 24 24" width="36" height="36" fill="#fff"><path d="M4 5h11a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H9l-4 3v-3.2A3 3 0 0 1 2 13V8a3 3 0 0 1 2-3z" opacity=".95"/><path d="M19 9.5a3 3 0 0 1 3 3V16a3 3 0 0 1-2 2.8V21l-3-2.5h-4.5a3 3 0 0 1-2.2-1h5.7a4 4 0 0 0 3-3.5z" opacity=".7"/></svg>`,"linear-gradient(160deg,#3db4f2,#1f8ad2)",S.tgRead?"":"4")}
-   ${appIcon("gmail","Gmail",`<svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#d93025" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>`,"#fff",Object.keys(S.gmRead).length>=2?"7":"9")}
+   ${appIcon("telegram","Telegram",`<svg viewBox="0 0 24 24" width="36" height="36" fill="#fff"><path d="M4 5h11a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H9l-4 3v-3.2A3 3 0 0 1 2 13V8a3 3 0 0 1 2-3z" opacity=".95"/><path d="M19 9.5a3 3 0 0 1 3 3V16a3 3 0 0 1-2 2.8V21l-3-2.5h-4.5a3 3 0 0 1-2.2-1h5.7a4 4 0 0 0 3-3.5z" opacity=".7"/></svg>`,"linear-gradient(160deg,#3db4f2,#1f8ad2)",tgBadge)}
+   ${appIcon("gmail","Gmail",`<svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#d93025" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>`,"#fff",gmBadge)}
    ${appIcon("calendar","Calendar",`<small>TUESDAY</small><b>10</b>`,"#fff",0,"cal-ic")}
    ${appIcon(null,"Photos",g('<circle cx="12" cy="8" r="3.2" fill="#fbbf24" stroke="none"/><circle cx="8" cy="13" r="3.2" fill="#ef4444" stroke="none" opacity=".85"/><circle cx="16" cy="13" r="3.2" fill="#3b82f6" stroke="none" opacity=".85"/><circle cx="12" cy="16" r="3.2" fill="#22c55e" stroke="none" opacity=".85"/>'),"#fff")}
    ${appIcon(null,"Camera",g('<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/>'),"linear-gradient(#9ca3af,#4b5563)")}
@@ -712,32 +882,55 @@ function homeView(){
 }
 
 /* ================= WHATSAPP ================= */
+function waLast(id){
+ if(id==="pip"){const l=S.pip.filter(m=>m.kind!=="date").slice(-1)[0];return {pv:l?previewOf(l):"",t:l&&l.t?l.t.replace(" pm","").replace(" am",""):"8:00"}}
+ const c=S.chats[id];const l=c.msgs.slice(-1)[0];if(!l)return{pv:"",t:WA_TIMES[id]||""};
+ const who=l.from==="me"?"You: ":(c.group&&PEOPLE[l.from]?PEOPLE[l.from][0]+": ":"");
+ return {pv:who+(l.del?"This message was deleted":(l.img?"📷 ":"")+l.text),t:l.fresh?l.t.replace(" pm","").replace(" am",""):(WA_TIMES[id]||l.t)};
+}
+function waRowsHTML(){
+ const q=S.wa.q.trim().toLowerCase();
+ let ids=WA_ORDER.filter(id=>{
+  const name=id==="pip"?"Jarvis":S.chats[id].name;
+  if(q&&!name.toLowerCase().includes(q))return false;
+  if(S.wa.filter==="unread")return !!S.unread[id];
+  if(S.wa.filter==="fav")return ["pip","priya","mom","jonah"].includes(id);
+  if(S.wa.filter==="groups")return id!=="pip"&&S.chats[id].group;
+  return true});
+ if(!ids.length)return `<div style="text-align:center;color:var(--mute);padding:40px 20px;font-size:15px">No chats found</div>`;
+ return ids.map(id=>{const L=waLast(id);const u=S.unread[id];const muted=id==="climb"||S.mutedChats[id];
+  const name=id==="pip"?"Jarvis":S.chats[id].name;
+  return `<button class="row" type="button" data-a="wa:${id}">${avImg(id==="pip"?"pip":S.chats[id].av)}<span class="rb"><span class="rl"><b>${esc(name)}${id==="pip"?' <span class="bot" aria-hidden="true">🤖</span>':""}</b><time class="${u&&!muted?"u":""}">${L.t}</time></span><span class="pv"><span>${md(L.pv)}</span>${u?`<span class="ubadge" ${muted?'style="background:#b0bac1"':""}>${u}</span>`:(id==="pip"?`<span class="pin">${I.pin}</span>`:"")}</span></span></button>`}).join("");
+}
+function waTabs(){
+ const total=Object.values(S.unread).filter(Boolean).length;const t=S.wa.tab;
+ const b=(k,ic,l,extra)=>`<button type="button" class="${t===k?"on":""}" data-a="watab:${k}">${extra||ic}${l}</button>`;
+ return `<div class="tabs">${b("updates",I.tUpd,"Updates")}${b("calls",I.tCall,"Calls")}${b("communities",I.tCom,"Communities")}${b("chats",I.tChat,"Chats",`<span class="dot">${I.tChat}${total?`<i>${total}</i>`:""}</span>`)}${b("settings",I.tSet,"Settings")}</div>`;
+}
 function waChats(){
- const lastP=S.pip.filter(m=>m.kind!=="date").slice(-1)[0];
- const rows=[
-  {id:"pip",name:"Jarvis",pv:lastP?previewOf(lastP):"",t:lastP&&lastP.t?lastP.t.replace(" pm","").replace(" am",""):"8:00",av:avImg("pip"),pin:true,u:S.unread.pip},
-  {id:"study",name:"Stats 203 study group",pv:"Sam: actually 4:30, sorry! got us room 405 at the library",t:"2:31",av:avImg("study"),u:S.unread.study},
-  {id:"priya",name:"Priya",pv:"📷 did you see this??",t:"1:52",av:avImg("priya"),u:S.unread.priya},
-  {name:"Design 213 team",pv:"Kai: deck draft is in the drive",t:"11:20",av:avImg("design")},
-  {name:"Climbing crew 🧗",pv:"Lena: Thursday 7pm at the gym? bring chalk",t:"10:48",av:avImg("climb"),u:2,muted:true},
-  {name:"Mom",pv:"call this weekend?",t:"10:10",av:avImg("mom")},
-  {name:"Jonah",pv:"I'll grab the table, see you at 7 🍜",t:"9:52",av:avImg("jonah")},
-  {name:"2420 Durant housemates",pv:"Zhuldyz: who took my oat milk 😭",t:"9:31",av:avImg("house")},
-  {name:"Dana Kim",pv:"🎤 Voice message (0:42)",t:"Yesterday",av:avImg("dana")},
-  {name:"Lena",pv:"Photo",t:"Yesterday",av:avImg("lena")},
-  {name:"Aidos",pv:"thanks for helping with the couch!",t:"Yesterday",av:avImg("aidos")},
-  {name:"Grandma",pv:"❤️ Reacted to your photo",t:"Sunday",av:avImg("grandma")},
-  {name:"Berkeley Free & For Sale",pv:"Alex: desk still available, $40",t:"Sunday",av:avImg("market")}
- ];
- const total=rows.reduce((n,r)=>n+(r.u?1:0),0);
+ if(S.wa.tab!=="chats")return waTabScreen();
+ const total=Object.values(S.unread).filter(Boolean).length;const f=S.wa.filter;
+ const chip=(k,l)=>`<button type="button" class="chip ${f===k?"on":""}" data-a="wafilter:${k}">${l}</button>`;
  return `<div class="view">${statusBar(false)}
- <div class="cl-top"><span class="circbtn">${I.dots}</span><span style="display:flex;gap:12px"><span class="circbtn">${I.cam}</span><span class="circbtn g">${I.plus}</span></span></div>
+ <div class="cl-top"><button class="circbtn" type="button" data-a="wadots" aria-label="More">${I.dots}</button><span style="display:flex;gap:12px"><button class="circbtn" type="button" data-a="camera:wa" aria-label="Camera">${I.cam}</button><button class="circbtn g" type="button" data-a="wanew" aria-label="New chat">${I.plus}</button></span></div>
  <div class="cl-title">Chats</div>
- <div class="search">${I.search}Search</div>
- <div class="chips"><span class="chip on">All</span><span class="chip">Unread ${total}</span><span class="chip">Favorites</span><span class="chip">Groups</span></div>
- <div class="rows"><div class="archived">${I.arch}<span>Archived</span></div>${rows.map(r=>`<button class="row" type="button" data-a="${r.id?"wa:"+r.id:"noop"}">${r.av}<span class="rb"><span class="rl"><b>${esc(r.name)}${r.id==="pip"?' <span class="bot" aria-hidden="true">🤖</span>':""}</b><time class="${r.u&&!r.muted?"u":""}">${r.t}</time></span><span class="pv"><span>${md(r.pv)}</span>${r.u?`<span class="ubadge" ${r.muted?'style="background:#b0bac1"':""}>${r.u}</span>`:(r.pin?`<span class="pin">${I.pin}</span>`:"")}</span></span></button>`).join("")}</div>
- <div class="tabs"><div>${I.tUpd}Updates</div><div>${I.tCall}Calls</div><div>${I.tCom}Communities</div><div class="on"><span class="dot">${I.tChat}${total?`<i>${total}</i>`:""}</span>Chats</div><div>${I.tSet}Settings</div></div>
+ <label class="search">${I.search}<input class="sin" id="waq" type="search" placeholder="Search" value="${esc(S.wa.q)}" autocomplete="off"></label>
+ <div class="chips">${chip("all","All")}${chip("unread","Unread "+(total||""))}${chip("fav","Favorites")}${chip("groups","Groups")}</div>
+ <div class="rows"><button class="archived" type="button" data-a="screen:archived">${I.arch}<span>Archived</span></button><div id="warows">${waRowsHTML()}</div></div>
+ ${waTabs()}
  ${homeBar(false)}</div>`;
+}
+function waTabScreen(){
+ const t=S.wa.tab;let body="",title={updates:"Updates",calls:"Calls",communities:"Communities",settings:"Settings"}[t];
+ if(t==="updates")body=`<div class="sec" style="padding-top:4px">Status</div>
+  <div class="row" style="cursor:default">${letterAv("M","#e8710a")}<span class="rb"><span class="rl"><b>My status</b></span><span class="pv"><span>Add to my status</span></span></span></div>
+  <div class="sec">Recent updates</div>
+  ${[["jonah","Jonah","24 minutes ago"],["lena","Lena","Today, 9:12 am"],["priya","Priya","Today, 8:40 am"]].map(r=>`<button class="row" type="button" data-a="status:${r[0]}"><span class="av" style="box-shadow:0 0 0 2.5px #1daa61;border:2px solid #fff"><img src="${AV[r[0]]}" alt=""></span><span class="rb"><span class="rl"><b>${r[1]}</b></span><span class="pv"><span>${r[2]}</span></span></span></button>`).join("")}`;
+ if(t==="calls")body=`<div class="sec" style="padding-top:4px">Recent</div>${[["mom","Mom","Incoming · Yesterday"],["jonah","Jonah","Outgoing · Sunday"],["priya","Priya","Missed · Saturday"]].map(r=>`<div class="row" style="cursor:default">${avImg(S.chats[r[0]].av)}<span class="rb"><span class="rl"><b style="${r[2].startsWith("Missed")?"color:#e5484d":""}">${r[1]}</b><button type="button" data-a="call:${r[0]}" aria-label="Call ${r[1]}" style="color:#1daa61">${I.phone}</button></span><span class="pv"><span>${r[2]}</span></span></span></div>`).join("")}`;
+ if(t==="communities")body=`<div style="text-align:center;padding:60px 30px;color:#3b4a54"><div style="font-size:48px">👥</div><b style="display:block;font-size:20px;margin:12px 0 6px">Stay connected with a community</b><span style="font-size:15px;color:var(--mute);line-height:1.45">Communities bring members together in topic-based groups.</span></div>`;
+ if(t==="settings")body=`<div class="row" style="cursor:default">${letterAv("M","#e8710a")}<span class="rb"><span class="rl"><b>Maya Chen</b></span><span class="pv"><span>Hey there! I am using WhatsApp.</span></span></span></div>
+  <div class="setlist">${["Account","Privacy","Chats","Notifications","Storage and data","Help"].map(l=>`<button type="button" data-a="set:${l}">${l}<span>›</span></button>`).join("")}</div>`;
+ return `<div class="view">${statusBar(false)}<div class="cl-title" style="padding-top:60px">${title}</div><div class="rows">${body}</div>${waTabs()}${homeBar(false)}</div>`;
 }
 function previewOf(m){
  switch(m.kind){
@@ -751,29 +944,39 @@ function previewOf(m){
  }
  return"";
 }
-function waHeader(kind){
- const b=`<button class="back" type="button" data-a="wa:chats">${I.back}${totalOtherUnread(kind)?`<em>${totalOtherUnread(kind)}</em>`:""}</button>`;
- if(kind==="pip")return `<div class="ch-top">${b}<button class="who" type="button" data-a="noop">${avImg("pip","sm")}<span><b>Jarvis <span class="bot" aria-hidden="true">🤖</span></b><small>Calendar assistant</small></span></button><span class="ch-ic">${I.video}${I.phone}</span></div>`;
- if(kind==="study")return `<div class="ch-top">${b}<button class="who" type="button" data-a="noop">${avImg("study","sm")}<span><b>Stats 203 study group</b><small>Diego, Hana, Sam, You</small></span></button><span class="ch-ic">${I.video}${I.phone}</span></div>`;
- return `<div class="ch-top">${b}<button class="who" type="button" data-a="noop">${avImg("priya","sm")}<span><b>Priya</b><small>online</small></span></button><span class="ch-ic">${I.video}${I.phone}</span></div>`;
+function totalOtherUnread(except){return Object.keys(S.unread).filter(k=>k!==except&&S.unread[k]).length}
+function waHeader(id){
+ const n=totalOtherUnread(id);
+ const b=`<button class="back" type="button" data-a="wa:chats">${I.back}${n?`<em>${n}</em>`:""}</button>`;
+ const name=id==="pip"?`Jarvis <span class="bot" aria-hidden="true">🤖</span>`:esc(S.chats[id].name);
+ const sub=id==="pip"?"Calendar assistant":esc(S.chats[id].sub);
+ return `<div class="ch-top">${b}<button class="who" type="button" data-a="info:${id}">${avImg(id==="pip"?"pip":S.chats[id].av,"sm")}<span><b>${name}</b><small>${sub}</small></span></button><span class="ch-ic"><button type="button" data-a="call:${id}:video" aria-label="Video call">${I.video}</button><button type="button" data-a="call:${id}" aria-label="Voice call">${I.phone}</button></span></div>`;
 }
-function totalOtherUnread(except){let n=0;["pip","study","priya"].forEach(k=>{if(k!==except&&S.unread[k])n++});return n+2}
-function composer(){return `<div class="composer"><span>${I.plus}</span><span class="in">${I.stick}</span><span style="color:#54656f">${I.cam}</span><span style="color:#54656f">${I.mic}</span></div>`}
-function waMsg(m,chat,tail){
- const me=m.from==="me";const nm=NAMES[m.from];
+function composer(chat,dark){
+ const r=S.reply&&S.reply.chat===chat?S.reply:null;
+ const emo=S.emoji?`<div class="emostrip">${EMOJI.map(e=>`<button type="button" data-a="emo:${e}">${e}</button>`).join("")}</div>`:"";
+ const rbar=r?`<div class="replybar"><div><b>${esc(r.who)}</b>${esc(r.text)}</div><button type="button" data-a="noreply" aria-label="Cancel reply">✕</button></div>`:"";
+ return `${emo}${rbar}<div class="composer ${draftOf(chat).trim()?"typing":""}" data-chat="${chat}"><button type="button" data-a="attach:${chat}" aria-label="Attach">${I.plus}</button><label class="in"><input class="cin" id="cin" type="text" placeholder="" value="${esc(draftOf(chat))}" autocomplete="off" aria-label="Message"><button type="button" data-a="emoji" aria-label="Stickers and emoji">${I.stick}</button></label><button class="ccam" type="button" data-a="camera:${chat}" aria-label="Camera" style="color:#54656f">${I.cam}</button><button class="cmic" type="button" data-a="voice:${chat}" aria-label="Voice message" style="color:#54656f">${I.mic}</button><button class="csend" type="button" data-a="send:${chat}" aria-label="Send">${I.send}</button></div>`;
+}
+function msgKey(chat,id){return chat+"/"+id}
+function waMsg(m,chat,tail,group){
+ const me=m.from==="me";const nm=PEOPLE[m.from];
  const selecting=S.wa.sel===chat,on=S.wa.selected.includes(m.id);
- const name=(chat==="study"&&!me)?`<span class="nm" style="color:${nm[1]}">${nm[0]}</span>`:"";
- const body=m.img?`${SHOT(false)}${esc(m.text)}`:esc(m.text);
- return `<div class="msgrow ${me?"me":""} gap">${selecting?`<button class="ck ${on?"on":""}" type="button" data-a="tick:${m.id}" aria-label="Select message">${on?I.check:""}</button>`:""}
-  <button class="bub ${on?"sel":""} ${tail?(me?"tail-r":"tail-l"):""}" type="button" data-a="${selecting?"tick:":"wamenu:"}${m.id}">${name}${body}<span class="tm">${m.t}${me?I.checks:""}</span></button></div>`;
+ const name=(group&&!me&&nm)?`<span class="nm" style="color:${nm[1]}">${nm[0]}</span>`:"";
+ const k=msgKey(chat,m.id);const star=S.star[k]?"★ ":"";const re=S.react[k];
+ const body=m.del?`<i style="color:var(--mute)">🚫 This message was deleted</i>`:(m.fwd?`<span class="fwd">${I.fwd}Forwarded</span>`:"")+(m.quote?`<div class="quote" style="border-color:#06cf9c"><b style="color:#06cf9c">${esc(m.quote.who)}</b>${esc(m.quote.text)}</div>`:"")+(m.img===true?SHOT(false):m.img?`<img class="photo" src="${m.img}" alt="Photo">`:"")+esc(m.text);
+ return `<div class="msgrow ${me?"me":""} gap ${re?"hasre":""}">${selecting?`<button class="ck ${on?"on":""}" type="button" data-a="tick:${m.id}" aria-label="Select message">${on?I.check:""}</button>`:""}
+  <button class="bub ${on?"sel":""} ${tail?(me?"tail-r":"tail-l"):""}" type="button" data-a="${selecting?"tick:":"wamenu:"}${m.id}">${name}${body}<span class="tm">${star}${m.t}${me?I.checks:""}</span>${re?`<span class="react-b">${re}</span>`:""}</button></div>`;
 }
+function pinBar(text,chat,dark){return `<div class="pinbar ${dark?"dk":""}"><span>${I.pin}</span><div><b>Pinned message</b>${esc(text)}</div><button type="button" data-a="unpin:${chat}" aria-label="Unpin">✕</button></div>`}
 function waChat(chat){
- const list=chat==="study"?study:priyaChat;let html="",last=null;
- list.forEach((m,i)=>{if(m.day&&m.day!==last){html+=`<div class="datechip">${m.day}</div>`;last=m.day}const nx=list[i+1];const tail=!nx||nx.from!==m.from||(nx.day&&nx.day!==last);html+=waMsg(m,chat,tail)});
+ const c=S.chats[chat];const list=c.msgs;let html="",last=null;
+ list.forEach((m,i)=>{if(m.day&&m.day!==last){html+=`<div class="datechip">${m.day}</div>`;last=m.day}const nx=list[i+1];const tail=!nx||nx.from!==m.from||(nx.day&&nx.day!==last);html+=waMsg(m,chat,tail,c.group)});
  const sel=S.wa.sel===chat;
  const top=sel?`<div class="seltop"><span style="width:60px"></span><b style="font-weight:600">${S.wa.selected.length} Selected</b><button type="button" data-a="cancelsel">Cancel</button></div>`:waHeader(chat);
- const bottom=sel?`<div class="selbar"><span style="color:#b0bac1">${I.trash}</span><b>${S.wa.selected.length} Selected</b><button class="go" type="button" data-a="fwdgo" ${S.wa.selected.length?"":"disabled"} aria-label="Forward selected messages">${I.fwdBig}</button></div>`:composer();
- return `<div class="view">${statusBar(false)}${top}<div class="wall" id="wall">${html}</div>${bottom}${homeBar(false)}</div>`;
+ const pinned=S.pins[chat]&&list.find(m=>m.id===S.pins[chat]);
+ const bottom=sel?`<div class="selbar"><button type="button" data-a="seldel" aria-label="Delete selected" style="color:${S.wa.selected.length?"#e5484d":"#b0bac1"}">${I.trash}</button><b>${S.wa.selected.length} Selected</b><button class="go" type="button" data-a="fwdgo" aria-label="Forward selected messages">${I.fwdBig}</button></div>`:composer(chat);
+ return `<div class="view">${statusBar(false)}${top}${pinned?pinBar(pinned.text,chat):""}<div class="wall" id="wall">${html}</div>${bottom}${homeBar(false)}</div>`;
 }
 const row=(inner,me)=>`<div class="msgrow ${me?"me":""} gap">${inner}</div>`;
 function cardHTML(m){
@@ -807,7 +1010,7 @@ function pipItem(m){
    <div class="steps"><span class="s1">1 Hold</span><span class="s2">2 Forward</span><span class="s3">3 Jarvis</span></div>
   </div><div class="gifcap"><b>Hold any message → Forward → Jarvis.</b> From any other app, tap Share.<span class="tm">8:00 am</span></div></div>`);
  case"fwd":return row(`<div class="bub"><span class="fwd">${I.fwd}Forwarded</span>${m.img?SHOT(true):""}${esc(m.text)}<span class="tm">${m.t}${I.checks}</span></div>`,true);
- case"shared":return row(`<div class="bub" style="max-width:84%">${m.email?`<div class="mailprev"><b>${esc(m.email.subject)}</b><small>${esc(m.email.from)} · ${esc(m.email.addr)}</small><small>${esc(m.email.preview)}</small></div>Shared from Gmail`:esc(m.text)}<span class="tm">${m.t}${I.checks}</span></div>`,true);
+ case"shared":return row(`<div class="bub" style="max-width:84%">${m.email?`<div class="mailprev"><b>${esc(m.email.subject)}</b><small>${esc(m.email.from)}${m.email.addr?" · "+esc(m.email.addr):""}</small><small>${esc(m.email.preview)}</small></div>Shared from Gmail`:esc(m.text)}<span class="tm">${m.t}${I.checks}</span></div>`,true);
  case"user":return row(`<div class="bub">${m.quote?`<div class="quote"><b>Jarvis</b>${esc(m.quote)}</div>`:""}${esc(m.text)}<span class="tm">${m.t}${I.checks}</span></div>`,true);
  case"text":case"summary":return row(`<div class="bub" ${m.kind==="summary"?'role="status"':""}>${md(m.text)}<span class="tm">${m.t}</span></div>`);
  case"card":return cardHTML(m);
@@ -819,33 +1022,34 @@ function pipWithTails(){return S.pip.map((m,i)=>{let html=pipItem(m);if(m.kind==
  const nextSame=nx&&nx.kind!=="date"&&meKind(nx.kind)===me;const hasBtns=(m.kind==="card"&&m.buttons&&m.buttons.length)||m.kind==="brief";
  if(!nextSame&&!hasBtns&&!(S.typing&&!nx&&!me))html=html.replace('class="bub','class="bub '+(me?"tail-r":"tail-l"));return html}).join("")}
 function pipView(){
- return `<div class="view">${statusBar(false)}${waHeader("pip")}<div class="wall" id="wall">${pipWithTails()}${S.typing?`<div class="typing" aria-label="Jarvis is typing"><i></i><i></i><i></i></div>`:""}</div>${composer()}${homeBar(false)}</div>`;
+ return `<div class="view">${statusBar(false)}${waHeader("pip")}<div class="wall" id="wall">${pipWithTails()}${S.typing?`<div class="typing" aria-label="Jarvis is typing"><i></i><i></i><i></i></div>`:""}</div>${composer("pip")}${homeBar(false)}</div>`;
 }
 function waMenu(){
- const m=[...study,...priyaChat].find(x=>x.id===S.wa.menu);const me=m.from==="me";const nm=NAMES[m.from];
- const name=(S.wa.view==="study"&&!me)?`<span class="nm" style="color:${nm[1]}">${nm[0]}</span>`:"";
+ const chat=S.wa.view;const m=S.chats[chat].msgs.find(x=>x.id===S.wa.menu);const me=m.from==="me";const nm=PEOPLE[m.from];
+ const name=(S.chats[chat].group&&!me&&nm)?`<span class="nm" style="color:${nm[1]}">${nm[0]}</span>`:"";
+ const k=msgKey(chat,m.id);
  return `<div class="blur" data-a="closemenu"></div><div class="ctx" style="top:${S.wa.menuTop}px">
-  <div class="react"><span>👍</span><span>❤️</span><span>😂</span><span>😮</span><span>😢</span><span>🙏</span><span>+</span></div>
-  <div class="msgrow ${me?"me":""}" style="pointer-events:none"><div class="bub" style="max-width:86%">${name}${m.img?SHOT(false):""}${esc(m.text)}<span class="tm">${m.t}</span></div></div>
+  <div class="react">${["👍","❤️","😂","😮","😢","🙏"].map(e=>`<button type="button" data-a="react:${e}">${e}</button>`).join("")}<button type="button" data-a="react:🔥" aria-label="More reactions">+</button></div>
+  <div class="msgrow ${me?"me":""}" style="pointer-events:none"><div class="bub" style="max-width:86%">${name}${m.img===true?SHOT(false):m.img?`<img class="photo" src="${m.img}" alt="">`:""}${esc(m.text)}<span class="tm">${m.t}</span></div></div>
   <div class="menu" role="menu">
-   <button type="button" data-a="noop">Reply<span>↩︎</span></button>
+   <button type="button" data-a="reply">Reply<span>↩︎</span></button>
    <button type="button" data-a="startfwd">Forward<span>${I.fwd}</span></button>
-   <button type="button" data-a="toast:Copied">Copy<span>⧉</span></button>
-   <button type="button" data-a="noop">Star<span>☆</span></button>
-   <button type="button" data-a="noop">Pin<span>${I.pin}</span></button>
-   <button type="button" data-a="noop">Report<span>⚑</span></button>
-   <button type="button" class="red" data-a="noop">Delete<span>${I.trash}</span></button>
+   <button type="button" data-a="copy">Copy<span>⧉</span></button>
+   <button type="button" data-a="star">${S.star[k]?"Unstar":"Star"}<span>${S.star[k]?"★":"☆"}</span></button>
+   <button type="button" data-a="pin">${S.pins[chat]===m.id?"Unpin":"Pin"}<span>${I.pin}</span></button>
+   <button type="button" data-a="report">Report<span>⚑</span></button>
+   <button type="button" class="red" data-a="delmsg">Delete<span>${I.trash}</span></button>
   </div></div>`;
 }
 function waPicker(){
- const opts=[["pip","Jarvis","Calendar assistant","pip"],["priya","Priya","","priya"],["design","Design 213 team","Kai, Lena, Ravi, You","design"],["mom","Mom","","mom"],["jonah","Jonah","","jonah"]].filter(o=>o[0]!==S.wa.view);
+ const opts=[["pip","Jarvis","Calendar assistant","pip"],["priya","Priya","","priya"],["design","Design 213 team","Kai, Lena, Ravi, You","design"],["mom","Mom","","mom"],["jonah","Jonah","","jonah"],["study","Stats 203 study group","Diego, Hana, Sam, You","study"]].filter(o=>o[0]!==S.wa.view);
  const to=S.wa.pickTo;
  return `<div class="scrim"></div><div class="sheet tall"><div class="grab"></div>
   <div class="sh-top"><button type="button" data-a="closepicker">Cancel</button><b>Forward to…</b><span style="width:52px"></span></div>
   <div class="search" style="margin-top:6px">${I.search}Search</div>
   <div class="sec">Frequently contacted</div>
   ${opts.map(o=>`<button class="pick" type="button" data-a="pickto:${o[0]}">${avImg(o[3],"sm")}<span class="pb"><b>${o[1]}</b>${o[2]?`<small>${o[2]}</small>`:""}</span><span class="radio ${to===o[0]?"on":""}">${to===o[0]?I.check:""}</span></button>`).join("")}
-  <div class="sendbar"><span>${to?(to==="pip"?"Jarvis":"Only Jarvis works in this test"):`${S.wa.selected.length} message${S.wa.selected.length>1?"s":""} selected`}</span><button class="sendc" type="button" data-a="fwdsend" ${to==="pip"?"":"disabled"} aria-label="Send">${I.send}</button></div>
+  <div class="sendbar"><span>${to?esc(opts.find(o=>o[0]===to)[1]):`${S.wa.selected.length} message${S.wa.selected.length!==1?"s":""} selected`}</span><button class="sendc" type="button" data-a="fwdsend" aria-label="Send">${I.send}</button></div>
  </div>`;
 }
 function waList(){
@@ -854,94 +1058,134 @@ function waList(){
   <div class="sh-top"><span style="width:52px"></span><b>Choose a date</b><button type="button" data-a="closelist" aria-label="Close">✕</button></div>
   <div class="sec">Assignment 5 · Stats 203</div>
   ${rows.map(r=>`<button class="pick" type="button" data-a="lp:${r[0]}"><span class="pb"><b>${r[1]}</b><small>${r[2]}</small></span><span class="radio ${S.wa.listPick===r[0]?"on":""}">${S.wa.listPick===r[0]?I.check:""}</span></button>`).join("")}
-  <button class="lsend" type="button" data-a="listsend" ${S.wa.listPick?"":"disabled"}>Send</button>
+  <button class="lsend" type="button" data-a="listsend">Send</button>
  </div>`;
 }
 
 /* ================= TELEGRAM ================= */
+function tgLast(id){const c=S.tgchats[id];const l=c.msgs.slice(-1)[0];if(!l)return{pv:"",t:""};
+ const who=l.from==="me"?"<b>You:</b> ":(c.group&&TGN[l.from]?`<b>${esc(TGN[l.from][0].split(" ·")[0])}:</b> `:"");return {pv:who+esc(l.del?"Deleted message":l.text),t:l.fresh?l.t:TG_PREV_T[id]}}
+function tgAv(id,cls){const c=S.tgchats[id];return c.avl?letterAv(c.avl[0],c.avl[1],cls):avImg(c.av,cls)}
+function tgRowsHTML(){
+ const q=S.tg.q.trim().toLowerCase();
+ const ids=TG_ORDER.filter(id=>!q||S.tgchats[id].name.toLowerCase().includes(q));
+ if(!ids.length)return `<div style="text-align:center;color:rgba(255,255,255,.5);padding:40px">No results</div>`;
+ return ids.map(id=>{const L=tgLast(id);const u=S.tgUnread[id];const mut=id==="cabo"||id==="housing";
+  return `<button class="row" type="button" data-a="tg:${id}">${tgAv(id)}<span class="rb"><span class="rl"><b>${esc(S.tgchats[id].name)}</b><time>${L.t}</time></span><span class="pv"><span>${L.pv}</span>${u?`<span class="tgbadge ${mut?"mut":""}">${u}</span>`:""}</span></span></button>`}).join("");
+}
+function tgTabs(){const t=S.tg.tab;const b=(k,ic,l)=>`<button type="button" class="${t===k?"on":""}" data-a="tgtab:${k}">${ic}${l}</button>`;
+ return `<div class="tg-tabs glass" style="border-radius:34px;height:64px;margin-bottom:24px;align-items:center;padding-top:0">${b("contacts",I.person,"Contacts")}${b("calls",I.tCall,"Calls")}${b("chats",I.tChat,"Chats")}${b("settings",I.tSet,"Settings")}</div>`}
 function tgChats(){
- const rows=[
-  {id:"kazsa",name:"KazSA Berkeley",pv:`<b>Nurlan:</b> count me in! can bring drinks`,t:"2:03 PM",av:avImg("kazsa"),u:S.tgRead?0:4},
-  {name:"Aigerim",pv:"see you saturday!! 🦃",t:"1:49 PM",av:avImg("aigerim")},
-  {name:"Plans",pv:"🎤 Voice message",t:"12:33 PM",av:letterAv("P","linear-gradient(160deg,#fbbf24,#f97316)")},
-  {name:"Cabo winter break 🌴",pv:"<b>Dana:</b> flights are cheaper on the 20th",t:"Mon",av:avImg("maui"),u:12,mut:true},
-  {name:"Dana",pv:"lol yes",t:"Mon",av:avImg("dana")},
-  {name:"Berkeley Housing Exchange",pv:"Room in 3BR near campus, $1,350, from Jan 1",t:"Mon",av:avImg("city"),u:38,mut:true},
-  {name:"Zhuldyz",pv:"Sticker",t:"Sun",av:avImg("zhuldyz")},
-  {name:"Mama",pv:"Позвони когда сможешь ❤️",t:"Sun",av:avImg("mom")},
-  {name:"Nurlan",pv:"ok see you there",t:"Sat",av:avImg("nurlan")}
- ];
+ if(S.tg.tab!=="chats")return tgTabScreen();
  return `<div class="view tg">${statusBar(true)}
- <div class="tg-top"><span class="tg-pill">Edit</span><span class="tg-title">Chats</span><span class="tg-pill" style="width:38px;padding:0;justify-content:center">${I.pencil}</span></div>
- <div class="tg-search">${I.search}Search</div>
- <div class="rows">${rows.map(r=>`<button class="row" type="button" data-a="${r.id?"tg:"+r.id:"noop"}">${r.av}<span class="rb"><span class="rl"><b>${esc(r.name)}${r.id==="pip"?' <span class="bot" aria-hidden="true">🤖</span>':""}</b><time>${r.t}</time></span><span class="pv"><span>${r.pv}</span>${r.u?`<span class="tgbadge ${r.mut?"mut":""}">${r.u}</span>`:""}</span></span></button>`).join("")}</div>
- <div class="tg-tabs glass" style="border-radius:34px;height:64px;margin-bottom:24px;align-items:center;padding-top:0"><div>${I.person}Contacts</div><div>${I.tCall}Calls</div><div class="on">${I.tChat}Chats</div><div>${I.tSet}Settings</div></div>
+ <div class="tg-top"><button class="tg-pill" type="button" data-a="tgedit">Edit</button><span class="tg-title">Chats</span><button class="tg-pill" type="button" data-a="tgnew" aria-label="New message" style="width:38px;padding:0;justify-content:center">${I.pencil}</button></div>
+ <label class="tg-search">${I.search}<input class="sin dk" id="tgq" type="search" placeholder="Search" value="${esc(S.tg.q)}" autocomplete="off"></label>
+ <div class="rows" id="tgrows">${tgRowsHTML()}</div>
+ ${tgTabs()}
  ${homeBar(true)}</div>`;
 }
-function tgBubble(m){
- const me=m.from==="me";const n=TGN[m.from];
- return `<button class="tbub ${me?"me":""}" type="button" data-a="tgmenu:${m.id}">${!me?`<span class="nm" style="color:${n[1]}">${n[0]}</span>`:""}${esc(m.text)}<span class="tt">${m.t}${me?" ✓✓":""}</span></button>`;
+function tgTabScreen(){
+ const t=S.tg.tab;let body="";
+ if(t==="contacts")body=["aigerim","dana","nurlan","zhuldyz","mama"].map(id=>`<button class="row" type="button" data-a="tg:${id}">${tgAv(id)}<span class="rb"><span class="rl"><b>${esc(S.tgchats[id].name)}</b></span><span class="pv"><span>${esc(S.tgchats[id].sub)}</span></span></span></button>`).join("");
+ if(t==="calls")body=[["mama","Outgoing · Sunday"],["aigerim","Incoming · Nov 6"]].map(r=>`<div class="row" style="cursor:default">${tgAv(r[0])}<span class="rb"><span class="rl"><b>${esc(S.tgchats[r[0]].name)}</b><button type="button" data-a="call:tg-${r[0]}" aria-label="Call" style="color:#a78bfa">${I.phone}</button></span><span class="pv"><span>${r[1]}</span></span></span></div>`).join("");
+ if(t==="settings")body=`<div style="text-align:center;padding:10px 0 20px"><span style="display:flex;justify-content:center">${letterAv("M","linear-gradient(160deg,#fb923c,#ea580c)")}</span><b style="display:block;font-size:20px;margin-top:10px">Maya</b><span style="color:rgba(255,255,255,.55);font-size:14px">@maya_c · online</span></div><div class="setlist dk">${["My Profile","Saved Messages","Notifications and Sounds","Privacy and Security","Appearance"].map(l=>`<button type="button" data-a="set:${l}">${l}<span>›</span></button>`).join("")}</div>`;
+ return `<div class="view tg">${statusBar(true)}<div class="tg-top" style="justify-content:center"><span class="tg-title">${{contacts:"Contacts",calls:"Calls",settings:"Settings"}[t]}</span></div><div class="rows">${body}</div>${tgTabs()}${homeBar(true)}</div>`;
+}
+function tgBubble(m,chat,group){
+ const me=m.from==="me";const n=TGN[m.from];const k="tg/"+chat+"/"+m.id;const re=S.react[k];
+ const selecting=S.tg.sel===chat,on=S.tg.selected.includes(m.id);
+ return `<button class="tbub ${me?"me":""} ${on?"tsel":""}" type="button" data-a="${selecting?"tgtick:":"tgmenu:"}${m.id}">${group&&!me&&n?`<span class="nm" style="color:${n[1]}">${n[0]}</span>`:""}${m.quote?`<div class="quote" style="border-color:#a78bfa;background:rgba(255,255,255,.08);color:#ddd"><b style="color:#c4b5fd">${esc(m.quote.who)}</b>${esc(m.quote.text)}</div>`:""}${m.del?"<i>Deleted message</i>":(m.img?`<img class="photo" src="${m.img}" alt="Photo">`:"")+esc(m.text)}${re?`<span class="tgre">${re} 1</span>`:""}<span class="tt">${m.t}${me?" ✓✓":""}</span></button>`;
 }
 function tgChatView(){
- let html="",last=null;
- TGMSGS.forEach(m=>{if(m.day&&m.day!==last){html+=`<div class="tg-date">${m.day}</div>`;last=m.day}
-  html+=m.from==="me"?tgBubble(m):`<div style="display:flex;gap:8px;align-items:flex-end">${avImg(m.from,"xs")}${tgBubble(m)}</div>`});
+ const id=S.tg.view;const c=S.tgchats[id];let html="",last=null;
+ c.msgs.forEach(m=>{if(m.day&&m.day!==last){html+=`<div class="tg-date">${m.day}</div>`;last=m.day}
+  const selBox=S.tg.sel===id?`<button class="ck ${S.tg.selected.includes(m.id)?"on":""}" type="button" data-a="tgtick:${m.id}" aria-label="Select">${S.tg.selected.includes(m.id)?I.check:""}</button>`:"";
+  html+=m.from==="me"?`<div style="display:flex;gap:8px;align-items:center;justify-content:flex-end">${selBox}${tgBubble(m,id,c.group)}</div>`:`<div style="display:flex;gap:8px;align-items:flex-end">${selBox}${c.group?avImg(m.from in AV?m.from:"aidos","xs"):""}${tgBubble(m,id,c.group)}</div>`});
+ const pinned=S.pins["tg/"+id]&&c.msgs.find(m=>m.id===S.pins["tg/"+id]);
+ const sel=S.tg.sel===id;
+ const bottom=sel?`<div class="tg-selbar"><button type="button" data-a="tgseldel" style="color:#ff6b6b">Delete</button><b>${S.tg.selected.length} selected</b><button type="button" data-a="tgselshare" style="color:#a78bfa">Share</button></div>`:tgComposer(id);
  return `<div class="view tg">${statusBar(true)}
-  <div class="tg-head"><button class="tg-b glass" type="button" data-a="tg:chats">${I.back}</button><div class="tg-t glass"><b>KazSA Berkeley</b><small>48 members</small></div>${avImg("kazsa","")}</div>
-  <div class="tg-wall" id="wall">${html}</div>
-  <div class="tg-comp"><span style="color:rgba(255,255,255,.6)">${I.plus}</span><span class="in">Message</span><span style="color:rgba(255,255,255,.6)">${I.mic}</span></div>
+  <div class="tg-head">${sel?`<button class="tg-b glass" type="button" data-a="tgselcancel" style="width:auto;padding:0 16px;border-radius:24px">Cancel</button><div class="tg-t glass"><b>${S.tg.selected.length} selected</b></div>`:`<button class="tg-b glass" type="button" data-a="tg:chats" aria-label="Back">${I.back}</button><button class="tg-t glass" type="button" data-a="info:tg-${id}"><b>${esc(c.name)}</b><small>${esc(c.sub)}</small></button><button type="button" data-a="info:tg-${id}" aria-label="Info">${tgAv(id,"")}</button>`}</div>
+  ${pinned?`<div style="position:absolute;top:104px;left:12px;right:12px;z-index:6">${pinBar(pinned.text,"tg/"+id,true)}</div>`:""}
+  <div class="tg-wall" id="wall" style="${pinned?"padding-top:170px":""}">${html}</div>
+  ${bottom}
   ${homeBar(true)}</div>`;
 }
+function tgComposer(id){
+ const key="tg/"+id;const r=S.reply&&S.reply.chat===key?S.reply:null;
+ return `${r?`<div class="replybar dk"><div><b>${esc(r.who)}</b>${esc(r.text)}</div><button type="button" data-a="noreply" aria-label="Cancel reply">✕</button></div>`:""}<div class="tg-comp composer ${draftOf(key).trim()?"typing":""}" data-chat="${key}"><button type="button" data-a="attach:${key}" style="color:rgba(255,255,255,.6)" aria-label="Attach">${I.plus}</button><label class="in"><input class="cin dk" id="cin" type="text" placeholder="Message" value="${esc(draftOf(key))}" autocomplete="off" aria-label="Message"></label><button class="cmic" type="button" data-a="voice:${key}" style="color:rgba(255,255,255,.6)" aria-label="Voice message">${I.mic}</button><button class="csend tg" type="button" data-a="send:${key}" aria-label="Send">${I.send}</button></div>`;
+}
 function tgMenu(){
- const m=TGMSGS.find(x=>x.id===S.tg.menu);const me=m.from==="me";const n=TGN[m.from];
+ const id=S.tg.view;const m=S.tgchats[id].msgs.find(x=>x.id===S.tg.menu);const me=m.from==="me";const n=TGN[m.from];
  return `<div class="blur dk" data-a="tgclose"></div><div class="ctx" style="top:${S.tg.menuTop}px">
-  <div class="tg-react glass"><span>🤣</span><span>❤️</span><span>👍</span><span>😢</span><span>👎</span><span>🔥</span><span>🥰</span><span>${I.chev}</span></div>
-  <div class="tbub ${me?"me":""}" style="pointer-events:none;max-width:92%">${!me?`<span class="nm" style="color:${n[1]}">${n[0]}</span>`:""}${esc(m.text)}<span class="tt">${m.t}</span></div>
+  <div class="tg-react glass">${["🤣","❤️","👍","😢","👎","🔥","🥰"].map(e=>`<button type="button" data-a="tgreact:${e}">${e}</button>`).join("")}<button type="button" data-a="tgreact:🎉" aria-label="More reactions">${I.chev}</button></div>
+  <div class="tbub ${me?"me":""}" style="pointer-events:none;max-width:92%">${S.tgchats[id].group&&!me&&n?`<span class="nm" style="color:${n[1]}">${n[0]}</span>`:""}${esc(m.text)}<span class="tt">${m.t}</span></div>
   <div class="tg-menu glass" role="menu">
-   <button type="button" data-a="noop">${I.reply}Reply</button>
-   <button type="button" data-a="noop">${I.pinO}Pin</button>
+   <button type="button" data-a="tgreply">${I.reply}Reply</button>
+   <button type="button" data-a="tgpin">${I.pinO}${S.pins["tg/"+id]===m.id?"Unpin":"Pin"}</button>
    <button type="button" data-a="tgshare">${I.share}Share</button>
-   <button type="button" class="red" data-a="noop">${I.trash}Delete</button>
+   <button type="button" class="red" data-a="tgdel">${I.trash}Delete</button>
    <hr>
-   <button type="button" data-a="noop">${I.selO}Select</button>
+   <button type="button" data-a="tgselect">${I.selO}Select</button>
   </div></div>`;
 }
 
 /* ================= GMAIL ================= */
 function gmAv(e,selected){return selected?`<span class="gm-av chk">${I.check}</span>`:`<span class="gm-av" style="background:${e.color}">${esc(e.from[0])}</span>`}
+function gmVisible(){
+ const f=S.gm.folder,q=S.gm.q.trim().toLowerCase();
+ let list=f==="sent"?S.sent:S.mail.filter(e=>S.gm.label?e.labels.includes(S.gm.label)&&e.folder!=="trash":f==="starred"?e.star&&e.folder!=="trash":f==="archive"?e.folder!=="trash"&&e.folder!=="spam":e.folder===f);
+ if(q)list=list.filter(e=>(e.from+" "+e.subject+" "+e.preview).toLowerCase().includes(q));
+ return list;
+}
+function gmRowsHTML(){
+ const sel=S.gm.sel;const list=gmVisible();
+ if(!list.length)return `<div style="text-align:center;color:#a8abaf;padding:60px 20px;font-size:15px">${S.gm.q?"No results":"Nothing in "+(S.gm.label||FOLDERS.find(x=>x[0]===S.gm.folder)[1])}</div>`;
+ return list.map(e=>{const un=!e.read;const on=sel.includes(e.id);return `<div class="gm-row ${un?"un":""} ${on?"sel":""}"><button type="button" data-a="gmsel:${e.id}" aria-label="Select email">${gmAv(e,on)}</button><button class="gm-b" type="button" data-a="gmopen:${e.id}"><span class="gm-l"><b>${esc(e.from)}</b><time>${e.t}</time></span><span class="gm-s" style="display:block">${esc(e.subject)}</span><span class="gm-p" style="display:block">${e.labels.map(l=>`<span class="gm-lab">${l}</span>`).join("")}${esc(e.preview)}</span></button><button type="button" data-a="gmstar:${e.id}" aria-label="Star" style="color:${e.star?"#fbbc04":"#a8abaf"};padding-top:30px">${e.star?I.star.replace('fill="none"','fill="#fbbc04"'):I.star}</button></div>`}).join("");
+}
 function gmInbox(){
- const sel=S.gm.sel;
- const top=sel?`<div class="gm-sel"><span class="gm-pill bl">${I.back.replace('stroke-width="2.4"','stroke-width="2.4" style="color:#a8c7fa"')}<b style="color:#e3e3e3;font-weight:500">1</b></span><span class="gm-pill bl" style="flex:1">☐&nbsp; Select all</span><button class="gm-pill" type="button" data-a="gmdots" aria-label="More">${I.dotsV}</button></div>`
-  :`<div class="gm-search">${I.menuI}<span style="flex:1">Search in mail</span>${letterAv("M","#e8710a","xs")}</div>`;
- const list=INBOX.map(e=>{const un=e.un&&!S.gm.read?.[e.id];return `<div class="gm-row ${un?"un":""} ${sel===e.id?"sel":""}" style="cursor:pointer"><button type="button" data-a="gmsel:${e.id}" aria-label="Select email">${gmAv(e,sel===e.id)}</button><button class="gm-b" type="button" data-a="gmopen:${e.id}"><span class="gm-l"><b>${esc(e.from)}</b><time>${e.t}</time></span><span class="gm-s" style="display:block">${esc(e.subject)}</span><span class="gm-p" style="display:block">${esc(e.preview)}</span></button><span style="color:#a8abaf;padding-top:30px">${I.star}</span></div>`}).join("");
- return `<div class="view gm">${statusBar(true)}${top}<div class="gm-label">Inbox</div><div class="rows" style="padding:0 6px">${list}</div>
-  ${sel?"":`<div class="gm-fab">${I.pencil}Compose</div>`}
-  <div class="gm-tabs"><div class="on"><i class="pillbg">${I.mail}</i>Mail<em>9</em></div><div><i class="pillbg">${I.video}</i>Meet</div></div>
+ if(S.gm.tab==="meet")return gmMeet();
+ const sel=S.gm.sel;const vis=gmVisible();
+ const top=sel.length?`<div class="gm-sel"><button class="gm-pill bl" type="button" data-a="gmselclear" aria-label="Clear selection">${I.back}<b style="color:#e3e3e3;font-weight:500">${sel.length}</b></button><button class="gm-pill bl" type="button" data-a="gmselall" style="flex:1">${sel.length===vis.length?"☑":"☐"}&nbsp; Select all</button><button class="gm-pill" type="button" data-a="gmdots" aria-label="More">${I.dotsV}</button></div>`
+  :`<div class="gm-search"><button type="button" data-a="gmdrawer" aria-label="Menu" style="color:#c4c7c5">${I.menuI}</button><input class="sin dk" id="gmq" type="search" placeholder="Search in mail" value="${esc(S.gm.q)}" autocomplete="off" style="flex:1"><button type="button" data-a="gmacct" aria-label="Account">${letterAv("M","#e8710a","xs")}</button></div>`;
+ const label=S.gm.label||FOLDERS.find(x=>x[0]===S.gm.folder)[1];
+ return `<div class="view gm">${statusBar(true)}${top}<div class="gm-label">${esc(label)}</div><div class="rows" id="gmrows" style="padding:0 6px">${gmRowsHTML()}</div>
+  ${sel.length?"":`<button class="gm-fab" type="button" data-a="gmcompose">${I.pencil}Compose</button>`}
+  ${gmTabs()}
   ${S.gm.menu?gmMenu():""}${homeBar(true)}</div>`;
 }
+function gmTabs(){const unread=S.mail.filter(e=>e.folder==="inbox"&&!e.read).length;return `<div class="gm-tabs"><button type="button" class="${S.gm.tab==="mail"?"on":""}" data-a="gmtab:mail"><i class="pillbg">${I.mail}</i>Mail${unread?`<em>${unread}</em>`:""}</button><button type="button" class="${S.gm.tab==="meet"?"on":""}" data-a="gmtab:meet"><i class="pillbg">${I.video}</i>Meet</button></div>`}
+function gmMeet(){
+ return `<div class="view gm">${statusBar(true)}<div style="padding:60px 20px 0;font-size:22px;color:#fff">Meet</div>
+  <div style="display:flex;gap:10px;padding:20px"><button class="gm-pill" type="button" data-a="meetnew" style="background:#a8c7fa;color:#062e6f;font-weight:600">New meeting</button><button class="gm-pill" type="button" data-a="meetjoin">Join with a code</button></div>
+  <div style="flex:1;display:grid;place-items:center;text-align:center;color:#a8abaf;padding:30px;font-size:15px;line-height:1.5">Get a link you can share<br>Tap New meeting to get a link you can send to people you want to meet with.</div>
+  ${gmTabs()}${homeBar(true)}</div>`;
+}
+function gmFind(id){return S.mail.find(e=>e.id===id)||S.sent.find(e=>e.id===id)}
 function gmOpen(){
- const e=EMAILS[S.gm.view]||INBOX.find(x=>x.id===S.gm.view);
+ const e=gmFind(S.gm.view);
  const body=e.body||[e.preview];
+ const fname=FOLDERS.find(x=>x[0]===e.folder);
  return `<div class="view gm">${statusBar(true)}
-  <div class="gm-top"><button type="button" data-a="gm:inbox" aria-label="Back">${I.back}</button><span class="sp"></span><button type="button" data-a="noop">${I.arch}</button><button type="button" data-a="noop">${I.trash}</button><button type="button" data-a="noop">${I.mail}</button><button type="button" data-a="gmdots" aria-label="More">${I.dotsV}</button></div>
-  <div class="gm-open"><h2>${esc(e.subject)} <span style="font-size:12px;background:#3c4043;border-radius:4px;padding:2px 6px;vertical-align:middle;color:#c4c7c5">Inbox</span></h2>
-   <div class="gm-from">${gmAv(e)}<div style="flex:1;min-width:0"><b>${esc(e.from)}</b> <span style="color:#a8abaf;font-size:13px">${e.t}</span><small>${esc(e.addr||"")} · to me</small></div><span style="color:#a8abaf">${I.reply}</span></div>
+  <div class="gm-top"><button type="button" data-a="gmback" aria-label="Back">${I.back}</button><span class="sp"></span><button type="button" data-a="gmarch" aria-label="Archive">${I.arch}</button><button type="button" data-a="gmtrash" aria-label="Delete">${I.trash}</button><button type="button" data-a="gmunread" aria-label="Mark unread">${I.mail}</button><button type="button" data-a="gmdots" aria-label="More">${I.dotsV}</button></div>
+  <div class="gm-open"><h2>${esc(e.subject)} <span style="font-size:12px;background:#3c4043;border-radius:4px;padding:2px 6px;vertical-align:middle;color:#c4c7c5">${fname?fname[1]:"Inbox"}</span>${(e.labels||[]).map(l=>` <span style="font-size:12px;background:#3c4043;border-radius:4px;padding:2px 6px;vertical-align:middle;color:#c4c7c5">${l}</span>`).join("")}</h2>
+   <div class="gm-from">${gmAv(e)}<div style="flex:1;min-width:0"><b>${esc(e.from)}</b> <span style="color:#a8abaf;font-size:13px">${e.t}</span><small>${esc(e.addr||"")} · to ${e.to?esc(e.to):"me"}</small></div><button type="button" data-a="gmreply" aria-label="Reply" style="color:#a8abaf">${I.reply}</button></div>
    <div class="gm-body">${body.map(p=>`<p>${esc(p)}</p>`).join("")}</div></div>
-  <div class="gm-reply"><span>${I.reply}Reply</span><span>${I.fwdO}Forward</span></div>
+  <div class="gm-reply"><button type="button" data-a="gmreply">${I.reply}Reply</button><button type="button" data-a="gmfwd">${I.fwdO}Forward</button></div>
   ${S.gm.menu?gmMenu():""}${homeBar(true)}</div>`;
 }
 function gmMenu(){
  return `<div style="position:absolute;inset:0;z-index:22" data-a="gmclose"></div><div class="gm-menu" role="menu">
   <button type="button" class="new" data-a="gmshare">${I.share}Share</button>
   <hr>
-  <button type="button" data-a="noop">${I.moveTo}Move to</button>
-  <button type="button" data-a="noop">${I.label}Label as</button>
-  <button type="button" data-a="noop">${I.notImp}Mark as not important</button>
+  <button type="button" data-a="gmmove">${I.moveTo}Move to</button>
+  <button type="button" data-a="gmlabel">${I.label}Label as</button>
+  <button type="button" data-a="gmnotimp">${I.notImp}Mark as not important</button>
   <hr>
-  <button type="button" data-a="noop">${I.snooze}Snooze</button>
-  <button type="button" data-a="noop">${I.mute}Mute</button>
+  <button type="button" data-a="gmsnooze">${I.snooze}Snooze</button>
+  <button type="button" data-a="gmmute">${I.mute}Mute</button>
   <hr>
-  <button type="button" class="red" data-a="noop">${I.spam}Report spam</button>
+  <button type="button" class="red" data-a="gmspam">${I.spam}Report spam</button>
  </div>`;
 }
 
@@ -949,43 +1193,50 @@ function gmMenu(){
 function shareSheet(){
  const sh=S.share;const gm=sh.source==="gmail";
  const head=gm?`<span class="ss-doc" style="background:#fff;color:#ea4335">${I.mail}</span><div><b>${esc(sh.email.subject)}</b><small>Email · ${esc(sh.email.from)}</small></div>`
-   :`<span class="ss-doc">TXT</span><div><b>${esc("Aigerim: "+TG_MSG)}</b><small>Text · 168 characters</small></div>`;
+   :`<span class="ss-doc">TXT</span><div><b>${esc(sh.text)}</b><small>Text · ${sh.text.length} characters</small></div>`;
  const wab=`<span class="wab">${I.chatbubS}</span>`;
  const ppl=[["pip","Jarvis"],["study","Stats 203 study group"],["design","Design 213 team"],["mom","Mom"],["priya","Priya"]];
+ const more=sh.more?`<div class="ss-act" style="padding-top:12px"><button type="button" data-a="toast:Added to Reading List"><i>${I.list}</i>Reading List</button><button type="button" data-a="toast:Sent to printer"><i>${I.copy}</i>Print</button><button type="button" data-a="toast:Saved to Notes"><i>${I.note}</i>Add to Notes</button><button type="button" data-a="ssmore"><i>${I.chev}</i>Less</button></div>`:"";
  return `<div class="ss-scrim" data-a="sharecancel"></div><div class="ss ${gm?"gm":""}" role="dialog" aria-label="Share">
   <div class="ss-head">${head}<button class="ss-x" type="button" data-a="sharecancel" aria-label="Close">✕</button></div>
-  <div class="ss-row">${ppl.map(p=>`<button class="ss-p" type="button" data-a="${p[0]==="pip"?"sharepip":"toast:Only Jarvis works in this test"}"><span class="av"><img src="${AV[p[0]]}" alt="">${wab}</span>${p[1]}</button>`).join("")}</div>
+  <div class="ss-row">${ppl.map(p=>`<button class="ss-p" type="button" data-a="shareto:${p[0]}"><span class="av"><img src="${AV[p[0]==="pip"?"pip":S.chats[p[0]].av]}" alt="">${wab}</span>${p[1]}</button>`).join("")}</div>
   <div class="ss-row">
-   <div class="ss-a"><span class="ic" style="background:linear-gradient(160deg,#4aa3ff,#1565e6)">${I.airdrop}</span>AirDrop</div>
-   <div class="ss-a"><span class="ic" style="background:linear-gradient(#5ee27a,#1daa61)"><svg viewBox="0 0 24 24" width="34" height="34" fill="#fff"><path d="M12 4c5 0 9 3 9 7s-4 7-9 7c-1 0-2 0-3-.3L5 20l1-3.5C4 15 3 13 3 11c0-4 4-7 9-7z"/></svg></span>Messages</div>
-   <div class="ss-a"><span class="ic" style="background:linear-gradient(#5aa9ff,#1f6fe5)"><svg viewBox="0 0 24 24" width="34" height="34" fill="#fff"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 7l9 6 9-6" stroke="#1f6fe5" stroke-width="1.6" fill="none"/></svg></span>Mail</div>
+   <button class="ss-a" type="button" data-a="toast:No AirDrop devices nearby"><span class="ic" style="background:linear-gradient(160deg,#4aa3ff,#1565e6)">${I.airdrop}</span>AirDrop</button>
+   <button class="ss-a" type="button" data-a="ssapp:Messages"><span class="ic" style="background:linear-gradient(#5ee27a,#1daa61)"><svg viewBox="0 0 24 24" width="34" height="34" fill="#fff"><path d="M12 4c5 0 9 3 9 7s-4 7-9 7c-1 0-2 0-3-.3L5 20l1-3.5C4 15 3 13 3 11c0-4 4-7 9-7z"/></svg></span>Messages</button>
+   <button class="ss-a" type="button" data-a="ssapp:Mail"><span class="ic" style="background:linear-gradient(#5aa9ff,#1f6fe5)"><svg viewBox="0 0 24 24" width="34" height="34" fill="#fff"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 7l9 6 9-6" stroke="#1f6fe5" stroke-width="1.6" fill="none"/></svg></span>Mail</button>
    <button class="ss-a" type="button" data-a="sharewa"><span class="ic" style="background:linear-gradient(160deg,#5ee27a,#1daa61)"><svg viewBox="0 0 24 24" width="34" height="34" fill="#fff"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/></svg></span>WhatsApp</button>
-   <div class="ss-a"><span class="ic" style="background:#fff;color:#f59e0b">${I.note}</span>Notes</div>
+   <button class="ss-a" type="button" data-a="toast:Saved to Notes"><span class="ic" style="background:#fff;color:#f59e0b">${I.note}</span>Notes</button>
   </div>
-  <div class="ss-act"><div><i>${I.copy}</i>Copy</div><div><i>${I.folder}</i>Save to Files</div><div><i>${I.note}</i>New Quick Note</div><div><i>${I.chev}</i>View More</div></div>
+  <div class="ss-act"><button type="button" data-a="sscopy"><i>${I.copy}</i>Copy</button><button type="button" data-a="toast:Saved to Files"><i>${I.folder}</i>Save to Files</button><button type="button" data-a="toast:Quick Note saved"><i>${I.note}</i>New Quick Note</button>${sh.more?"":`<button type="button" data-a="ssmore"><i>${I.chev}</i>View More</button>`}</div>
+  ${more}
  </div>`;
 }
 function waExtension(){
  const sh=S.share;
  if(sh.step==="pick"){
-  const opts=[["pip","Jarvis","Calendar assistant"],["study","Stats 203 study group",""],["priya","Priya",""],["mom","Mom",""],["design","Design 213 team",""]];
+  const opts=[["pip","Jarvis","Calendar assistant"],["study","Stats 203 study group",""],["priya","Priya",""],["mom","Mom",""],["design","Design 213 team",""],["jonah","Jonah",""]];
   return `<div class="ss-scrim"></div><div class="ext"><div class="bar"><button type="button" data-a="sharecancel">Cancel</button><b>Send to…</b><span style="width:52px"></span></div>
    <div class="search" style="margin:10px 16px">${I.search}Search</div><div class="sec">Frequently contacted</div>
-   ${opts.map(o=>`<button class="pick" type="button" data-a="${o[0]==="pip"?"sharepip":"toast:Only Jarvis works in this test"}">${avImg(o[0],"sm")}<span class="pb"><b>${o[1]}</b>${o[2]?`<small>${o[2]}</small>`:""}</span></button>`).join("")}</div>`;
+   ${opts.map(o=>`<button class="pick" type="button" data-a="shareto:${o[0]}">${avImg(o[0]==="pip"?"pip":S.chats[o[0]].av,"sm")}<span class="pb"><b>${o[1]}</b>${o[2]?`<small>${o[2]}</small>`:""}</span></button>`).join("")}</div>`;
  }
- const content=sh.source==="gmail"?`<div class="mailprev" style="background:#f5f6f6"><b>${esc(sh.email.subject)}</b><small>${esc(sh.email.from)} · ${esc(sh.email.addr)}</small><small>${esc(sh.email.preview)}</small></div>`:`<div class="txt">Aigerim: ${esc(TG_MSG)}</div>`;
- return `<div class="ss-scrim"></div><div class="ext" role="dialog" aria-label="Send to Jarvis in WhatsApp">
-  <div class="bar"><button type="button" data-a="sharecancel">Cancel</button><span class="to">${avImg("pip","xs")}Jarvis</span><span style="width:52px"></span></div>
-  <div class="bodyx">${content}<div class="cap">Add a caption…</div></div>
-  <div class="sendbar"><span>Send to Jarvis in WhatsApp</span><button class="sendc" type="button" data-a="sharesend" aria-label="Send">${I.send}</button></div></div>`;
+ const to=sh.to||"pip";const toName=to==="pip"?"Jarvis":S.chats[to].name;
+ const content=sh.source==="gmail"?`<div class="mailprev" style="background:#f5f6f6"><b>${esc(sh.email.subject)}</b><small>${esc(sh.email.from)} · ${esc(sh.email.addr||"")}</small><small>${esc(sh.email.preview)}</small></div>`:`<div class="txt">${esc(sh.text)}</div>`;
+ return `<div class="ss-scrim"></div><div class="ext" role="dialog" aria-label="Send to ${esc(toName)} in WhatsApp">
+  <div class="bar"><button type="button" data-a="sharecancel">Cancel</button><span class="to">${avImg(to==="pip"?"pip":S.chats[to].av,"xs")}${esc(toName)}</span><span style="width:52px"></span></div>
+  <div class="bodyx">${content}<input class="cap" id="capin" type="text" placeholder="Add a caption…" autocomplete="off"></div>
+  <div class="sendbar"><span>Send to ${esc(toName)} in WhatsApp</span><button class="sendc" type="button" data-a="sharesend" aria-label="Send">${I.send}</button></div></div>`;
 }
 
 /* ================= iOS CALENDAR ================= */
+const calBack=`${I.back.replace('width="12" height="20"','width="10" height="18"')}`;
+function visibleEvents(){return S.events.filter(e=>!e.deleted&&!S.hidden[e.cal])}
 function calView(){
  if(S.cal.detail)return calDetail();
+ if(S.cal.mode==="month")return calMonth();
+ if(S.cal.mode==="list")return calList();
  const d=S.cal.day;const sun=d-wdi(d);
  const days=[0,1,2,3,4,5,6].map(i=>sun+i);
- const evs=S.events.filter(e=>e.date===d&&!e.deleted);
+ const evs=visibleEvents().filter(e=>e.date===d);
  const allday=evs.filter(e=>e.kind==="deadline");
  const timed=evs.filter(e=>e.kind!=="deadline").sort((a,b)=>a.start-b.start);
  const START=6,END=23,PX=56;
@@ -996,28 +1247,77 @@ function calView(){
   return `<button class="evb ${S.cal.hl===e.id?"hl":""}" type="button" data-a="evd:${e.id}" style="top:${top}px;height:${ht}px;left:${64+L.c*W}px;right:auto;width:${W-4}px;background:${c}26;border-color:${c};color:#1c1c1e;text-align:left"><b>${esc(e.title)}</b>${e.loc?esc(e.loc)+" · ":""}${fmtT(e.start)}</button>`}).join("");
  const nowLine=d===10?`<div class="now" style="top:${(S.clock/60-START)*PX}px"></div>`:"";
  return `<div class="view cal">${statusBar(false)}
-  <div class="cal-top"><span class="bk2">${I.back.replace('width="12" height="20"','width="10" height="18"')} November</span><span class="ics">${I.list}${I.search}${I.plus}</span></div>
-  <div class="wk">${days.map(x=>`<span class="l">${WD[wdi(x)][0]}</span>`).join("")}${days.map(x=>{const has=S.events.some(e=>e.date===x);return `<button type="button" class="${x===10?"today":""} ${x===d?"on":""}" data-a="calday:${x}">${x}</button>`}).join("")}</div>
-  <div class="wknav"><button type="button" data-a="calday:${Math.max(8,d-7)}">‹ Previous week</button><button type="button" data-a="calday:${Math.min(28,d+7)}">Next week ›</button></div>
+  <div class="cal-top"><button class="bk2" type="button" data-a="calmode:month">${calBack} November</button><span class="ics"><button type="button" data-a="calmode:list" aria-label="List">${I.list}</button><button type="button" data-a="calsearch" aria-label="Search">${I.search}</button><button type="button" data-a="calnew" aria-label="New event">${I.plus}</button></span></div>
+  <div class="wk">${days.map(x=>`<span class="l">${WD[wdi(x)][0]}</span>`).join("")}${days.map(x=>x>30?`<button type="button" data-a="calmode:month" style="color:#c7c7cc">${x-30}</button>`:`<button type="button" class="${x===10?"today":""} ${x===d?"on":""}" data-a="calday:${x}">${x}</button>`).join("")}</div>
+  <div class="wknav"><button type="button" data-a="calday:${Math.max(1,d-7)}">‹ Previous week</button><button type="button" data-a="calday:${Math.min(30,d+7)}">Next week ›</button></div>
   <div class="cal-date">${WDL[wdi(d)]} – November ${d}, 2026</div>
   ${allday.length?`<div class="allday"><span class="k">all-day</span>${allday.map(e=>`<button class="ev ${S.cal.hl===e.id?"evb hl":""}" type="button" data-a="evd:${e.id}" style="position:static;background:${COL[e.color]}2e;color:#7a4a00;${S.cal.hl===e.id?"border-left:3px solid "+COL[e.color]:""}">${esc(e.title)} · due ${fmtT(e.start)}${e.flag?" · "+esc(e.flag):""}</button>`).join("")}</div>`:""}
   <div class="tl" id="tl"><div style="position:relative;padding:10px 0 20px">${hrs.join("")}${blocks}${nowLine}</div></div>
-  <div class="cal-bot"><button type="button" data-a="calday:10">Today</button><span>Calendars</span><span>Inbox</span></div>
+  ${calBottom()}
   ${homeBar(false)}</div>`;
+}
+function calBottom(){return `<div class="cal-bot"><button type="button" data-a="caltoday">Today</button><button type="button" data-a="calcals">Calendars</button><button type="button" data-a="calinbox">Inbox</button></div>`}
+function calMonth(){
+ const first=wdi(1);const cells=[];for(let i=0;i<first;i++)cells.push("<span></span>");
+ for(let d=1;d<=30;d++){const n=visibleEvents().filter(e=>e.date===d).length;cells.push(`<button type="button" data-a="calpick:${d}" class="${d===10?"today":""} ${d===S.cal.day?"on":""}"><b>${d}</b>${n?`<i></i>`:""}</button>`)}
+ return `<div class="view cal">${statusBar(false)}
+  <div class="cal-top"><span class="bk2" style="color:#8e8e93">2026</span><span class="ics"><button type="button" data-a="calmode:list" aria-label="List">${I.list}</button><button type="button" data-a="calsearch" aria-label="Search">${I.search}</button><button type="button" data-a="calnew" aria-label="New event">${I.plus}</button></span></div>
+  <div style="font-size:30px;font-weight:700;padding:6px 16px 10px;color:var(--ios-red)">November</div>
+  <div class="mgrid">${WD.map(w=>`<span class="l">${w[0]}</span>`).join("")}${cells.join("")}</div>
+  <div style="flex:1"></div>${calBottom()}${homeBar(false)}</div>`;
+}
+function calList(){
+ const q=S.cal.q.trim().toLowerCase();
+ const evs=visibleEvents().filter(e=>e.date>=(q?1:10)&&(!q||(e.title+" "+(e.loc||"")).toLowerCase().includes(q))).sort((a,b)=>a.date-b.date||a.start-b.start);
+ let html="",last=null;
+ evs.forEach(e=>{if(e.date!==last){html+=`<div class="ldate">${WDL[wdi(e.date)]}, Nov ${e.date}</div>`;last=e.date}
+  html+=`<button class="lev" type="button" data-a="evd:${e.id}"><i style="background:${COL[e.color]}"></i><span><b>${esc(e.title)}</b><small>${e.kind==="deadline"?"Due "+fmtT(e.start):fmtT(e.start)+" – "+fmtT(e.end)}${e.loc?" · "+esc(e.loc):""}</small></span></button>`});
+ return `<div class="view cal">${statusBar(false)}
+  <div class="cal-top"><button class="bk2" type="button" data-a="calmode:day">${calBack} Day</button><span class="ics"><button type="button" data-a="calnew" aria-label="New event">${I.plus}</button></span></div>
+  <label class="search" style="margin:4px 14px 8px">${I.search}<input class="sin" id="calq" type="search" placeholder="Search events" value="${esc(S.cal.q)}" autocomplete="off"></label>
+  <div class="rows" id="callist" style="background:#f2f2f7">${html||`<div style="text-align:center;color:#8e8e93;padding:40px">No events</div>`}</div>
+  ${calBottom()}${homeBar(false)}</div>`;
 }
 function calDetail(){
  const e=evById(S.cal.detail);
+ if(!e){S.cal.detail=null;return calView()}
  return `<div class="view cal">${statusBar(false)}
-  <div class="cal-top"><button class="bk2" type="button" data-a="evback">${I.back.replace('width="12" height="20"','width="10" height="18"')} ${WD[wdi(e.date)]} ${e.date}</button><span style="color:var(--ios-red);font-size:17px">Edit</span></div>
+  <div class="cal-top"><button class="bk2" type="button" data-a="evback">${calBack} ${WD[wdi(e.date)]} ${e.date}</button><button type="button" data-a="evedit:${e.id}" style="color:var(--ios-red);font-size:17px">Edit</button></div>
   <div class="evd"><div class="grp2"><h3>${esc(e.title)}</h3><p>${e.loc?esc(e.loc)+"<br>":""}${WDL[wdi(e.date)]}, Nov ${e.date}, 2026<br>${e.kind==="deadline"?"Due "+fmtT(e.start):"from "+fmtT(e.start)+" to "+fmtT(e.end)}</p></div>
    <div class="grp2"><div class="rowx"><span>Calendar</span><span><span style="color:${COL[e.color]}">●</span> ${esc(e.cal)}</span></div><div class="rowx"><span>Alert</span><span>${e.alert||"None"}</span></div></div>
    ${e.notes?`<div class="grp2"><div class="note">${esc(e.notes)}</div></div>`:""}
-   <div class="grp2" style="text-align:center;color:var(--ios-red)">Delete Event</div></div>
+   <button class="grp2" type="button" data-a="evdel:${e.id}" style="text-align:center;color:var(--ios-red);display:block;width:calc(100% - 32px)">Delete Event</button></div>
   ${homeBar(false)}</div>`;
+}
+
+/* ================= generic sheets and full-screen overlays ================= */
+function sheetHTML(){
+ const s=S.sheet;if(!s)return"";
+ const dk=s.dark?"dk":"";
+ if(s.type==="actions")return `<div class="scrim" data-a="sheetclose"></div><div class="asheet ${dk}" role="dialog">${s.title?`<div class="atitle">${esc(s.title)}</div>`:""}<div class="agroup">${s.items.map(it=>`<button type="button" class="${it.red?"red":""}" data-a="${it.a}">${esc(it.l)}</button>`).join("")}</div><button type="button" class="acancel" data-a="sheetclose">Cancel</button></div>`;
+ if(s.type==="list")return `<div class="scrim" data-a="sheetclose"></div><div class="sheet tall ${dk}" role="dialog"><div class="grab"></div><div class="sh-top"><button type="button" data-a="sheetclose">Cancel</button><b>${esc(s.title)}</b><span style="width:52px"></span></div>${s.items.map(it=>`<button class="pick" type="button" data-a="${it.a}">${it.av||""}<span class="pb"><b>${esc(it.l)}</b>${it.sub?`<small>${esc(it.sub)}</small>`:""}</span>${it.on!=null?`<span class="radio ${it.on?"on":""}">${it.on?I.check:""}</span>`:""}</button>`).join("")}</div>`;
+ if(s.type==="form")return `<div class="scrim" data-a="sheetclose"></div><div class="sheet tall form ${dk}" role="dialog"><div class="grab"></div><div class="sh-top"><button type="button" data-a="sheetclose">Cancel</button><b>${esc(s.title)}</b><button type="button" data-a="${s.submit.a}" style="font-weight:600">${esc(s.submit.l)}</button></div>
+  <div class="fbody">${s.fields.map(f=>`<label class="frow"><span>${esc(f.l)}</span>${f.type==="select"?`<select id="f_${f.id}">${f.options.map(o=>`<option value="${esc(o[0])}" ${String(o[0])===String(f.v)?"selected":""}>${esc(o[1])}</option>`).join("")}</select>`:f.type==="area"?`<textarea id="f_${f.id}" rows="6">${esc(f.v||"")}</textarea>`:`<input id="f_${f.id}" type="text" value="${esc(f.v||"")}" placeholder="${esc(f.ph||"")}" autocomplete="off">`}</label>`).join("")}</div></div>`;
+ if(s.type==="note")return `<div class="scrim" data-a="sheetclose"></div><div class="asheet ${dk}" role="dialog"><div class="agroup"><div class="anote"><b>${esc(s.title)}</b>${esc(s.text)}</div></div><button type="button" class="acancel" data-a="sheetclose">${esc(s.done||"Done")}</button></div>`;
+ return"";
+}
+function overHTML(){
+ const o=S.over;if(!o)return"";
+ if(o.type==="call")return `<div class="callscr"><div style="margin-top:110px;text-align:center"><span class="av" style="width:110px;height:110px;margin:0 auto">${o.av?`<img src="${o.av}" alt="">`:""}</span><b style="display:block;font-size:28px;margin-top:18px;font-weight:600">${esc(o.name)}</b><span id="callst" style="opacity:.75;font-size:17px">${o.ringing?"Ringing":o.app+" "+(o.video?"video":"audio")}…</span></div>
+  <div class="callbtns"><button type="button" data-a="callmute" class="${o.mute?"on":""}">${I.mic}<small>${o.mute?"Unmute":"Mute"}</small></button><button type="button" data-a="callspk" class="${o.spk?"on":""}">${I.mute.replace('M17 9l4 6M21 9l-4 6','M17 9a4 4 0 0 1 0 6')}<small>Speaker</small></button><button type="button" data-a="callend" class="end">${I.phone}<small>End</small></button></div></div>`;
+ if(o.type==="camera")return `<div class="camscr"><button type="button" data-a="overclose" class="camx" aria-label="Close camera">✕</button><div class="viewf"><span>📷</span></div>${o.flash?`<div class="flash"></div>`:""}<div class="cambar"><span style="width:44px"></span><button type="button" data-a="shutter" class="shutter" aria-label="Take photo"></button><button type="button" data-a="camflip" aria-label="Switch camera" style="color:#fff;width:44px">⟲</button></div></div>`;
+ if(o.type==="info"){return `<div class="view ovl infoscr ${o.dark?"dk":""}">${statusBar(o.dark)}<div class="ch-top" style="background:transparent;border:0"><button class="back" type="button" data-a="overclose">${I.back} Back</button></div>
+  <div style="text-align:center;padding:10px 20px 18px">${o.avHTML}<b style="display:block;font-size:24px;margin-top:12px">${o.name}</b><span style="color:var(--mute);font-size:15px">${esc(o.sub)}</span>
+  <div class="infobtns">${o.call?`<button type="button" data-a="call:${o.call}">${I.phone}Audio</button><button type="button" data-a="call:${o.call}:video">${I.video}Video</button>`:""}</div></div>
+  <div class="setlist ${o.dark?"dk":""}"><button type="button" data-a="mutechat:${o.key}">${S.mutedChats[o.key]?"Unmute notifications":"Mute notifications"}<span>${S.mutedChats[o.key]?"Muted":"Off"}</span></button>${o.rows.map(r=>`<button type="button" data-a="${r[1]}">${r[0]}<span>›</span></button>`).join("")}</div>${homeBar(o.dark)}</div>`}
+ if(o.type==="screen")return `<div class="view ovl ${o.dark?"infoscr dk":""}">${statusBar(o.dark)}<div class="ch-top" style="${o.dark?"background:#1f1f1f;border:0;color:#e3e3e3":""}"><button class="back" type="button" data-a="overclose" style="${o.dark?"color:#e3e3e3":""}">${I.back} ${esc(o.backLabel||"Back")}</button><b style="flex:1;text-align:center;margin-right:60px">${esc(o.title)}</b></div><div class="rows" style="${o.dark?"background:#1f1f1f":"background:#fff"}">${o.html}</div>${homeBar(o.dark)}</div>`;
+ if(o.type==="drawer")return `<div class="scrim" data-a="overclose"></div><div class="drawer"><div style="font-size:20px;color:#fff;padding:60px 24px 14px">Gmail</div>${FOLDERS.map(f=>`<button type="button" class="${!S.gm.label&&S.gm.folder===f[0]?"on":""}" data-a="gmfolder:${f[0]}">${f[1]}${f[0]==="inbox"?`<span>${S.mail.filter(e=>e.folder==="inbox"&&!e.read).length||""}</span>`:""}</button>`).join("")}<div style="color:#a8abaf;font-size:13px;padding:14px 24px 6px">Labels</div>${LABELS.map(l=>`<button type="button" class="${S.gm.label===l?"on":""}" data-a="gmlab:${l}">${l}</button>`).join("")}</div>`;
+ return"";
 }
 
 /* ================= render ================= */
 function render(){
+ const prevWall=document.getElementById("wall");const keepTop=S.keepScroll&&prevWall?prevWall.scrollTop:null;
  let html="";const a=S.app;
  if(a==="home")html=homeView();
  else if(a==="whatsapp"){const v=S.wa.view;html=v==="chats"?waChats():v==="pip"?pipView():waChat(v);
@@ -1025,12 +1325,15 @@ function render(){
  else if(a==="telegram"){html=S.tg.view==="chats"?tgChats():tgChatView();if(S.tg.menu)html+=tgMenu()}
  else if(a==="gmail"){html=S.gm.view==="inbox"?gmInbox():gmOpen()}
  else if(a==="calendar")html=calView();
+ html+=overHTML();
  if(S.share)html+=S.share.step==="sheet"?shareSheet():waExtension();
+ html+=sheetHTML();
  if(S.notif)html+=`<button class="notif" type="button" data-a="notif"><span class="appic">${I.chatbub}</span><div><b>Jarvis<small>WhatsApp · now</small></b>${md(S.notif)}</div></button>`;
  if(S.toast)html+=`<div class="toast" role="status">${esc(S.toast)}</div>`;
  phone.innerHTML=html;
- const w=document.getElementById("wall");if(w&&!S.keepScroll)w.scrollTop=w.scrollHeight;S.keepScroll=false;
+ const w=document.getElementById("wall");if(w){w.scrollTop=keepTop!=null?keepTop:w.scrollHeight}S.keepScroll=false;
  const tl=document.getElementById("tl");if(tl){const hl=S.cal.hl&&evById(S.cal.hl);const ref=hl&&hl.date===S.cal.day&&hl.kind!=="deadline"?hl.start:h(8);tl.scrollTop=Math.max(0,(ref/60-6)*56-80)}
+ if(S.focus){const f=document.getElementById(S.focus);if(f){f.focus();try{f.setSelectionRange(f.value.length,f.value.length)}catch(_){}}S.focus=null}
  for(let i=1;i<=4;i++)document.getElementById("task"+i).classList.toggle("on",S.task===i);
 }
 
@@ -1039,6 +1342,8 @@ let timers=[];
 const later=(fn,ms)=>timers.push(setTimeout(fn,ms));
 function clearTimers(){timers.forEach(clearTimeout);timers=[]}
 function toast(t){S.toast=t;render();later(()=>{S.toast=null;render()},1600)}
+function copyText(t){try{navigator.clipboard&&navigator.clipboard.writeText(t).catch(()=>{})}catch(_){}}
+const PHOTO=()=>AV.climb;
 function pipReply(steps,notif){
  S.typing=true;render();
  later(()=>{S.typing=false;steps.forEach(s=>P(s.kind,s));
@@ -1059,19 +1364,18 @@ function t1Card(variant,t){
  return {kind:"card",key:"t1",title:"Stats 203 study group",status:["Needs your OK","a"],t,
   inset:`<div class="ir"><span class="k">Day</span><span><s>Wed Nov 11</s><b>Thu Nov 12</b></span></div><div class="ir"><span class="k">Time</span><span>${full?`<s>4:00</s><b>4:30 – 5:30 pm</b>`:`<b>4:00 – 5:00 pm</b> <span style="color:var(--mute)">(same length)</span>`}</span></div><div class="ir"><span class="k">Room</span><span>${full?`<s>Library 4th floor</s><b>Room 405</b>`:`<span class="warn">Still undecided</span>`}</span></div>`,
   lines:[["ok",I.check,"No clash. Design 213 team sync starts at 6:00 pm."]].concat(full?[]:[["",I.info,"Plans often change in follow-ups. Forward later messages and I'll update the room."]]),
-  foot:(full?"From 2 messages by Sam":"From Sam · 2:14 pm")+" · nothing changes yet",
-  buttons:[{label:"Update event",a:"t1upd",pri:true,icon:I.check},{label:"Edit details",a:"toast:Edit opens a short form (not in this test)"},{label:"Not this event",a:"t1not"}]};
+  buttons:[{label:"Update event",a:"t1upd",pri:true,icon:I.check},{label:"Edit details",a:"t1edit"},{label:"Not this event",a:"t1not"}]};
 }
 function t2Card(t){
  return {kind:"card",key:"t2",title:"Stats 203 Assignment 5",status:["Needs your choice","a"],t,
   inset:`<div class="opt"><span>Screenshot · TA post, Nov 9</span><b>Mon Nov 16, 9:00 am</b><span class="tags"><span class="tag new">Newer</span><span class="tag unv">Unverified</span></span></div><div class="opt"><span>Course site · updated Oct 30</span><b>Fri Nov 13, 11:59 pm</b><span class="tags"><span class="tag cal">In your calendar now</span></span></div>`,
-  lines:[["",I.info,"Screenshots can be edited, so I can't confirm the newer date."]],foot:"Nothing changes until you choose",
+  lines:[["",I.info,"Screenshots can be edited, so I can't confirm the newer date."]],
   buttons:[{label:"Choose a date",a:"openlist",pri:true,icon:I.list}]};
 }
 function t3Card(t){
  return {kind:"card",key:"t3",title:"Friendsgiving potluck",status:["New event","b"],t,
   inset:`<div class="ir"><span class="k">When</span><span><b>Sat Nov 14 · 6:30 – 9:00 pm</b></span></div><div class="ir"><span class="k">Where</span><span><b>2420 Durant Ave, apt 3</b></span></div><div class="ir"><span class="k">RSVP</span><span>by <b>Thu Nov 12</b> · bring a dish</span></div>`,
-  lines:[["ok",I.check,"Your Saturday evening is free."]],foot:"From text you shared · nothing added yet",
+  lines:[["ok",I.check,"Your Saturday evening is free."]],
   buttons:[{label:"Add to calendar",a:"t3add",pri:true,icon:I.plus.replace('width="22" height="22"','width="15" height="15"')},{label:"Add + remind me to RSVP",a:"t3addr"},{label:"Not now",a:"t3not"}]};
 }
 function t4Card(fake,t){
@@ -1079,20 +1383,29 @@ function t4Card(fake,t){
  if(fake)return {kind:"card",key:"t4",title:"Product Design Career Night",status:["Check sender","a"],t,
   inset:base+`<div class="ir"><span class="k">From</span><span class="warn">events@berkeley-career-signup.net</span></div>`,
   lines:[["am",I.alert,"I haven't seen this sender before. Earlier Career Center emails came from **careercenter@berkeley.edu**. I won't send your résumé."],["am",I.info,"Overlaps **Design 213 team sync**, 6:00 – 7:00 pm."]],
-  foot:"From an email you shared",buttons:[{label:"Add to calendar only",a:"t4add",pri:true},{label:"Not now",a:"t4not"}]};
+  buttons:[{label:"Add to calendar only",a:"t4add",pri:true},{label:"Not now",a:"t4not"}]};
  return {kind:"card",key:"t4",title:"Product Design Career Night",status:["New event","b"],t,
   inset:base+`<div class="ir"><span class="k">Sign up</span><span>by <b>Mon Nov 16</b> · bring 3 résumés</span></div>`,
   lines:[["ok",I.check,"Sender checked: **careercenter@berkeley.edu**, same as earlier Career Center emails."],["am",I.info,"Overlaps **Design 213 team sync**, 6:00 – 7:00 pm."]],
-  foot:"From an email you shared · nothing added yet",
   buttons:[{label:"Add + register me",a:"t4reg",pri:true},{label:"Add to calendar only",a:"t4add"},{label:"Not now",a:"t4not"}]};
+}
+/* extra: résumé drop-ins email (any other email can be shared too) */
+function t5Card(t){
+ return {kind:"card",key:"t5",title:"Résumé review drop-ins",status:["New event","b"],t,
+  inset:`<div class="ir"><span class="k">When</span><span><b>Fri Nov 13 · 1:00 – 3:00 pm</b></span></div><div class="ir"><span class="k">Where</span><span><b>Career Center</b> · no appointment</span></div>`,
+  lines:[["ok",I.check,"Your Friday afternoon is free."]],
+  buttons:[{label:"Add to calendar",a:"t5add",pri:true,icon:I.plus.replace('width="22" height="22"','width="15" height="15"')},{label:"Not now",a:"t5not"}]};
 }
 
 function forwardFromWA(){
- const src=S.wa.view,ids=S.wa.selected.slice();
- const list=src==="study"?study:priyaChat;const msgs=list.filter(m=>ids.includes(m.id));
+ const src=S.wa.view,ids=S.wa.selected.slice(),to=S.wa.pickTo;
+ const msgs=S.chats[src].msgs.filter(m=>ids.includes(m.id)&&!m.del);
  tick(2);const t=tLabel();
- msgs.forEach(m=>P("fwd",{text:m.text,img:!!m.img,t}));
  S.wa.sel=null;S.wa.selected=[];S.wa.picker=false;S.wa.pickTo=null;
+ if(to!=="pip"){const c=S.chats[to];const today=!c.msgs.some(m=>m.day==="Today");
+  msgs.forEach((m,i)=>c.msgs.push({id:uid("f"),from:"me",text:m.text,img:m.img,fwd:true,t,fresh:true,day:today&&i===0?"Today":undefined}));
+  return toast("Forwarded to "+c.name)}
+ msgs.forEach(m=>P("fwd",{text:m.text,img:!!m.img,t}));
  toast("Forwarded");
  if(src==="study"){
   const a=ids.includes("s214"),b=ids.includes("s231");
@@ -1100,25 +1413,116 @@ function forwardFromWA(){
   if(b&&!a){pipReply([{kind:"text",text:"This looks like a correction to an earlier plan, but I can't see the original. Forward Sam's earlier message too and I'll put them together.",t}],"Forward Sam's earlier message too.");return}
   const v=b?"full":"partial";S.t1Var=v;
   pipReply([{kind:"summary",text:v==="full"?"Sam moved **Stats 203 study group** to Thursday, then corrected it to **4:30 pm in Room 405**.":"Sam moved **Stats 203 study group** to **Thursday at 4:00 pm**. The room is still undecided.",t},t1Card(v,t)],v==="full"?"Sam moved the study group to Thu 4:30 pm. Tap to review.":"Sam moved the study group to Thu 4:00 pm. Tap to review.");
- }else{
-  if(!ids.includes("p152")){pipReply([{kind:"text",text:"This matches your calendar: **Dinner with friends**, Tue Nov 10, 7:00–9:00 pm. Nothing to change.",t}],"Nothing to change.");return}
+ }else if(src==="priya"&&ids.includes("p152")){
   pipReply([{kind:"summary",text:"This screenshot says **Assignment 5** is now due **Mon Nov 16, 9:00 am**. The course site still says **Fri Nov 13, 11:59 pm**.",t},t2Card(t)],"Two sources disagree about Assignment 5. Tap to choose.");
+ }else if(src==="priya"){
+  pipReply([{kind:"text",text:"This matches your calendar: **Dinner with friends**, Tue Nov 10, 7:00–9:00 pm. Nothing to change.",t}],"Nothing to change.");
+ }else{
+  pipReply([{kind:"text",text:genericCheck(msgs.map(m=>m.text).join(" ")),t}],"I checked what you forwarded.");
  }
+}
+function genericCheck(txt){
+ const s=(txt||"").toLowerCase();
+ if(/thursday|thurs|\bthu\b/.test(s)&&/7\s?pm|7pm/.test(s))return "Thursday 7:00 pm is free on your calendar. Want to plan it? Forward the final time once it's set and I'll add it.";
+ if(/room 205|6.?7|sync/.test(s))return "That matches your calendar: **Design 213 team sync**, Thu Nov 12, 6:00–7:00 pm, Room 205. Nothing to change.";
+ if(/dinner|at 7|7 🍜/.test(s))return "That matches your calendar: **Dinner with friends**, today 7:00–9:00 pm. Nothing to change.";
+ return "I didn't find a date or time in this that changes your calendar.";
 }
 function shareSend(){
- const sh=S.share;S.share=null;tick(2);const t=tLabel();
+ const sh=S.share;const cap=(document.getElementById("capin")||{}).value||"";S.share=null;tick(2);const t=tLabel();const to=sh.to||"pip";
+ if(to!=="pip"){const c=S.chats[to];const today=!c.msgs.some(m=>m.day==="Today");
+  c.msgs.push({id:uid("s"),from:"me",text:sh.source==="gmail"?"✉ "+sh.email.subject:sh.text,t,fresh:true,day:today?"Today":undefined});
+  if(cap.trim())c.msgs.push({id:uid("s"),from:"me",text:cap.trim(),t,fresh:true});
+  return toast("Sent to "+c.name)}
  toast("Sent to Jarvis");
  if(sh.source==="telegram"){
-  P("shared",{text:"Aigerim: "+TG_MSG,t});
-  pipReply([{kind:"summary",text:"Aigerim invited you to a **Friendsgiving potluck** on **Sat Nov 14, 6:30 pm**. It's not on your calendar yet.",t},t3Card(t)],"New plan: Friendsgiving potluck, Sat 6:30 pm. Tap to review.");
- }else{
-  const fake=sh.email.id==="cf";
-  P("shared",{email:sh.email,t});
-  pipReply(fake?[{kind:"summary",text:"This email is about **Product Design Career Night**, Thu Nov 19, 6:00–8:00 pm. It asks for your résumé from a sender I don't recognize.",t},t4Card(true,t)]
-   :[{kind:"summary",text:"The Career Center invited you to **Product Design Career Night**, Thu Nov 19, 6:00–8:00 pm. It needs a sign-up by **Mon Nov 16**.",t},t4Card(false,t)],
-   fake?"Check this sender before you sign up for Career Night.":"Career Night, Thu Nov 19. Want me to add it and sign you up?");
+  P("shared",{text:sh.text,t});if(cap.trim())P("user",{text:cap.trim(),t});
+  if(sh.key)return pipReply([{kind:"summary",text:"Aigerim invited you to a **Friendsgiving potluck** on **Sat Nov 14, 6:30 pm**. It's not on your calendar yet.",t},t3Card(t)],"New plan: Friendsgiving potluck, Sat 6:30 pm. Tap to review.");
+  return pipReply([{kind:"text",text:genericCheck(sh.text),t}],"I checked the message you shared.");
  }
+ const e=sh.email;P("shared",{email:e,t});if(cap.trim())P("user",{text:cap.trim(),t});
+ if(e.id==="cn"||e.id==="cf"){const fake=e.id==="cf";
+  return pipReply(fake?[{kind:"summary",text:"This email is about **Product Design Career Night**, Thu Nov 19, 6:00–8:00 pm. It asks for your résumé from a sender I don't recognize.",t},t4Card(true,t)]
+   :[{kind:"summary",text:"The Career Center invited you to **Product Design Career Night**, Thu Nov 19, 6:00–8:00 pm. It needs a sign-up by **Mon Nov 16**.",t},t4Card(false,t)],
+   fake?"Check this sender before you sign up for Career Night.":"Career Night, Thu Nov 19. Want me to add it and sign you up?")}
+ if(e.id==="rr")return pipReply([{kind:"summary",text:"The Career Center has **résumé review drop-ins** on **Fri Nov 13, 1:00–3:00 pm**.",t},t5Card(t)],"Résumé drop-ins, Fri 1–3 pm. Tap to review.");
+ if(e.id==="cs")return pipReply([{kind:"text",text:"That's already on your calendar: **Stats 203 reading response**, due Thu Nov 12, 11:59 pm. Nothing to change.",t}],"Already on your calendar.");
+ if(e.id==="lb")return pipReply([{kind:"text",text:"Your library hold is ready until **Tue Nov 17**. It's not an event, so I didn't add anything.",t}],"Nothing to add.");
+ return pipReply([{kind:"text",text:"I didn't find a date or time in this email that changes your calendar.",t}],"Nothing to add.");
 }
+function jarvisChat(text){
+ const s=text.toLowerCase();const t=tLabel();
+ const fmt=d=>{const l=S.events.filter(e=>e.date===d&&!e.deleted&&(d!==10||e.end>S.clock)).sort((a,b)=>a.start-b.start);return l.length?l.map(e=>`**${e.title}**, ${e.kind==="deadline"?"due "+fmtT(e.start):fmtT(e.start)+" – "+fmtT(e.end)}`).join("\n"):"Nothing else on your calendar."};
+ let r;
+ if(/tomorrow|wed/.test(s))r="Tomorrow, Wed Nov 11:\n"+fmt(11);
+ else if(/today|schedule|agenda|what.*(have|on|left)/.test(s))r="Still on today:\n"+fmt(10);
+ else if(/thank|thx|ty\b/.test(s))r="Anytime 🙂";
+ else if(/undo/.test(s))r="Tap **Undo** on the card you want to reverse.";
+ else if(/^(hi|hey|hello|yo)\b/.test(s))r="Hi Maya! Forward me a message, or share one from any other app, and I'll check it against your calendar.";
+ else r="I can help with plans in your messages. Hold a message → **Forward** → Jarvis, or tap **Share** in any other app.";
+ pipReply([{kind:"text",text:r,t}]);
+}
+function waFind(chat,id){return S.chats[chat].msgs.find(m=>m.id===id)}
+function waWho(chat,m){return m.from==="me"?"You":PEOPLE[m.from]&&S.chats[chat].group?PEOPLE[m.from][0]:S.chats[chat].name}
+function tgWho(chat,m){return m.from==="me"?"You":TGN[m.from]?TGN[m.from][0].split(" ·")[0]:S.tgchats[chat].name}
+function sendTo(key,payload){
+ if(key==="pip"){tick();const t=tLabel();P("user",Object.assign({t,quote:S.reply&&S.reply.chat==="pip"?S.reply.text:undefined},payload));S.reply=null;S.emoji=false;
+  if(payload.voice){render();return pipReply([{kind:"text",text:"I can't listen to voice messages yet. Type it, or forward the message with the plan in it.",t}])}
+  if(payload.photo){render();return pipReply([{kind:"text",text:"I don't see a date or time in this photo. If it's a screenshot of a plan, forward it from the chat it came from.",t}])}
+  render();return jarvisChat(payload.text)}
+ tick();
+ const tg=key.startsWith("tg/");const id=tg?key.slice(3):key;const c=tg?S.tgchats[id]:S.chats[id];
+ const t=tg?tLabel().toUpperCase():tLabel();const today=!c.msgs.some(m=>m.day==="Today");
+ const r=S.reply&&S.reply.chat===key?{who:S.reply.who,text:S.reply.text}:undefined;
+ c.msgs.push(Object.assign({id:uid("u"),from:"me",t,fresh:true,quote:r,day:today?"Today":undefined},payload));
+ S.reply=null;S.emoji=false;render();
+}
+function draftOf(key){return (S.draft||{})[key]||""}
+function setDraft(key,v){S.draft=S.draft||{};S.draft[key]=v}
+
+/* ---------- sheets / overlays helpers ---------- */
+function actions(title,items,dark){S.sheet={type:"actions",title,items,dark};render()}
+function screen(title,html,dark,backLabel){S.over={type:"screen",title,html,dark,backLabel};render()}
+function kv(pairs,dark){return `<div class="setlist ${dark?"dk":""}" style="margin-top:12px">${pairs.map(p=>`<div class="kvrow"><span>${esc(p[0])}</span><span>${esc(p[1])}</span></div>`).join("")}</div>`}
+const SETINFO={
+ Account:[["Phone","+1 (510) 555-0142"],["Email","maya.chen@berkeley.edu"],["Two-step verification","On"]],
+ Privacy:[["Last seen and online","Everyone"],["Profile photo","My contacts"],["Read receipts","On"]],
+ Chats:[["Theme","System"],["Chat backup","Today, 3:00 am"],["Keep chats archived","On"]],
+ Notifications:[["Message notifications","On"],["Group notifications","On"],["Show preview","Always"]],
+ "Storage and data":[["Network usage","1.2 GB sent · 3.4 GB received"],["Media auto-download","Wi-Fi only"]],
+ Help:[["App version","26.21.4"],["Terms and Privacy Policy",""]],
+ "My Profile":[["Name","Maya"],["Username","@maya_c"],["Bio","Berkeley · design + stats"]],
+ "Saved Messages":[["Saved messages","None yet"]],
+ "Notifications and Sounds":[["Private chats","On"],["Groups","On"],["Channels","Off"]],
+ "Privacy and Security":[["Phone number","My contacts"],["Last seen","Everybody"],["Passcode","Off"]],
+ Appearance:[["Theme","Night"],["Text size","Default"]]
+};
+const TIMES=[];for(let m=h(6);m<=h(23,30);m+=30)TIMES.push([m,fmtT(m)]);
+const DAYS=[];for(let d=1;d<=30;d++)DAYS.push([d,`${WD[wdi(d)]} Nov ${d}`]);
+function fval(id){const el=document.getElementById("f_"+id);return el?el.value:""}
+function eventForm(e){
+ const isNew=!e;e=e||{title:"",date:S.cal.day,start:h(12),end:h(13),loc:""};
+ S.sheet={type:"form",title:isNew?"New Event":"Edit Event",submit:{l:isNew?"Add":"Done",a:isNew?"calsave":"calsave:"+e.id},fields:[
+  {id:"title",l:"Title",v:e.title,ph:"Title"},{id:"loc",l:"Location",v:e.loc||"",ph:"Location or Video Call"},
+  {id:"date",l:"Day",type:"select",options:DAYS,v:e.date},
+  {id:"start",l:e.kind==="deadline"?"Due":"Starts",type:"select",options:TIMES.concat([[h(23,59),"11:59 pm"]]),v:e.start},
+  ...(e.kind==="deadline"?[]:[{id:"end",l:"Ends",type:"select",options:TIMES.concat([[h(23,59),"11:59 pm"]]),v:e.end}])]};
+ render();
+}
+function infoFor(key){
+ if(key.startsWith("tg-")){const id=key.slice(3),c=S.tgchats[id];
+  return {type:"info",dark:true,key,name:esc(c.name),sub:c.sub,avHTML:`<span style="display:inline-block;transform:scale(1.8);margin:18px">${tgAv(id)}</span>`,call:c.group?null:"tg-"+id,
+   rows:[["Shared media","media:"+key],c.group?["Members","members:"+key]:["Saved to contacts","toast:Already in your contacts"]]}}
+ if(key==="pip")return {type:"info",key,name:`Jarvis <span class="bot" aria-hidden="true">🤖</span>`,sub:"Calendar assistant · business account",avHTML:`<span style="display:inline-block;transform:scale(1.8);margin:18px">${avImg("pip")}</span>`,call:"pip",
+  rows:[["Media, links and docs","media:pip"],["Starred messages","starred:pip"],["What Jarvis can see","seen:pip"]]};
+ const c=S.chats[key];
+ return {type:"info",key,name:esc(c.name),sub:c.group?"Group · "+c.sub:c.sub,avHTML:`<span style="display:inline-block;transform:scale(1.8);margin:18px">${avImg(c.av)}</span>`,call:c.group?null:key,
+  rows:[["Media, links and docs","media:"+key],["Starred messages","starred:"+key]].concat(c.group?[["Members","members:"+key]]:[])};
+}
+function closeTransient(){S.wa.menu=null;S.wa.picker=false;S.wa.list=false;S.tg.menu=false;S.gm.menu=false;S.sheet=null;S.emoji=false}
+function gmTargets(){return S.gm.view!=="inbox"?[S.gm.view]:S.gm.sel.slice()}
+function gmAfter(msg){S.gm.menu=false;S.sheet=null;S.gm.sel=[];if(S.gm.view!=="inbox")S.gm.view="inbox";toast(msg)}
+function gmCompose(to,subject,body){S.sheet={type:"form",dark:true,title:"Compose",submit:{l:"Send",a:"gmsendmail"},fields:[{id:"to",l:"To",v:to||"",ph:"Recipients"},{id:"subj",l:"Subject",v:subject||"",ph:"Subject"},{id:"body",l:"",type:"area",v:body||""}]};render()}
 
 /* ================= actions ================= */
 function act(a){
@@ -1127,58 +1531,185 @@ function act(a){
  case"noop":return;
  case"noapp":return toast("Not available in this test");
  case"toast":return toast(v);
- case"home":S.app="home";S.back=null;S.share=null;S.wa.menu=null;S.tg.menu=false;S.gm.menu=false;S.wa.list=false;S.wa.picker=false;return render();
- case"open":S.app=v;S.back=null;if(v==="calendar"){S.cal.hl=null;S.cal.detail=null}return render();
- case"goback":{const b=S.back;S.back=null;S.app=b.app;return render()}
- case"notif":S.notif=null;S.share=null;S.back=S.app!=="whatsapp"?{app:S.app,label:S.app[0].toUpperCase()+S.app.slice(1)}:null;S.app="whatsapp";S.wa.view="pip";S.unread.pip=0;S.wa.sel=null;S.wa.selected=[];S.wa.menu=null;return render();
- /* whatsapp */
- case"wa":S.wa.view=v;if(S.unread[v]!=null)S.unread[v]=0;S.wa.sel=null;S.wa.selected=[];return render();
+ case"home":S.app="home";S.back=null;S.share=null;S.over=null;closeTransient();return render();
+ case"open":S.app=v;S.back=null;S.over=null;closeTransient();if(v==="calendar"){S.cal.hl=null;S.cal.detail=null;S.cal.mode="day";S.cal.day=10}return render();
+ case"goback":{const b=S.back;S.back=null;S.over=null;closeTransient();S.app=b.app;return render()}
+ case"notif":S.notif=null;S.share=null;S.over=null;closeTransient();S.back=S.app!=="whatsapp"?{app:S.app,label:S.app[0].toUpperCase()+S.app.slice(1)}:null;S.app="whatsapp";S.wa.tab="chats";S.wa.view="pip";S.unread.pip=0;S.wa.sel=null;S.wa.selected=[];return render();
+ case"sheetclose":S.sheet=null;return render();
+ case"overclose":S.over=null;S.sheet=null;return render();
+ case"set":screen(v,kv(SETINFO[v]||[["Nothing to change here",""]],S.app==="telegram"),S.app==="telegram","Settings");return;
+ /* ---------- whatsapp ---------- */
+ case"wa":closeTransient();S.reply=null;S.over=null;S.wa.view=v;if(v!=="chats"&&S.unread[v]!=null)S.unread[v]=0;S.wa.sel=null;S.wa.selected=[];if(v==="chats")S.wa.tab="chats";return render();
+ case"watab":S.wa.tab=v;S.wa.view="chats";return render();
+ case"wafilter":S.wa.filter=S.wa.filter===v&&v!=="all"?"all":v;return render();
+ case"wadots":return actions(null,[{l:"Read all",a:"wareadall"},{l:"Starred messages",a:"starred:all"},{l:"Settings",a:"watab:settings"}]);
+ case"wareadall":S.sheet=null;Object.keys(S.unread).forEach(k=>S.unread[k]=0);return toast("All chats marked as read");
+ case"wanew":S.sheet={type:"list",title:"New chat",items:["priya","mom","jonah","dana","lena","aidos","grandma"].map(id=>({l:S.chats[id].name,sub:S.chats[id].sub,av:avImg(S.chats[id].av,"sm"),a:"wa:"+id}))};return render();
+ case"screen":if(v==="archived")screen("Archived",`<div style="text-align:center;padding:70px 30px;color:var(--mute);font-size:15px;line-height:1.5">${I.arch}<br><b style="color:#111;font-size:17px">No archived chats</b><br>Swipe left on a chat to archive it.</div>`,false,"Chats");return;
+ case"status":{const c=S.chats[v]||{name:v};screen(c.name,`<div style="padding:20px;text-align:center"><img src="${AV[S.chats[v]?S.chats[v].av:v]}" alt="" style="width:100%;border-radius:16px"><p style="margin-top:14px;color:var(--mute)">${esc(c.name)}'s update</p></div>`,false,"Updates");return}
+ case"starred":{const parts=[];const chats=v==="all"?Object.keys(S.chats):[v];
+  chats.forEach(cid=>{if(cid==="pip")return;S.chats[cid].msgs.forEach(m=>{if(S.star[msgKey(cid,m.id)])parts.push(`<div class="kvrow" style="display:block"><b style="display:block;font-size:13px;color:var(--mute)">${esc(S.chats[cid].name)} · ${m.t}</b>${esc(m.text)}</div>`)})});
+  S.sheet=null;screen("Starred messages",parts.length?`<div class="setlist" style="margin-top:12px">${parts.join("")}</div>`:`<div style="text-align:center;padding:70px 30px;color:var(--mute);font-size:15px">Tap and hold any message, then tap Star to find it here later.</div>`,false,"Back");return}
+ case"media":{const dark=v.startsWith("tg-");const n=dark?S.tgchats[v.slice(3)].msgs.filter(m=>m.img).length:v==="pip"?S.pip.filter(m=>m.img).length:S.chats[v].msgs.filter(m=>m.img).length;
+  screen("Media",kv([["Photos",String(n)],["Links","0"],["Docs","0"]],dark),dark,"Info");return}
+ case"members":{const dark=v.startsWith("tg-");const names=dark?["Aigerim · admin","Aidos","Dana","Nurlan","You"]:S.chats[v].sub.split(", ");screen("Members",kv(names.map(n=>[n,""]),dark),dark,"Info");return}
+ case"seen":screen("What Jarvis can see",`<div style="padding:18px 20px;font-size:15.5px;line-height:1.5;color:#3b4a54"><p>Only messages you forward or share to this chat, and your calendar.</p><p style="margin-top:10px">Jarvis can't read your other chats, and asks before it changes or sends anything.</p></div>`,false,"Info");return;
+ case"info":S.over=infoFor(v);return render();
+ case"mutechat":S.mutedChats[v]=!S.mutedChats[v];render();return toast(S.mutedChats[v]?"Notifications muted":"Notifications on");
+ case"call":{if(v==="pip")return toast("Jarvis can't take calls. Send a message instead.");
+  const video=v.endsWith(":video");const key=v.replace(":video","");
+  let name,av;if(key.startsWith("tg-")){const c=S.tgchats[key.slice(3)];name=c.name;av=c.av?AV[c.av]:null}else{name=S.chats[key].name;av=AV[S.chats[key].av]}
+  S.over={type:"call",name,av,video,app:key.startsWith("tg-")?"Telegram":"WhatsApp"};render();
+  later(()=>{if(S.over&&S.over.type==="call"){S.over.ringing=true;render()}},1200);return}
+ case"callmute":S.over.mute=!S.over.mute;return render();
+ case"callspk":S.over.spk=!S.over.spk;return render();
+ case"callend":S.over=null;return toast("Call ended");
+ case"camera":S.over={type:"camera",chat:v};return render();
+ case"camflip":S.over.front=!S.over.front;return render();
+ case"shutter":{const chat=S.over.chat;S.over.flash=true;render();
+  later(()=>{S.over=null;if(chat==="wa")return toast("Saved to Photos");if(chat==="pip")return sendTo("pip",{text:"📷 Photo",photo:true});sendTo(chat,{text:"",img:PHOTO()});toast("Photo sent")},350);return}
+ case"attach":{const key=v;return actions(null,[{l:"Photo Library",a:"sendphoto:"+key},{l:"Camera",a:"camera:"+key},{l:"Location",a:"sendloc:"+key},{l:"Document",a:"senddoc:"+key}],key.startsWith("tg/"))}
+ case"sendphoto":S.sheet=null;if(v==="pip")return sendTo("pip",{text:"📷 Photo",photo:true});return sendTo(v,{text:"",img:PHOTO()});
+ case"sendloc":S.sheet=null;return sendTo(v,{text:"📍 Location: Main Library, UC Berkeley"});
+ case"senddoc":S.sheet=null;return sendTo(v,{text:"📄 Stats203_notes.pdf · 214 KB"});
+ case"voice":return sendTo(v,{text:"🎤 Voice message (0:04)",voice:true});
+ case"emoji":S.emoji=!S.emoji;S.keepScroll=true;S.focus="cin";return render();
+ case"emo":{const key=phone.querySelector(".composer").dataset.chat;setDraft(key,draftOf(key)+v);S.keepScroll=true;S.focus="cin";return render()}
+ case"send":{const el=document.getElementById("cin");const txt=(el?el.value:draftOf(v)).trim();if(!txt)return;setDraft(v,"");return sendTo(v,{text:txt})}
+ case"noreply":S.reply=null;S.keepScroll=true;return render();
  case"wamenu":{const el=phone.querySelector(`[data-a="wamenu:${v}"]`);const r=el.getBoundingClientRect(),pr=phone.getBoundingClientRect(),sc=pr.height/844;
-  S.wa.menu=v;S.wa.menuTop=Math.max(70,Math.min((r.top-pr.top)/sc-60,844-560));return render()}
- case"closemenu":S.wa.menu=null;return render();
- case"startfwd":S.wa.sel=S.wa.view;S.wa.selected=[S.wa.menu];S.wa.menu=null;return render();
+  S.wa.menu=v;S.wa.menuTop=Math.max(70,Math.min((r.top-pr.top)/sc-60,844-560));S.keepScroll=true;return render()}
+ case"closemenu":S.wa.menu=null;S.keepScroll=true;return render();
+ case"react":{const k2=msgKey(S.wa.view,S.wa.menu);S.react[k2]=S.react[k2]===v?null:v;S.wa.menu=null;S.keepScroll=true;return render()}
+ case"reply":{const chat=S.wa.view,m=waFind(chat,S.wa.menu);S.reply={chat,who:waWho(chat,m),text:m.text||"Photo"};S.wa.menu=null;S.focus="cin";return render()}
+ case"copy":{const m=waFind(S.wa.view,S.wa.menu);copyText(m.text);S.wa.menu=null;S.keepScroll=true;return toast("Copied")}
+ case"star":{const k2=msgKey(S.wa.view,S.wa.menu);S.star[k2]=!S.star[k2];S.wa.menu=null;S.keepScroll=true;return toast(S.star[k2]?"Starred":"Unstarred")}
+ case"pin":{const chat=S.wa.view;S.pins[chat]=S.pins[chat]===S.wa.menu?null:S.wa.menu;S.wa.menu=null;S.keepScroll=true;return toast(S.pins[chat]?"Pinned":"Unpinned")}
+ case"unpin":S.pins[v]=null;S.keepScroll=true;return render();
+ case"report":{const chat=S.wa.view;S.wa.menu=null;return actions(`Report this message to WhatsApp? The last 5 messages from ${S.chats[chat].name} will be sent.`,[{l:"Report",a:"reportok",red:true}])}
+ case"reportok":S.sheet=null;return toast("Reported. Thanks for letting us know.");
+ case"delmsg":{const chat=S.wa.view,m=waFind(chat,S.wa.menu);S.wa.menu=null;
+  return actions("Delete message?",[{l:"Delete for me",a:"delok:me:"+m.id,red:true}].concat(m.from==="me"?[{l:"Delete for everyone",a:"delok:all:"+m.id,red:true}]:[]))}
+ case"delok":{const [mode,id]=v.split(":");const c=S.chats[S.wa.view];const i=c.msgs.findIndex(m=>m.id===id);
+  if(i>=0){if(mode==="all")c.msgs[i]=Object.assign({},c.msgs[i],{del:true,text:"",img:null});else{const d=c.msgs[i].day;c.msgs.splice(i,1);if(d&&c.msgs[i]&&!c.msgs[i].day)c.msgs[i].day=d}}
+  S.sheet=null;S.keepScroll=true;return toast("Message deleted")}
+ case"startfwd":S.wa.sel=S.wa.view;S.wa.selected=[S.wa.menu];S.wa.menu=null;S.keepScroll=true;return render();
  case"tick":{const i=S.wa.selected.indexOf(v);i>=0?S.wa.selected.splice(i,1):S.wa.selected.push(v);S.keepScroll=true;return render()}
- case"cancelsel":S.wa.sel=null;S.wa.selected=[];return render();
- case"fwdgo":S.wa.picker=true;S.wa.pickTo=null;return render();
+ case"cancelsel":S.wa.sel=null;S.wa.selected=[];S.keepScroll=true;return render();
+ case"seldel":{if(!S.wa.selected.length)return toast("Select messages to delete");const n=S.wa.selected.length;return actions(`Delete ${n} message${n>1?"s":""}?`,[{l:"Delete for me",a:"seldelok",red:true}])}
+ case"seldelok":{const c=S.chats[S.wa.view];S.wa.selected.forEach(id=>{const i=c.msgs.findIndex(m=>m.id===id);if(i>=0){const d=c.msgs[i].day;c.msgs.splice(i,1);if(d&&c.msgs[i]&&!c.msgs[i].day)c.msgs[i].day=d}});S.wa.sel=null;S.wa.selected=[];S.sheet=null;return toast("Messages deleted")}
+ case"fwdgo":if(!S.wa.selected.length)return toast("Select messages to forward");S.wa.picker=true;S.wa.pickTo=null;return render();
  case"closepicker":S.wa.picker=false;return render();
  case"pickto":S.wa.pickTo=v;return render();
- case"fwdsend":return forwardFromWA();
- /* telegram */
- case"tg":S.tg.view=v;if(v==="kazsa")S.tgRead=true;return render();
+ case"fwdsend":if(!S.wa.pickTo)return toast("Choose a chat");return forwardFromWA();
+ /* ---------- telegram ---------- */
+ case"tg":closeTransient();S.over=null;S.reply=null;S.tg.view=v;S.tg.sel=null;S.tg.selected=[];if(v!=="chats")S.tgUnread[v]=0;else S.tg.tab="chats";return render();
+ case"tgtab":S.tg.tab=v;S.tg.view="chats";return render();
+ case"tgedit":return actions(null,[{l:"Read all",a:"tgreadall"},{l:"Settings",a:"tgtab:settings"}],true);
+ case"tgreadall":S.sheet=null;Object.keys(S.tgUnread).forEach(k=>S.tgUnread[k]=0);return toast("All chats marked as read");
+ case"tgnew":S.sheet={type:"list",dark:true,title:"New Message",items:["aigerim","dana","nurlan","zhuldyz","mama"].map(id=>({l:S.tgchats[id].name,sub:S.tgchats[id].sub,av:tgAv(id,"sm"),a:"tg:"+id}))};return render();
  case"tgmenu":{const el=phone.querySelector(`[data-a="tgmenu:${v}"]`);const r=el.getBoundingClientRect(),pr=phone.getBoundingClientRect(),sc=pr.height/844;
-  S.tg.menu=v;S.tg.menuTop=Math.max(80,Math.min((r.top-pr.top)/sc-80,844-560));return render()}
- case"tgclose":S.tg.menu=false;return render();
- case"tgshare":S.tg.menu=false;S.share={source:"telegram",step:"sheet"};return render();
- /* gmail */
- case"gm":S.gm.view=v;S.gm.menu=false;S.gm.sel=null;return render();
- case"gmsel":S.gm.sel=S.gm.sel===v?null:v;S.gm.menu=false;return render();
- case"gmopen":S.gm.view=v;S.gm.sel=null;S.gm.read=S.gm.read||{};S.gm.read[v]=true;S.gmRead[v]=true;return render();
+  S.tg.menu=v;S.tg.menuTop=Math.max(80,Math.min((r.top-pr.top)/sc-80,844-560));S.keepScroll=true;return render()}
+ case"tgclose":S.tg.menu=false;S.keepScroll=true;return render();
+ case"tgreact":{const k2="tg/"+S.tg.view+"/"+S.tg.menu;S.react[k2]=S.react[k2]===v?null:v;S.tg.menu=false;S.keepScroll=true;return render()}
+ case"tgreply":{const id=S.tg.view,m=S.tgchats[id].msgs.find(x=>x.id===S.tg.menu);S.reply={chat:"tg/"+id,who:tgWho(id,m),text:m.text};S.tg.menu=false;S.focus="cin";return render()}
+ case"tgpin":{const k2="tg/"+S.tg.view;S.pins[k2]=S.pins[k2]===S.tg.menu?null:S.tg.menu;S.tg.menu=false;return toast(S.pins[k2]?"Pinned":"Unpinned")}
+ case"tgshare":{const id=S.tg.view,m=S.tgchats[id].msgs.find(x=>x.id===S.tg.menu);S.tg.menu=false;
+  S.share={source:"telegram",step:"sheet",text:(m.from==="me"?"":tgWho(id,m)+": ")+m.text,key:!!m.key};return render()}
+ case"tgdel":{const id=S.tg.view;const mid=S.tg.menu;S.tg.menu=false;return actions("Delete message?",[{l:"Delete for me",a:"tgdelok:"+mid,red:true}],true)}
+ case"tgdelok":{const c=S.tgchats[S.tg.view];const i=c.msgs.findIndex(m=>m.id===v);if(i>=0){const d=c.msgs[i].day;c.msgs.splice(i,1);if(d&&c.msgs[i]&&!c.msgs[i].day)c.msgs[i].day=d}S.sheet=null;S.keepScroll=true;return toast("Message deleted")}
+ case"tgselect":S.tg.sel=S.tg.view;S.tg.selected=[S.tg.menu];S.tg.menu=false;S.keepScroll=true;return render();
+ case"tgtick":{const i=S.tg.selected.indexOf(v);i>=0?S.tg.selected.splice(i,1):S.tg.selected.push(v);S.keepScroll=true;return render()}
+ case"tgselcancel":S.tg.sel=null;S.tg.selected=[];return render();
+ case"tgseldel":{if(!S.tg.selected.length)return toast("Select messages first");const c=S.tgchats[S.tg.view];S.tg.selected.forEach(id=>{const i=c.msgs.findIndex(m=>m.id===id);if(i>=0){const d=c.msgs[i].day;c.msgs.splice(i,1);if(d&&c.msgs[i]&&!c.msgs[i].day)c.msgs[i].day=d}});S.tg.sel=null;S.tg.selected=[];return toast("Messages deleted")}
+ case"tgselshare":{if(!S.tg.selected.length)return toast("Select messages first");const id=S.tg.view,c=S.tgchats[id];const ms=c.msgs.filter(m=>S.tg.selected.includes(m.id));
+  S.share={source:"telegram",step:"sheet",text:ms.map(m=>(m.from==="me"?"":tgWho(id,m)+": ")+m.text).join("\n"),key:ms.some(m=>m.key)};S.tg.sel=null;S.tg.selected=[];return render()}
+ /* ---------- gmail ---------- */
+ case"gmback":S.gm.view="inbox";S.gm.menu=false;return render();
+ case"gmtab":S.gm.tab=v;S.gm.view="inbox";return render();
+ case"gmsel":{const i=S.gm.sel.indexOf(v);i>=0?S.gm.sel.splice(i,1):S.gm.sel.push(v);S.gm.menu=false;return render()}
+ case"gmselclear":S.gm.sel=[];S.gm.menu=false;return render();
+ case"gmselall":{const vis=gmVisible().map(e=>e.id);S.gm.sel=S.gm.sel.length===vis.length?[]:vis;return render()}
+ case"gmopen":{S.gm.view=v;S.gm.sel=[];const e=gmFind(v);if(e)e.read=true;return render()}
  case"gmdots":S.gm.menu=true;return render();
  case"gmclose":S.gm.menu=false;return render();
- case"gmshare":{const id=S.gm.view!=="inbox"?S.gm.view:S.gm.sel;S.gm.menu=false;
-  const e=EMAILS[id];if(!e){toast("Pick the Career Night email for this test");return}
+ case"gmdrawer":S.over={type:"drawer"};return render();
+ case"gmfolder":S.gm.folder=v;S.gm.label=null;S.gm.sel=[];S.over=null;S.gm.view="inbox";S.gm.tab="mail";return render();
+ case"gmlab":S.gm.label=v;S.gm.sel=[];S.over=null;S.gm.view="inbox";S.gm.tab="mail";return render();
+ case"gmacct":S.sheet={type:"note",dark:true,title:"Maya Chen",text:"maya.chen@berkeley.edu"};return render();
+ case"gmcompose":return gmCompose();
+ case"gmreply":{const e=gmFind(S.gm.view);return gmCompose(e.addr||e.from,"Re: "+e.subject,"")}
+ case"gmfwd":{const e=gmFind(S.gm.view);return gmCompose("","Fwd: "+e.subject,"\n\n---------- Forwarded message ---------\nFrom: "+e.from+"\n"+(e.body||[e.preview]).join("\n"))}
+ case"gmsendmail":{const to=fval("to").trim();if(!to)return toast("Add at least one recipient");
+  S.sent.unshift({id:uid("sent"),from:"Me",to,subject:fval("subj")||"(no subject)",preview:fval("body").split("\n")[0]||"",body:fval("body").split("\n").filter(Boolean),t:tLabelU(),color:"#e8710a",folder:"sent",read:true,labels:[]});
+  S.sheet=null;return toast("Sent")}
+ case"gmstar":{const e=gmFind(v);e.star=!e.star;return render()}
+ case"gmshare":{const ids=gmTargets();S.gm.menu=false;const e=gmFind(ids[0]);if(!e)return toast("Select an email to share");
   S.share={source:"gmail",step:"sheet",email:e};return render()}
- /* share */
+ case"gmmove":S.gm.menu=false;S.sheet={type:"list",dark:true,title:"Move to",items:FOLDERS.filter(f=>!["starred","sent"].includes(f[0])).map(f=>({l:f[1],a:"gmmoveto:"+f[0]}))};return render();
+ case"gmmoveto":{gmTargets().forEach(id=>{const e=gmFind(id);if(e)e.folder=v});return gmAfter("Moved to "+FOLDERS.find(f=>f[0]===v)[1])}
+ case"gmlabel":S.gm.menu=false;S.sheet={type:"list",dark:true,title:"Label as",items:LABELS.map(l=>({l,a:"gmlabelto:"+l}))};return render();
+ case"gmlabelto":{gmTargets().forEach(id=>{const e=gmFind(id);if(e&&!e.labels.includes(v))e.labels.push(v)});S.sheet=null;S.gm.menu=false;S.gm.sel=[];return toast("Labeled "+v)}
+ case"gmnotimp":return gmAfter("Marked as not important");
+ case"gmsnooze":S.gm.menu=false;return actions("Snooze until…",[{l:"Later today · 6:00 PM",a:"gmsnoozeok:Later today"},{l:"Tomorrow · 8:00 AM",a:"gmsnoozeok:Tomorrow"},{l:"This weekend · Sat 8:00 AM",a:"gmsnoozeok:Saturday"}],true);
+ case"gmsnoozeok":{gmTargets().forEach(id=>{const e=gmFind(id);if(e)e.folder="snoozed"});return gmAfter("Snoozed until "+v)}
+ case"gmmute":{gmTargets().forEach(id=>{const e=gmFind(id);if(e)e.folder="archive"});return gmAfter("Conversation muted")}
+ case"gmspam":{gmTargets().forEach(id=>{const e=gmFind(id);if(e)e.folder="spam"});return gmAfter("Reported as spam")}
+ case"gmarch":{const e=gmFind(S.gm.view);if(e)e.folder="archive";return gmAfter("Archived")}
+ case"gmtrash":{const e=gmFind(S.gm.view);if(e)e.folder="trash";return gmAfter("Moved to Trash")}
+ case"gmunread":{const e=gmFind(S.gm.view);if(e)e.read=false;return gmAfter("Marked as unread")}
+ case"meetnew":S.sheet={type:"note",dark:true,title:"Here's your meeting code",text:"kpx-rmtq-wve · share it with people you want to meet with.",done:"Copy code"};copyText("kpx-rmtq-wve");return render();
+ case"meetjoin":S.sheet={type:"form",dark:true,title:"Join with a code",submit:{l:"Join",a:"meetjoinok"},fields:[{id:"code",l:"Code",ph:"Example: abc-mnop-xyz"}]};return render();
+ case"meetjoinok":{const c=fval("code").trim();if(!c)return toast("Enter a meeting code");S.sheet=null;return toast("No one else is here yet")}
+ /* ---------- share sheet ---------- */
  case"sharecancel":S.share=null;return render();
- case"sharepip":S.share.step="compose";return render();
+ case"shareto":S.share.to=v;S.share.step="compose";return render();
+ case"sharepip":S.share.to="pip";S.share.step="compose";return render();
  case"sharewa":S.share.step="pick";return render();
  case"sharesend":return shareSend();
- /* calendar */
- case"cal":{const e=evById(v);S.back={app:S.app,label:S.app==="whatsapp"?"WhatsApp":S.app};S.app="calendar";S.cal.day=e?e.date:10;S.cal.hl=v;S.cal.detail=null;return render()}
- case"calday":S.cal.day=+v;S.cal.detail=null;return render();
+ case"sscopy":copyText(S.share.source==="gmail"?S.share.email.subject:S.share.text);S.share=null;return toast("Copied");
+ case"ssapp":S.share=null;return toast("Draft saved in "+v);
+ case"ssmore":S.share.more=!S.share.more;return render();
+ /* ---------- calendar ---------- */
+ case"cal":{const e=evById(v);S.back={app:S.app,label:S.app==="whatsapp"?"WhatsApp":S.app};S.app="calendar";S.cal.mode="day";S.cal.day=e?e.date:10;S.cal.hl=v;S.cal.detail=null;closeTransient();return render()}
+ case"calday":S.cal.day=+v;S.cal.detail=null;S.cal.mode="day";return render();
+ case"calpick":S.cal.day=+v;S.cal.mode="day";return render();
+ case"calmode":S.cal.mode=v;S.cal.detail=null;if(v==="list")S.cal.q="";return render();
+ case"calsearch":S.cal.mode="list";S.cal.q="";S.focus="calq";return render();
+ case"caltoday":S.cal.day=10;S.cal.mode="day";S.cal.detail=null;return render();
+ case"calnew":return eventForm(null);
+ case"evedit":return eventForm(evById(v));
+ case"calsave":{const title=fval("title").trim()||"New Event";const date=+fval("date"),start=+fval("start");let end=+(fval("end")||start);if(end<start)end=start+60;
+  if(v){const e=evById(v);Object.assign(e,{title,date,start,end:e.kind==="deadline"?start:end,loc:fval("loc")});S.sheet=null;S.cal.day=date;return toast("Event updated")}
+  S.events.push(ev(uid("ev"),title,date,start,Math.max(end,start+15),"blue",{loc:fval("loc"),cal:"Google Calendar"}));S.sheet=null;S.cal.day=date;S.cal.mode="day";S.cal.detail=null;return toast("Event added")}
+ case"evdel":return actions(null,[{l:"Delete Event",a:"evdelok:"+v,red:true}]);
+ case"evdelok":{const i=S.events.findIndex(e=>e.id===v);if(i>=0)S.events.splice(i,1);S.sheet=null;S.cal.detail=null;return toast("Event deleted")}
+ case"calcals":S.sheet={type:"list",title:"Calendars",items:["Google Calendar","Course site"].map(c=>({l:c,sub:c==="Course site"?"Subscribed":"maya.chen@berkeley.edu",a:"calcal:"+c,on:!S.hidden[c]}))};return render();
+ case"calcal":S.hidden[v]=!S.hidden[v];S.sheet.items.forEach(it=>it.on=!S.hidden[it.l]);return render();
+ case"calinbox":S.sheet={type:"note",title:"Inbox",text:"No new invitations."};return render();
  case"evd":S.cal.detail=v;return render();
  case"evback":S.cal.detail=null;return render();
- /* Jarvis actions */
+ /* ---------- Jarvis actions ---------- */
  case"t1upd":{lock("t1");tick();const t=tLabel();P("user",{text:"Update event",quote:"Stats 203 study group · Needs your OK",t});
   saveUndo("t1",["study"]);const e=evById("study");const full=S.t1Var==="full";
   Object.assign(e,{date:12,start:full?h(16,30):h(16),end:full?h(17,30):h(17),loc:full?"Main Library, Room 405":"Main Library · room undecided",notes:"Updated by Jarvis from Sam's messages in Stats 203 study group ("+(full?"2:14 and 2:31 pm":"2:14 pm")+").\nWas: Wed Nov 11, 4:00 pm, Main Library 4th floor."});
-  return pipReply([{kind:"card",key:"t1d",title:"Stats 203 study group",status:["Updated","g"],t,text:full?"Moved from Wed 4:00 pm to **Thu Nov 12, 4:30 – 5:30 pm**, Room 405. I'll keep an eye out for more changes.":"Moved from Wed 4:00 pm to **Thu Nov 12, 4:00 – 5:00 pm**. Room still undecided; forward the next message about it.",foot:"Google Calendar",buttons:[UNDOBTN("t1"),CALBTN("study")]}])}
+  return pipReply([{kind:"card",key:"t1d",title:"Stats 203 study group",status:["Updated","g"],t,text:full?"Moved from Wed 4:00 pm to **Thu Nov 12, 4:30 – 5:30 pm**, Room 405. I'll keep an eye out for more changes.":"Moved from Wed 4:00 pm to **Thu Nov 12, 4:00 – 5:00 pm**. Room still undecided; forward the next message about it.",buttons:[UNDOBTN("t1"),CALBTN("study")]}])}
+ case"t1edit":{const full=S.t1Var==="full";
+  S.sheet={type:"form",title:"Stats 203 study group",submit:{l:"Save",a:"t1editok"},fields:[
+   {id:"day",l:"Day",type:"select",options:[[11,"Wed Nov 11"],[12,"Thu Nov 12"],[13,"Fri Nov 13"]],v:12},
+   {id:"start",l:"Starts",type:"select",options:TIMES.filter(o=>o[0]>=h(9)&&o[0]<=h(20)),v:full?h(16,30):h(16)},
+   {id:"room",l:"Room",v:full?"Main Library, Room 405":"",ph:"Room or place"}]};return render()}
+ case"t1editok":{const d=+fval("day"),s=+fval("start"),room=fval("room").trim()||"Main Library · room undecided";S.sheet=null;
+  lock("t1");tick();const t=tLabel();P("user",{text:`Edited: ${WD[wdi(d)]} Nov ${d}, ${fmtT(s)}, ${room}`,quote:"Stats 203 study group · Needs your OK",t});
+  saveUndo("t1",["study"]);const e=evById("study");Object.assign(e,{date:d,start:s,end:s+60,loc:room,notes:"Updated by Jarvis with your edits, from Sam's messages in Stats 203 study group.\nWas: Wed Nov 11, 4:00 pm, Main Library 4th floor."});
+  const clash=S.events.filter(x=>x.id!=="study"&&x.date===d&&x.kind==="event"&&!x.deleted&&x.start<s+60&&x.end>s);
+  return pipReply([{kind:"card",key:"t1d",title:"Stats 203 study group",status:["Updated","g"],t,text:`Saved: **${WDL[wdi(d)]}, Nov ${d}, ${fmtT(s)} – ${fmtT(s+60)}**, ${esc(room)}.`+(clash.length?` Heads up: it overlaps **${clash[0].title}**.`:""),buttons:[UNDOBTN("t1"),CALBTN("study")]}])}
  case"t1not":{lock("t1");tick();const t=tLabel();P("user",{text:"Not this event",quote:"Stats 203 study group · Needs your OK",t});
   return pipReply([{kind:"text",text:"OK, I won't change **Stats 203 study group**. Tell me which event it's about, or ignore it.",t}])}
- case"openlist":S.wa.list=true;S.wa.listPick=null;return render();
- case"closelist":S.wa.list=false;return render();
- case"lp":S.wa.listPick=v;return render();
- case"listsend":{const p=S.wa.listPick;S.wa.list=false;lock("t2");tick();const t=tLabel();
+ case"openlist":S.wa.list=true;S.wa.listPick=null;S.keepScroll=true;return render();
+ case"closelist":S.wa.list=false;S.keepScroll=true;return render();
+ case"lp":S.wa.listPick=v;S.keepScroll=true;return render();
+ case"listsend":{const p=S.wa.listPick;if(!p)return toast("Choose an option first");S.wa.list=false;lock("t2");tick();const t=tLabel();
   const label={mon:"Mon Nov 16, 9:00 am",fri:"Fri Nov 13, 11:59 pm",both:"Keep both until it's confirmed",ask:"Draft a question to the TA"}[p];
   P("user",{text:label,quote:"Stats 203 Assignment 5 · Choose a date",t});saveUndo("t2",["a5"]);const e=evById("a5");
   if(p==="mon")Object.assign(e,{date:16,start:h(9),end:h(9),notes:"Due date from the TA's post (Nov 9) in Priya's screenshot. Unverified.\nCourse site still says Fri Nov 13, 11:59 pm."});
@@ -1187,31 +1718,49 @@ function act(a){
    fri:{status:["No change","n"],text:"Kept **Fri Nov 13, 11:59 pm** from the course site. I'll tell you if it changes there."},
    both:{status:["Checking","n"],text:"Your calendar shows **Fri Nov 13, 11:59 pm**, marked “checking”. I'll remind you Thu at 9:00 am to confirm."},
    ask:{status:["Draft","n"],text:"Here's a draft for Alex Rivera (TA). I didn't send it. Your calendar still shows **Fri Nov 13, 11:59 pm**, marked “checking”.",draft:"Hi Alex, is Assignment 5 due Mon Nov 16 at 9:00 am? The course site still shows Fri Nov 13. Thanks!"}}[p];
-  const btns=p==="ask"?[{label:"Copy draft",a:"toast:Draft copied"},CALBTN("a5")]:[UNDOBTN("t2"),CALBTN("a5")];
-  return pipReply([Object.assign({kind:"card",key:"t2d",title:"Stats 203 Assignment 5",t,foot:p==="ask"?"Not sent":"Google Calendar",buttons:btns},r)])}
+  const btns=p==="ask"?[{label:"Copy draft",a:"copydraft",keep:true},CALBTN("a5")]:[UNDOBTN("t2"),CALBTN("a5")];
+  return pipReply([Object.assign({kind:"card",key:"t2d",title:"Stats 203 Assignment 5",t,buttons:btns},r)])}
+ case"copydraft":copyText("Hi Alex, is Assignment 5 due Mon Nov 16 at 9:00 am? The course site still shows Fri Nov 13. Thanks!");S.keepScroll=true;return toast("Draft copied");
  case"t3add":case"t3addr":{lock("t3");tick();const t=tLabel();const rem=k==="t3addr";P("user",{text:rem?"Add + remind me to RSVP":"Add to calendar",quote:"Friendsgiving potluck · New event",t});
   saveUndo("t3",["potluck"]);S.events.push(ev("potluck","Friendsgiving potluck",14,h(18,30),h(21),"indigo",{loc:"2420 Durant Ave, apt 3",alert:rem?"Thu Nov 12, 10:00 am":"None",notes:"Added by Jarvis from a Telegram message you shared (Aigerim, KazSA Berkeley).\nRSVP by Thu Nov 12. Bring a dish to share."}));
-  return pipReply([{kind:"card",key:"t3d",title:"Friendsgiving potluck",status:["Added","g"],t,text:"Added **Sat Nov 14, 6:30 – 9:00 pm** at 2420 Durant Ave, apt 3."+(rem?" I'll remind you **Thu at 10:00 am** to RSVP to Aigerim.":""),foot:"Google Calendar",buttons:[UNDOBTN("t3"),CALBTN("potluck")]}])}
+  return pipReply([{kind:"card",key:"t3d",title:"Friendsgiving potluck",status:["Added","g"],t,text:"Added **Sat Nov 14, 6:30 – 9:00 pm** at 2420 Durant Ave, apt 3."+(rem?" I'll remind you **Thu at 10:00 am** to RSVP to Aigerim.":""),buttons:[UNDOBTN("t3"),CALBTN("potluck")]}])}
  case"t3not":{lock("t3");tick();const t=tLabel();P("user",{text:"Not now",quote:"Friendsgiving potluck · New event",t});return pipReply([{kind:"text",text:"OK, I didn't add it.",t}])}
  case"t4add":{lock("t4");tick();const t=tLabel();P("user",{text:"Add to calendar only",quote:"Product Design Career Night",t});
   saveUndo("t4",["cnight"]);S.events.push(ev("cnight","Product Design Career Night",19,h(18),h(20),"indigo",{loc:"Career Center Rm 110",notes:"Added by Jarvis from an email you shared. Not registered.\nSign up by Mon Nov 16. Overlaps Design 213 team sync (6–7 pm)."}));
-  return pipReply([{kind:"card",key:"t4d",title:"Product Design Career Night",status:["Added","g"],t,text:"Added **Thu Nov 19, 6:00 – 8:00 pm**, Career Center Rm 110. I didn't register you. It overlaps your team sync.",foot:"Google Calendar",buttons:[UNDOBTN("t4"),CALBTN("cnight")]}])}
+  return pipReply([{kind:"card",key:"t4d",title:"Product Design Career Night",status:["Added","g"],t,text:"Added **Thu Nov 19, 6:00 – 8:00 pm**, Career Center Rm 110. I didn't register you. It overlaps your team sync.",buttons:[UNDOBTN("t4"),CALBTN("cnight")]}])}
  case"t4reg":{lock("t4");tick();const t=tLabel();P("user",{text:"Add + register me",quote:"Product Design Career Night",t});
   return pipReply([{kind:"card",key:"t4r",title:"Registration to send",status:["Needs your OK","a"],t,text:"Here's exactly what I'll send. Nothing else is shared.",
    inset:`<div class="tight"><div class="ir"><span class="k">To</span><span><b style="font-size:13.5px">careercenter@berkeley.edu</b></span></div><div class="ir"><span class="k">Name</span><span><b style="font-size:13.5px">Maya Chen</b></span></div><div class="ir"><span class="k">Email</span><span><b style="font-size:13.5px">maya.chen@berkeley.edu</b></span></div><div class="ir"><span class="k">Résumé</span><span><b style="font-size:13.5px">Maya_Chen_Resume.pdf</b></span></div></div>`,
-   lines:[["",I.info,"I'll also add it to your calendar with a reminder 30 min before."]],foot:"Not sent yet",
+   lines:[["",I.info,"I'll also add it to your calendar with a reminder 30 min before."]],
    buttons:[{label:"Send registration",a:"t4send",pri:true,icon:I.send.replace('width="20" height="20"','width="14" height="14"')},{label:"Cancel",a:"t4cancel"}]}])}
  case"t4send":{lock("t4r");tick();const t=tLabel();P("user",{text:"Send registration",quote:"Registration to send",t});
   saveUndo("t4",["cnight"]);S.events.push(ev("cnight","Product Design Career Night",19,h(18),h(20),"indigo",{loc:"Career Center Rm 110",alert:"30 minutes before",notes:"Registered by Jarvis (sent to careercenter@berkeley.edu at "+t+").\nBring 3 printed résumés. Overlaps Design 213 team sync (6–7 pm)."}));
-  return pipReply([{kind:"card",key:"t4d",title:"Product Design Career Night",status:["Registered","g"],t,text:"Sent your sign-up to the Career Center and added **Thu Nov 19, 6:00 – 8:00 pm**, Rm 110. Reminder 30 min before; bring 3 printed résumés.",foot:"Google Calendar · confirmation will arrive by email",buttons:[UNDOBTN("t4"),CALBTN("cnight")]}])}
+  return pipReply([{kind:"card",key:"t4d",title:"Product Design Career Night",status:["Registered","g"],t,text:"Sent your sign-up to the Career Center and added **Thu Nov 19, 6:00 – 8:00 pm**, Rm 110. Reminder 30 min before; bring 3 printed résumés.",buttons:[UNDOBTN("t4"),CALBTN("cnight")]}])}
  case"t4cancel":{lock("t4r");tick();const t=tLabel();P("user",{text:"Cancel",quote:"Registration to send",t});return pipReply([{kind:"text",text:"OK, I didn't send anything or add it.",t}])}
  case"t4not":{lock("t4");tick();const t=tLabel();P("user",{text:"Not now",quote:"Product Design Career Night",t});return pipReply([{kind:"text",text:"OK, I didn't add it.",t}])}
- case"undo":{const key=v;lock(key+"d");tick();const t=tLabel();P("user",{text:"Undo",quote:"Undo the last change",t});restore(key);if(key==="t1"||key==="t2"||key==="t3")unlock(key);
-  const txt={t1:"Undone. **Stats 203 study group** is back to Wed Nov 11, 4:00 pm.",t2:"Undone. **Assignment 5** is back to Fri Nov 13, 11:59 pm.",t3:"Undone. I removed **Friendsgiving potluck** from your calendar.",t4:"Undone. I removed **Product Design Career Night** from your calendar."+(S.pip.some(m=>m.key==="t4r")?" Your sign-up was already sent; reply to the Career Center to cancel it.":"")}[key];
+ case"t5add":{lock("t5");tick();const t=tLabel();P("user",{text:"Add to calendar",quote:"Résumé review drop-ins · New event",t});
+  saveUndo("t5",["rrdrop"]);S.events.push(ev("rrdrop","Résumé review drop-ins",13,h(13),h(15),"indigo",{loc:"Career Center",notes:"Added by Jarvis from an email you shared (careercenter@berkeley.edu). No appointment needed."}));
+  return pipReply([{kind:"card",key:"t5d",title:"Résumé review drop-ins",status:["Added","g"],t,text:"Added **Fri Nov 13, 1:00 – 3:00 pm** at the Career Center.",buttons:[UNDOBTN("t5"),CALBTN("rrdrop")]}])}
+ case"t5not":{lock("t5");tick();const t=tLabel();P("user",{text:"Not now",quote:"Résumé review drop-ins · New event",t});return pipReply([{kind:"text",text:"OK, I didn't add it.",t}])}
+ case"undo":{const key=v;lock(key+"d");tick();const t=tLabel();P("user",{text:"Undo",quote:"Undo the last change",t});restore(key);if(key!=="t4")unlock(key);
+  const txt={t1:"Undone. **Stats 203 study group** is back to Wed Nov 11, 4:00 pm.",t2:"Undone. **Assignment 5** is back to Fri Nov 13, 11:59 pm.",t3:"Undone. I removed **Friendsgiving potluck** from your calendar.",t4:"Undone. I removed **Product Design Career Night** from your calendar."+(S.pip.some(m=>m.key==="t4r")?" Your sign-up was already sent; reply to the Career Center to cancel it.":""),t5:"Undone. I removed **Résumé review drop-ins** from your calendar."}[key];
   return pipReply([{kind:"text",text:txt,t}])}
  }
 }
 phone.addEventListener("click",e=>{const el=e.target.closest("[data-a]");if(!el||el.disabled)return;e.stopPropagation();act(el.dataset.a)});
+phone.addEventListener("input",e=>{const el=e.target;
+ if(el.id==="waq"){S.wa.q=el.value;document.getElementById("warows").innerHTML=waRowsHTML()}
+ else if(el.id==="tgq"){S.tg.q=el.value;document.getElementById("tgrows").innerHTML=tgRowsHTML()}
+ else if(el.id==="gmq"){S.gm.q=el.value;document.getElementById("gmrows").innerHTML=gmRowsHTML()}
+ else if(el.id==="calq"){S.cal.q=el.value;const scroll=document.getElementById("callist");const tmp=document.createElement("div");tmp.innerHTML=calList();const nl=tmp.querySelector("#callist");if(scroll&&nl)scroll.innerHTML=nl.innerHTML}
+ else if(el.id==="cin"){const c=el.closest(".composer");setDraft(c.dataset.chat,el.value);c.classList.toggle("typing",!!el.value.trim())}
+});
+phone.addEventListener("keydown",e=>{if(e.key!=="Enter")return;const el=e.target;
+ if(el.id==="cin"){e.preventDefault();act("send:"+el.closest(".composer").dataset.chat)}
+ else if(el.id==="capin"){e.preventDefault();act("sharesend")}
+ else if(el.tagName==="INPUT"&&el.closest(".form")){e.preventDefault();const b=phone.querySelector(".form .sh-top button:last-child");if(b)act(b.dataset.a)}
+ else if(el.classList.contains("sin"))e.preventDefault();
+});
 
 /* ================= moderator controls ================= */
 function reset(task,app){clearTimers();S=fresh();S.task=task;if(app)S.app=app;seedPip();render()}
@@ -1225,12 +1774,12 @@ function jump(w){
  reset(null,"whatsapp");
  if(w==="home")S.app="home";
  if(w==="review"||w==="done"||w==="calendar"||w==="conflict"){S.wa.view="pip";preT1()}
- if(w==="done"||w==="calendar"||w==="conflict"){act("t1upd");clearTimers();S.typing=false;S.pip.push({kind:"card",key:"t1d",title:"Stats 203 study group",status:["Updated","g"],t:"2:36 pm",text:"Moved from Wed 4:00 pm to **Thu Nov 12, 4:30 – 5:30 pm**, Room 405. I'll keep an eye out for more changes.",foot:"Google Calendar",buttons:[UNDOBTN("t1"),CALBTN("study")]})}
+ if(w==="done"||w==="calendar"||w==="conflict"){act("t1upd");clearTimers();S.typing=false;S.pip.push({kind:"card",key:"t1d",title:"Stats 203 study group",status:["Updated","g"],t:"2:36 pm",text:"Moved from Wed 4:00 pm to **Thu Nov 12, 4:30 – 5:30 pm**, Room 405. I'll keep an eye out for more changes.",buttons:[UNDOBTN("t1"),CALBTN("study")]})}
  if(w==="calendar"){S.back={app:"whatsapp",label:"WhatsApp"};S.app="calendar";S.cal.day=12;S.cal.hl="study"}
  if(w==="conflict"){S.clock=h(14,41);P("fwd",{text:"did you see this??",img:true,t:"2:41 pm"});P("summary",{text:"This screenshot says **Assignment 5** is now due **Mon Nov 16, 9:00 am**. The course site still says **Fri Nov 13, 11:59 pm**.",t:"2:41 pm"});P("card",t2Card("2:41 pm"));S.unread.priya=0}
- if(w==="tgshare"){S.app="telegram";S.tg.view="kazsa";S.tgRead=true;S.share={source:"telegram",step:"sheet"}}
+ if(w==="tgshare"){S.app="telegram";S.tg.view="kazsa";S.tgUnread.kazsa=0;S.share={source:"telegram",step:"sheet",text:"Aigerim: "+TG_MSG,key:true}}
  if(w==="tgcard"){S.clock=h(14,50);P("shared",{text:"Aigerim: "+TG_MSG,t:"2:50 pm"});P("summary",{text:"Aigerim invited you to a **Friendsgiving potluck** on **Sat Nov 14, 6:30 pm**. It's not on your calendar yet.",t:"2:50 pm"});P("card",t3Card("2:50 pm"));S.wa.view="pip";S.back={app:"telegram",label:"Telegram"}}
- if(w==="gmmenu"){S.app="gmail";S.gm.sel="cn";S.gm.menu=true}
+ if(w==="gmmenu"){S.app="gmail";S.gm.sel=["cn"];S.gm.menu=true}
  if(w==="gmcard"){S.clock=h(14,55);P("shared",{email:EMAILS.cn,t:"2:55 pm"});P("summary",{text:"The Career Center invited you to **Product Design Career Night**, Thu Nov 19, 6:00–8:00 pm. It needs a sign-up by **Mon Nov 16**.",t:"2:55 pm"});P("card",t4Card(false,"2:55 pm"));S.wa.view="pip";S.back={app:"gmail",label:"Gmail"}}
  render();
 }
