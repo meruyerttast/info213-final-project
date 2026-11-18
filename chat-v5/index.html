@@ -222,6 +222,7 @@ img{display:block}
 
 /* ---------- system overlays ---------- */
 .notif{position:absolute;top:52px;left:9px;right:9px;z-index:50;background:rgba(245,245,245,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:22px;padding:11px 13px;display:flex;gap:10px;text-align:left;box-shadow:0 8px 30px rgba(0,0,0,.22);animation:drop .35s ease-out;color:#0b141a}
+.notif.still{animation:none}
 @keyframes drop{from{transform:translateY(-120%)}to{transform:none}}
 .notif .appic{width:38px;height:38px;border-radius:9px;background:var(--wa);display:grid;place-items:center;color:#fff;flex:none}
 .notif div{flex:1;min-width:0;font-size:14.5px;line-height:1.32}
@@ -1326,9 +1327,9 @@ function render(){
  html+=overHTML();
  if(S.share)html+=S.share.step==="sheet"?shareSheet():waExtension();
  html+=sheetHTML();
- if(S.notif)html+=`<button class="notif" type="button" data-a="notif"><span class="appic">${I.chatbub}</span><div><b>Jarvis<small>WhatsApp · now</small></b>${md(S.notif)}</div></button>`;
+ if(S.notif)html+=`<button class="notif ${S.notifAnim?"":"still"}" type="button" data-a="notif"><span class="appic">${I.chatbub}</span><div><b>Jarvis<small>WhatsApp · now</small></b>${md(S.notif)}</div></button>`;
  if(S.toast)html+=`<div class="toast" role="status">${esc(S.toast)}</div>`;
- phone.innerHTML=html;
+ phone.innerHTML=html;S.notifAnim=false;
  const w=document.getElementById("wall");if(w){w.scrollTop=keepTop!=null?keepTop:w.scrollHeight}S.keepScroll=false;
  const tl=document.getElementById("tl");if(tl){const hl=S.cal.hl&&evById(S.cal.hl);const ref=hl&&hl.date===S.cal.day&&hl.kind!=="deadline"?hl.start:h(8);tl.scrollTop=Math.max(0,(ref/60-6)*56-80)}
  if(S.focus){const f=document.getElementById(S.focus);if(f){f.focus();try{f.setSelectionRange(f.value.length,f.value.length)}catch(_){}}S.focus=null}
@@ -1339,14 +1340,14 @@ function render(){
 let timers=[];
 const later=(fn,ms)=>timers.push(setTimeout(fn,ms));
 function clearTimers(){timers.forEach(clearTimeout);timers=[]}
-function toast(t){S.toast=t;render();later(()=>{S.toast=null;render()},1600)}
+function toast(t){const n=S.toastSeq=(S.toastSeq||0)+1;S.toast=t;render();later(()=>{if(S.toastSeq===n){S.toast=null;render()}},1600)}
 function copyText(t){try{navigator.clipboard&&navigator.clipboard.writeText(t).catch(()=>{})}catch(_){}}
 const PHOTO=()=>AV.climb;
 function pipReply(steps,notif){
  S.typing=true;render();
  later(()=>{S.typing=false;steps.forEach(s=>P(s.kind,s));
   const inPip=S.app==="whatsapp"&&S.wa.view==="pip";
-  if(!inPip){S.unread.pip+=steps.length;if(notif){S.notif=notif;later(()=>{S.notif=null;render()},7000)}}
+  if(!inPip){S.unread.pip+=steps.length;if(notif){const n=S.notifSeq=(S.notifSeq||0)+1;S.notif=notif;S.notifAnim=true;later(()=>{if(S.notifSeq===n){S.notif=null;render()}},7000)}}
   render();},1100);
 }
 function lock(key){const c=S.pip.filter(m=>m.key===key).slice(-1)[0];if(c)c.locked=true}
